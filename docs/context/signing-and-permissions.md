@@ -2,6 +2,7 @@
 
 ## Reinstalling silently revoked the Accessibility permission
 
+**Id:** 848fc610-3a27-40bb-88fd-d006c06364e3
 **Type:** incident
 **Status:** active
 **Evidence:** confirmed

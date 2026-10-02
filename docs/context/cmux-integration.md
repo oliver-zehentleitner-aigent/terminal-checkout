@@ -4,6 +4,7 @@ How the app reaches a cmux server, what it is allowed to ask of it, and what it 
 
 ## The socket control mode is the user's setting, and the app stopped short of writing it
 
+**Id:** 2b2b6e42-aa5e-446d-8644-2ba7c0ae60e1
 **Type:** decision
 **Status:** active
 **Evidence:** confirmed
@@ -26,6 +27,7 @@ cmux only accepts socket commands from processes it can prove are its own descen
 
 ## Only an oversized send waits for raw mode, because the writer cannot see the truncation
 
+**Id:** 1f1d8a06-a0d3-42b8-923e-c154a91e335a
 **Type:** decision
 **Status:** active
 **Evidence:** confirmed
@@ -48,6 +50,7 @@ When raw mode is observed, any payload is sent immediately. Without that observa
 
 ## Each cmux channel is pinned to its own socket, because discovery crosses channels
 
+**Id:** e861eff1-4759-4c9b-8396-6d6500acb5aa
 **Type:** decision
 **Status:** active
 **Evidence:** confirmed
@@ -72,9 +75,11 @@ Stable and NIGHTLY each write the same live socket path to two pointer files. Th
 
 ## `cmux rpc` is the only control path, and it carries nine methods
 
+**Id:** 024b2041-cb20-486b-b5d3-e2412c2728ce
 **Type:** decision
 **Status:** active
-**Evidence:** confirmed; cmux 0.64.22 (102) [ddd4a01bc] issue #68 measurement plan; `app/Sources/Core/CmuxControl.swift`
+**Evidence:** confirmed
+**Evidence note:** cmux 0.64.22 (102) [ddd4a01bc] issue #68 measurement plan; `app/Sources/Core/CmuxControl.swift`
 **Source:** Issue #68 measurement round and PR #60; https://github.com/dazebug/terminal-checkout/issues/68#issuecomment-5487928294
 **Revisit when:** the pinned cmux version moves — the raw v2 method names are not a stable public API
 
@@ -88,9 +93,11 @@ Everything the app asks of cmux goes through `cmux rpc <method> <json>`. The ori
 
 ## Grouped placement prefers layout creation, and found workspaces use balanced target splits
 
+**Id:** a77a7192-b495-4b00-a093-d0869f0d8a6d
 **Type:** decision
 **Status:** active
-**Evidence:** confirmed; issue #68 items 5, 7–13 and driver measurements from 2026-09-01; live 25-item runs of the app's executor on cmux 0.64.25, 2026-10-02
+**Evidence:** confirmed
+**Evidence note:** issue #68 items 5, 7–13 and driver measurements from 2026-09-01; live 25-item runs of the app's executor on cmux 0.64.25, 2026-10-02
 **Source:** Issue #68 measurement comment and issue #69 driver measurements, 2026-09-01; https://github.com/dazebug/terminal-checkout/issues/68#issuecomment-5487928294; live 25-item `runCmuxBatch` runs against cmux 0.64.25, 2026-10-02
 **Revisit when:** cmux changes layout execution, split targeting or ordering, `operation_id` validation, or the window scope of an unaddressed `workspace.list`
 
@@ -110,9 +117,11 @@ There are two item-to-surface sources of truth. Layout-created leaves are enumer
 
 ## A batch into a found workspace leaves the surface that was already there untouched
 
+**Id:** ad406a47-a446-4c96-b83f-547a545a7abd
 **Type:** decision
 **Status:** active
-**Evidence:** confirmed; on cmux 0.64.25 (2026-10-02), the old N=9 plan sent 22 bytes to the existing first surface, while the new N=9 plan left it at 0 bytes with 10 total surfaces and 9/9 item markers, and the new N=25 plan left it at 0 bytes with 26 total surfaces and 25/25 item markers in 5.1 seconds; in a fixture where claude already ran in that surface, the old plan sent item zero's command there and the Claude-input path accepted that claude's PID as the prepared session
+**Evidence:** confirmed
+**Evidence note:** on cmux 0.64.25 (2026-10-02), the old N=9 plan sent 22 bytes to the existing first surface, while the new N=9 plan left it at 0 bytes with 10 total surfaces and 9/9 item markers, and the new N=25 plan left it at 0 bytes with 26 total surfaces and 25/25 item markers in 5.1 seconds; in a fixture where claude already ran in that surface, the old plan sent item zero's command there and the Claude-input path accepted that claude's PID as the prepared session
 **Source:** live `runCmuxBatch` before-and-after runs; `cmuxFoundWorkspacePanePlan` in `app/Sources/Core/CmuxPlacement.swift`; `executeFoundSplit` in `app/Sources/Core/CmuxGroupedExecution.swift`; `cmuxCommandSendGate` in `app/Sources/Core/CmuxControl.swift`; `waitUntilClaudeAcceptsInput` in `app/Sources/Core/ClaudeInjector.swift`; `testFoundPaneExecutionNeverSendsItemsToExistingRoot` in `app/Tests/CoreTests/CmuxGroupedExecutionTests.swift`
 **Revisit when:** cmux changes targeted `surface.split` behavior or the app changes found-workspace routing or its Claude-session gate
 
@@ -128,9 +137,11 @@ A fixed-name workspace exists to be reused, and under the old plan its first sur
 
 ## A launch retry is decided by the transport failure, never by matching a message
 
+**Id:** eab377e9-e7c7-42b6-a4d2-2dae534210e4
 **Type:** decision
 **Status:** active
-**Evidence:** confirmed; cmux 0.64.22 (102) [ddd4a01bc] item 3
+**Evidence:** confirmed
+**Evidence note:** cmux 0.64.22 (102) [ddd4a01bc] item 3
 **Source:** Issue #68 measurement item 3 and PR #60; https://github.com/dazebug/terminal-checkout/issues/68#issuecomment-5487928294
 **Revisit when:** cmux changes either connection-phase error string, or gains an exit code that distinguishes them
 
@@ -151,9 +162,11 @@ Measured server-side validation failures carried typed prefixes (`invalid_params
 
 ## The workspace is created focused and unaddressed
 
+**Id:** 6d8dbc15-63fe-4d83-b70c-818b815e6a95
 **Type:** decision
 **Status:** active
-**Evidence:** confirmed in cmux 0.64.22 (102) [ddd4a01bc], issue #68 item 1
+**Evidence:** confirmed
+**Evidence note:** in cmux 0.64.22 (102) [ddd4a01bc], issue #68 item 1
 **Source:** Issue #68 measurement item 1 and PR #60; https://github.com/dazebug/terminal-checkout/issues/68#issuecomment-5487928294
 **Revisit when:** cmux changes how an unaddressed or addressed `workspace.create` pick their window target
 
@@ -167,9 +180,11 @@ Measured server-side validation failures carried typed prefixes (`invalid_params
 
 ## The tty comes from `debug.terminals`, not from the pane
 
+**Id:** c89fcdd5-d141-4617-b942-5007ee4a2277
 **Type:** decision
 **Status:** active
-**Evidence:** confirmed in cmux 0.64.22 (102) [ddd4a01bc]; issue #68 item 2, item 6
+**Evidence:** confirmed
+**Evidence note:** in cmux 0.64.22 (102) [ddd4a01bc]; issue #68 item 2, item 6
 **Source:** Issue #68 measurement items 2 and 6 and PR #60; https://github.com/dazebug/terminal-checkout/issues/68#issuecomment-5487928294
 **Revisit when:** cmux exposes the tty on the workspace-creation response or changes `debug.terminals` semantics
 
@@ -187,9 +202,11 @@ The tty name for a new surface is read by polling `debug.terminals` for the surf
 
 ## Split order halves the active pane; balanced order or layout preserves width, and equalization normalizes a linear chain
 
+**Id:** d95f34cd-d7e2-4d24-933b-796136f91e49
 **Type:** decision
 **Status:** active
-**Evidence:** confirmed in cmux 0.64.22 (102) [ddd4a01bc]; issue #68 items 5, 7, 8, 9, 10, 11, 12, and 13
+**Evidence:** confirmed
+**Evidence note:** in cmux 0.64.22 (102) [ddd4a01bc]; issue #68 items 5, 7, 8, 9, 10, 11, 12, and 13
 **Source:** Issue #68 items 5, 7, 8, 9, 10, 11, 12, and 13; https://github.com/dazebug/terminal-checkout/issues/68#issuecomment-5487928294
 **Revisit when:** layout geometry, minimum shell column rules, or cmux split defaults move on this machine
 
@@ -238,9 +255,11 @@ A single `workspace.create` accepted the 25-leaf layout. On cmux 0.64.25 on 2026
 
 ## cmux's marker experiment reads its addressed surface, including in a background tab
 
+**Id:** 0af4adab-5942-4019-9a12-3894e0285dd4
 **Type:** decision
 **Status:** active
-**Evidence:** confirmed in cmux 0.64.22 (102) [ddd4a01bc]; issue #68 item 6; delivery continuing after the user switched to another tab was measured with PR #60; that every input runs the marker experiment is read from the code
+**Evidence:** confirmed
+**Evidence note:** in cmux 0.64.22 (102) [ddd4a01bc]; issue #68 item 6; delivery continuing after the user switched to another tab was measured with PR #60; that every input runs the marker experiment is read from the code
 **Source:** `proveOurPaneAndEmptyBox` and `inputBoxAfterSubmit` in `app/Sources/Core/ClaudeInjector.swift`; `surface.read_text` implementation in `app/Sources/Core/CmuxControl.swift`; issue #68 item 6 and PR #60; https://github.com/dazebug/terminal-checkout/issues/68#issuecomment-5487928294
 **Revisit when:** `surface.read_text` no longer accepts an explicit surface id, or the marker experiment or `screenNeedsPaneProof` contract changes
 

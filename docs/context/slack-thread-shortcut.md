@@ -4,6 +4,7 @@ Why the Slack desktop workflow is Copy link plus a global shortcut the app regis
 
 ## The trigger is Copy link plus a keyboard shortcut
 
+**Id:** aebdc42d-59e3-46bd-87cf-cf054b5ff577
 **Type:** decision
 **Status:** active
 **Evidence:** confirmed
@@ -15,11 +16,12 @@ The trigger is Slack desktop's **Copy link** followed by a keyboard shortcut. A 
 
 ## The app registers the shortcut itself
 
+**Id:** b44539a6-52e8-49e7-8ef5-ff168299ec93
 **Type:** decision
 **Status:** active
 **Evidence:** confirmed
 **Source:** User decision and driver measurements, 2026-10-03, Darwin 27.0.0
-**Verification:** measured end to end with the installed app — ⌃⇧⌘C pressed with Slack in front opened one session while the app's Accessibility permission was reset
+**Verification:** corroborated — measured end to end with the installed app — ⌃⇧⌘C pressed with Slack in front opened one session while the app's Accessibility permission was reset
 **Revisit when:** a shortcut assigned in the Shortcuts app fires whichever app is in front, or the app stops staying resident after it launches
 
 A keyboard shortcut assigned in the Shortcuts app is stored as a Services key equivalent — `pbs` held `(null) - <workflow id> - runShortcutAsService` with `key_equivalent` `@^$c` — and its run starts inside the frontmost app's process: the `Starting shortcut run from client` log line came from Finder. It worked with Finder in front and did nothing with Slack in front, the one app this workflow is for. The app instead registers a Carbon hotkey with `RegisterEventHotKey`, which the window server matches before any app sees the key; a disposable probe fired with Slack and with cmux in front, and the installed app needed no Accessibility permission. It registers with `kEventHotKeyExclusive`: without it, a combination another process holds exclusively registers with noErr and never fires, while with it Carbon returns -9878, which the Slack pane shows (measured across two processes; within one process a duplicate is refused either way). A press reads the clipboard text at that moment.
@@ -30,6 +32,7 @@ A Slack request still waiting on the serial execution queue can be lost without 
 
 ## The clipboard can choose a thread, not a command
 
+**Id:** 1d588767-204b-4fac-9bb8-de5c540eb826
 **Type:** decision
 **Status:** active
 **Evidence:** confirmed
@@ -43,9 +46,10 @@ The link is the first text in claude's one plain-text opening argument, followed
 
 ## The Shortcuts workflow was signed and configured locally
 
+**Id:** 0ffebfb8-9b0b-400c-bf3b-f001a687718b
 **Type:** decision
-**Status:** superseded — the app registers its own shortcut (see "The app registers the shortcut itself"); the measurements below are kept for anyone who reconsiders Shortcuts
-**Superseded by:** user decision, 2026-10-03
+**Status:** superseded
+**Superseded by:** b44539a6-52e8-49e7-8ef5-ff168299ec93
 **Evidence:** confirmed
 **Source:** User decision; [Apple — Run a shortcut while working on your Mac](https://support.apple.com/en-asia/guide/shortcuts-mac/apd163eb9f95/mac); driver measurements, 2026-10-02
 **Verification:** corroborated by the removed Shortcuts installer and driver import/run measurements
@@ -64,9 +68,10 @@ Driver measurements on Darwin 27.0.0 constrained the workflow file and its openi
 
 ## URL launch ordering was measured
 
+**Id:** 694792c4-c761-4f12-8b8b-e758d83f007e
 **Type:** constraint
-**Status:** superseded — the app no longer registers a URL scheme; the platform behavior is unchanged
-**Superseded by:** user decision, 2026-10-03
+**Status:** superseded
+**Superseded by:** none — the app no longer registers a URL scheme; the platform behavior is unchanged
 **Evidence:** confirmed
 **Source:** Driver AppKit probe, 2026-10-02, Darwin 27.0.0
 **Verification:** corroborated by the recorded probe results

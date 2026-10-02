@@ -4,6 +4,7 @@ How a button's scheduled `claude_inputs` — and the one-line note a click can a
 
 ## `!` inputs are typed into claude's shell mode, never pre-run and pasted
 
+**Id:** ec25f742-95c1-4b07-8afb-6eb563f5d696
 **Type:** decision
 **Status:** active
 **Evidence:** confirmed
@@ -22,9 +23,11 @@ An input starting with `!` is typed into the running TUI so that claude's own sh
 
 ## A leading `!` is sent in its own write before a long input
 
+**Id:** 28125d56-1ebb-4bcf-ab97-0f0e18b88467
 **Type:** decision
 **Status:** active
-**Evidence:** Claude Code 2.1.287 in cmux 0.64.25 on 2026-10-02: a 424-character merged line doubled its leading `!` in 6 of 8 one-write attempts, while sending `!` first and the rest immediately produced 0 of 8; a 24-character input doubled in 0 of 20 one-write attempts. A live delivery of the issue-list button's inputs to Claude in a 38×20 cmux pane sent all four typed inputs (424, 45, 21 and 105 characters) in 9.4 seconds; the first marker was retried once during startup, the Korean note arrived, `/rename` took effect, and no doubled `!!` or `no such file` error appeared.
+**Evidence:** confirmed
+**Evidence note:** Claude Code 2.1.287 in cmux 0.64.25 on 2026-10-02: a 424-character merged line doubled its leading `!` in 6 of 8 one-write attempts, while sending `!` first and the rest immediately produced 0 of 8; a 24-character input doubled in 0 of 20 one-write attempts. A live delivery of the issue-list button's inputs to Claude in a 38×20 cmux pane sent all four typed inputs (424, 45, 21 and 105 characters) in 9.4 seconds; the first marker was retried once during startup, the Korean note arrived, `/rename` took effect, and no doubled `!!` or `no such file` error appeared.
 **Source:** `typeAndSubmit` in `app/Sources/Core/ClaudeInjector.swift`; `testLeadingBangIsSentSeparatelyFromTheLongInputBody` in `app/Tests/CoreTests/CoreTests.swift`; a live delivery of the issue-list button's inputs to Claude in a 38×20 cmux pane
 **Revisit when:** Claude Code changes shell-mode entry or how it handles a long typed chunk
 
@@ -40,6 +43,7 @@ A typed input that starts with `!` sends the prefix in one write and the rest im
 
 ## Consecutive `!` inputs merge into one typed line, joined with `;`
 
+**Id:** 7f83af80-a0bb-4d85-9989-352d5c521135
 **Type:** decision
 **Status:** active
 **Evidence:** confirmed
@@ -56,6 +60,7 @@ What survives of the abandoned optimisation is cycles, not routes. A run of cons
 
 ## The gate makes no judgement about where a character sits
 
+**Id:** 40ec8942-502a-4d9a-a382-33546566f996
 **Type:** decision
 **Status:** active
 **Evidence:** confirmed
@@ -70,6 +75,7 @@ What survives of the abandoned optimisation is cycles, not routes. A run of cons
 
 ## argv carries the opening message only when every input is plain text
 
+**Id:** 6b8f3f2f-342b-41b5-841b-a4dedcf52fd3
 **Type:** decision
 **Status:** active
 **Evidence:** confirmed
@@ -86,6 +92,7 @@ A list holding exactly one plain-text input rides in argv, which skips the typin
 
 ## Delivery proves the input box by experiment, not by reading the screen
 
+**Id:** bd8c18bd-a6f6-4652-a895-7ca3b134af62
 **Type:** decision
 **Type:** workaround
 **Status:** active
@@ -103,9 +110,11 @@ Before each input, the app types a throwaway marker, watches it appear, clears t
 
 ## Reflection checks the tail first and accepts the head only at the window's end
 
+**Id:** d5587028-bcdd-4ac1-869c-0ccacbbe56f5
 **Type:** decision
 **Status:** active
-**Evidence:** Claude Code 2.1.287 in cmux 0.64.25 on 2026-10-02 showed only the last five composer lines in 38×20 and 76×20 panes: for the 424-character merged line the head fragment stayed at 0→0 while the tail rose 0→2. A 2,000-character paste appeared as `[Pasted text #N]` with the head rising 0→1 and the tail staying at 0→0, though the cause of folding was not isolated. A live delivery of the issue-list button's inputs to Claude in a 38×20 cmux pane sent four typed inputs in 9.4 seconds; the first marker was retried once during startup, the Korean note arrived and `/rename` took effect.
+**Evidence:** confirmed
+**Evidence note:** Claude Code 2.1.287 in cmux 0.64.25 on 2026-10-02 showed only the last five composer lines in 38×20 and 76×20 panes: for the 424-character merged line the head fragment stayed at 0→0 while the tail rose 0→2. A 2,000-character paste appeared as `[Pasted text #N]` with the head rising 0→1 and the tail staying at 0→0, though the cause of folding was not isolated. A live delivery of the issue-list button's inputs to Claude in a 38×20 cmux pane sent four typed inputs in 9.4 seconds; the first marker was retried once during startup, the Korean note arrived and `/rename` took effect.
 **Source:** `claudeInputProbe`, `screenReflectsNewInput` and `inputBoxAfterSubmit` in `app/Sources/Core/ClaudeInjector.swift`; `testShortPaneTailReflectionSubmitsThe424CharacterMergedInputOnce` and `testCollapsedInputUsesHeadReflectionOnlyAfterTheWindowExpires` in `app/Tests/CoreTests/CoreTests.swift`; a live delivery of the issue-list button's inputs to Claude in a 38×20 cmux pane
 **Revisit when:** Claude Code changes its composer scrolling or pasted-text rendering
 
@@ -119,9 +128,11 @@ The reflection check accepts a newly visible increase in the final 24 non-whites
 
 ## The input box is cleared by counted visual lines, then Backspace
 
+**Id:** 4be3abbe-431b-41be-b559-aba3ac55e2f7
 **Type:** decision
 **Status:** active
-**Evidence:** measured in a pty with Claude Code 2.1.238: Ctrl+U cleared text but left the `!` shell-mode prefix, and one Backspace removed it. Measured in cmux 0.64.25 with Claude Code 2.1.287 on 2026-10-02: one Ctrl+U removed one visual line; writes of 64 or 128 Ctrl+U bytes were each dropped whole in two trials, while bursts of at most eight were processed. A live delivery of the issue-list button's inputs to Claude in a 38×20 cmux pane sent 4 of 4 typed inputs in 9.4 seconds.
+**Evidence:** confirmed
+**Evidence note:** measured in a pty with Claude Code 2.1.238: Ctrl+U cleared text but left the `!` shell-mode prefix, and one Backspace removed it. Measured in cmux 0.64.25 with Claude Code 2.1.287 on 2026-10-02: one Ctrl+U removed one visual line; writes of 64 or 128 Ctrl+U bytes were each dropped whole in two trials, while bursts of at most eight were processed. A live delivery of the issue-list button's inputs to Claude in a 38×20 cmux pane sent 4 of 4 typed inputs in 9.4 seconds.
 **Source:** `claudeClearBatches`, `InputBoxOwnership` and `clearAbandonedInput` in `app/Sources/Core/ClaudeInjector.swift`; `testRetryClearsWrappedRemainderBeforeRetypingInputAgain`, `testAbandonedWrappedInputIsFullyClearedAfterRetriesExhausted` and `testRetryClears120KoreanCharactersByCellWidthBeforeSubmittingOnce` in `app/Tests/CoreTests/CoreTests.swift`; `testItem10CmuxClearInputIsTwoSendTextCallsCtrlUThenBackspace` in `app/Tests/CoreTests/CmuxTests.swift`
 **Revisit when:** Claude Code changes how Ctrl+U clears wrapped or collapsed input, or a terminal changes how it groups writes
 
@@ -139,10 +150,12 @@ The app estimates how many terminal cells its own writes may occupy since the in
 
 ## cmux sends Ctrl+U bursts as text and Backspace in a separate call
 
+**Id:** b8cc4c8f-3144-4035-90de-40ea8c2c44b0
 **Type:** incident
 **Type:** decision
 **Status:** active
-**Evidence:** cmux 0.64.22 and Claude Code 2.1.246: `surface.send_key` did not send Ctrl+U as Claude expected and a combined Ctrl+U plus Backspace write did not preserve their order. Claude Code 2.1.287 in cmux 0.64.25 on 2026-10-02 processed Ctrl+U bursts of eight bytes per `surface.send_text` call.
+**Evidence:** confirmed
+**Evidence note:** cmux 0.64.22 and Claude Code 2.1.246: `surface.send_key` did not send Ctrl+U as Claude expected and a combined Ctrl+U plus Backspace write did not preserve their order. Claude Code 2.1.287 in cmux 0.64.25 on 2026-10-02 processed Ctrl+U bursts of eight bytes per `surface.send_text` call.
 **Source:** PR #60; `cmuxSendOperations` in `app/Sources/Core/ClaudeInjector.swift`; `testItem10CmuxClearInputIsTwoSendTextCallsCtrlUThenBackspace` in `app/Tests/CoreTests/CmuxTests.swift`
 **Revisit when:** cmux changes key encoding or the ordering of bytes and key events sent through `surface.send_text`
 
@@ -160,8 +173,11 @@ cmux exposes `surface.send_key`, and it is unusable under Claude's kitty keyboar
 
 ## "The marker is gone" is checked over every 6-character window, not the whole string
 
+**Id:** 2bbac675-7b12-4428-8ff9-0ee38fd3e930
 **Type:** decision
-**Status:** superseded by the next entry — the question it asks is kept, the window size is not
+**Status:** superseded
+**Status note:** by the next entry — the question it asks is kept, the window size is not
+**Superseded by:** 51db08c5-a7ff-4849-9174-f65811f4301f
 **Evidence:** confirmed
 **Source:** PR #60; the defect above
 
@@ -175,9 +191,11 @@ The erase check counted occurrences of each 6-character window of the 12-charact
 
 ## The marker is three Runic letters, and the erase check counts single characters
 
+**Id:** 51db08c5-a7ff-4849-9174-f65811f4301f
 **Type:** decision
 **Status:** active
-**Evidence:** confirmed for claude's input box (Claude Code 2.1.283 in a pty); the terminals' own send and read paths are a `docs/new-terminal-checklist.md` item
+**Evidence:** confirmed
+**Evidence note:** for claude's input box (Claude Code 2.1.283 in a pty); the terminals' own send and read paths are a `docs/new-terminal-checklist.md` item
 **Source:** maintainer request to shorten the marker, and the Codex review that raised dialog key bindings
 **Revisit when:** claude's screen starts drawing Runic, or a supported terminal cannot round-trip it
 
@@ -193,6 +211,7 @@ The erase check counted occurrences of each 6-character window of the 12-charact
 
 ## Polling reads first and subtracts what the read cost
 
+**Id:** ee0449bd-18ae-4258-868c-1164c707078a
 **Type:** decision
 **Status:** active
 **Evidence:** confirmed
@@ -207,8 +226,10 @@ Every wait in the delivery loop reads before it sleeps, and the sleep is shorten
 
 ## An unreadable `stty` used to open gate ②
 
+**Id:** 1bb5a787-a6f9-4b27-8e64-079da9ed79d4
 **Type:** decision
 **Status:** superseded
+**Superseded by:** 33e7a359-1078-4583-bc2c-45e25eac1146
 **Evidence:** confirmed
 **Source:** PR #3, which introduced both the gate and the fallback; superseded by PR #41
 **Revisit when:** never on its own — it is here so the replacement is read as an expiry rather than as a discovery
@@ -219,9 +240,11 @@ The commit that added gate ② also added a way past it: when `stty` could not b
 
 ## Gate ② stays closed when raw mode cannot be decided
 
+**Id:** 33e7a359-1078-4583-bc2c-45e25eac1146
 **Type:** decision
 **Status:** active
-**Evidence:** confirmed for the case measured — one pty, three states, plus three unreadable ttys
+**Evidence:** confirmed
+**Evidence note:** for the case measured — one pty, three states, plus three unreadable ttys
 **Source:** PR #41; `app/Sources/Core/ClaudeInjector.swift:52` and `:73`
 **Revisit when:** a terminal appears where `stty` cannot be read while the tty is genuinely usable
 
@@ -235,6 +258,7 @@ The commit that added gate ② also added a way past it: when `stty` could not b
 
 ## The foreground check has three states, and `unknown` is not `different`
 
+**Id:** 754d493b-1b19-47e0-848d-f11694c867ad
 **Type:** decision
 **Status:** active
 **Evidence:** confirmed
@@ -251,9 +275,13 @@ A single `Bool` gave "another process group was observed" and "the lookup failed
 
 ## Non-ASCII text changes normalization when it crosses `Process.arguments`
 
+**Id:** 86ac0104-3baa-42d4-be85-f92f19be5ab7
 **Type:** constraint
-**Status:** superseded — the delivery paths no longer cross this boundary (PR #41, commit `682b6c7`); the platform behaviour it describes is unchanged
-**Evidence:** confirmed (measured)
+**Status:** superseded
+**Status note:** the delivery paths no longer cross this boundary (PR #41, commit `682b6c7`); the platform behaviour it describes is unchanged
+**Superseded by:** none — the delivery paths no longer cross this boundary (PR #41, commit `682b6c7`)
+**Evidence:** confirmed
+**Evidence note:** measured
 **Source:** PR #41; `ProcessArgumentBoundaryTests` in `app/Tests/CoreTests/CoreTests.swift`
 **Revisit when:** a delivery path has to put a value that is not a path into `Process.arguments` or the environment again
 
@@ -269,9 +297,11 @@ Measured by reading codepoints with AppleScript's `id of`: text handed to `osasc
 
 ## A click-time note is one more claude input, and only plain text
 
+**Id:** 980a96f8-1201-461d-8aaa-59b239ef3749
 **Type:** decision
 **Status:** active
-**Evidence:** confirmed — the scope is a maintainer decision; the premise of the first-character rule is measured; on a live page (the real scripts injected into github.com's main world, `chrome` stubbed, trusted keys) Enter on `!ls` showed the refusal and sent nothing
+**Evidence:** confirmed
+**Evidence note:** the scope is a maintainer decision; the premise of the first-character rule is measured; on a live page (the real scripts injected into github.com's main world, `chrome` stubbed, trusted keys) Enter on `!ls` showed the refusal and sent nothing
 **Source:** PR #90; `claudeNoteVerdict` in `extension/defaults.js`; `testEveryLeadingScalarTheTrimStripsIsASeparatorOrOther` in `app/Tests/CoreTests/CoreTests.swift`; `tests/claude-note.test.js` (`no first character the app could strip or read as a directive gets through`)
 **Revisit when:** the app changes its trim, the order of its render and trim, or what a leading `!`, `/` or `#` means
 
@@ -285,9 +315,11 @@ A ▾ caret beside a button that starts claude opens a one-line box, and what is
 
 ## A click-time note has a slot above the button's stored inputs
 
+**Id:** c96b9ff2-db7c-43eb-820e-1ca93f6668b0
 **Type:** decision
 **Status:** active
-**Evidence:** confirmed — the 2026-10-02 report found no caret on an issue-list button with five stored inputs; its saved value is preserved in `tests/fixtures/saved-issue-list-buttons.json` and exercised by `the saved issue-list button with five claude inputs takes a note` (`tests/claude-note.test.js`) and `a note on the saved issue-list button reaches the worker in its own slot` (`tests/worker-note.test.js`). The stored-input cap of 10 is the user's decision.
+**Evidence:** confirmed
+**Evidence note:** the 2026-10-02 report found no caret on an issue-list button with five stored inputs; its saved value is preserved in `tests/fixtures/saved-issue-list-buttons.json` and exercised by `the saved issue-list button with five claude inputs takes a note` (`tests/claude-note.test.js`) and `a note on the saved issue-list button reaches the worker in its own slot` (`tests/worker-note.test.js`). The stored-input cap of 10 is the user's decision.
 **Source:** PR #99; `buttonTakesClaudeNote` and `MAX_CLAUDE_INPUTS` in `extension/defaults.js`; the two tests above; `maxLifetime` in `app/Sources/WarpHelper/main.swift`
 **Revisit when:** the app begins enforcing a `claude_inputs` count limit, the Warp helper lifetime cap changes, or the storage format can block outdated readers
 
@@ -305,9 +337,11 @@ A button stores up to 10 claude inputs. A click-time note uses a separate slot a
 
 ## A note carries no variables: any closed brace span is refused
 
+**Id:** 5b303862-71fc-4ab4-97a9-cd8c1ad352b7
 **Type:** decision
 **Status:** active
-**Evidence:** confirmed (measured through the real `resolveRequest`: a 493-byte note rendered to 8201 bytes, in a batch one item rendered to 4096 bytes and the next to 4097, and `{이거}` was read as a variable name and refused)
+**Evidence:** confirmed
+**Evidence note:** measured through the real `resolveRequest`: a 493-byte note rendered to 8201 bytes, in a batch one item rendered to 4096 bytes and the next to 4097, and `{이거}` was read as a variable name and refused
 **Source:** PR #90; `variableRegex` and `renderCommand` in `app/Sources/Core/CommandRenderer.swift`; `claudeNoteVerdict` in `extension/defaults.js`; `tests/claude-note.test.js` (`any closed brace span is refused, whatever is inside it`)
 **Revisit when:** the app's renderer gains an escape, or stops rendering claude inputs as templates
 
@@ -323,9 +357,11 @@ The app renders every claude input as a template, the note included, so `{repo}`
 
 ## ✅ on the page means the terminal opened, not that claude received anything
 
+**Id:** 0b871300-a750-4e61-97cd-597e7d75b03f
 **Type:** decision
 **Status:** active
-**Evidence:** confirmed; on a live page (the real scripts injected into github.com's main world, `chrome` stubbed with the app's answers written by hand) a batch of one selected row, answered as failed, showed ❌ with that row's ✕ badge and kept the note, and a failed single request kept it too. A batch mixing ✓ and ✕ was not seen there: its mapping to one badge of each is pinned by `tests/list-pages.test.js` (`listBatchResultView maps ordered item results without crossing button identities`), and the worker's answer for it by `tests/worker-note.test.js` (`a batch the app ran in part arrives as the app's own result, keyed in the order the worker read`)
+**Evidence:** confirmed
+**Evidence note:** on a live page (the real scripts injected into github.com's main world, `chrome` stubbed with the app's answers written by hand) a batch of one selected row, answered as failed, showed ❌ with that row's ✕ badge and kept the note, and a failed single request kept it too. A batch mixing ✓ and ✕ was not seen there: its mapping to one badge of each is pinned by `tests/list-pages.test.js` (`listBatchResultView maps ordered item results without crossing button identities`), and the worker's answer for it by `tests/worker-note.test.js` (`a batch the app ran in part arrives as the app's own result, keyed in the order the worker read`)
 **Source:** PR #90; `serve(fd:)` in `app/Sources/App/HostServer.swift`; `handleBatchRequest` in `app/Sources/Core/Request.swift`
 **Revisit when:** the app answers a request only after delivery, or keeps the session handle to report on it later
 
@@ -335,9 +371,11 @@ The app answers as soon as the tab exists and delivers claude input afterwards, 
 
 ## Whether a note is typed or rides in argv is the app's decision, and nothing promises it
 
+**Id:** d0f3807e-3fe7-46fb-957c-cceb228b69fd
 **Type:** decision
 **Status:** active
-**Evidence:** confirmed (measured: a button storing one input made of U+200B, a zero-width space, plus the note `hello` reached the app as the single input `hello`, an argv candidate, although the extension saw two inputs)
+**Evidence:** confirmed
+**Evidence note:** measured: a button storing one input made of U+200B, a zero-width space, plus the note `hello` reached the app as the single input `hello`, an argv candidate, although the extension saw two inputs
 **Source:** PR #90; `executionPayload` and `buttonTakesClaudeNote` in `extension/defaults.js`
 **Revisit when:** the extension and the app come to share one normalization of stored inputs
 
@@ -347,9 +385,11 @@ The note joins the stored inputs, and the app chooses the route by the rules abo
 
 ## A note goes to the page its popover opened on, and a draft stays with that page
 
+**Id:** 08058a59-9667-4d55-9721-9e84553edc4a
 **Type:** decision
 **Status:** active
-**Evidence:** confirmed; on a live page (the real scripts injected into github.com's main world, `chrome` stubbed) a draft typed on PR 86 was back when that button's popover was opened on PR 86 again, after a move to PR 87 had closed it
+**Evidence:** confirmed
+**Evidence note:** on a live page (the real scripts injected into github.com's main world, `chrome` stubbed) a draft typed on PR 86 was back when that button's popover was opened on PR 86 again, after a move to PR 87 had closed it
 **Source:** PR #90; `openNotePopover` and `submitNote` in `extension/content.js`; `tests/claude-note.test.js` (`a note is for the page its popover opened on, read once, and judged before anything is sent (lint)`)
 **Revisit when:** the popover starts following the page instead of closing when the page moves
 
@@ -359,9 +399,11 @@ The popover reads the page when it opens, and the note is sent for that page —
 
 ## A split button's run is held by page and button, never by the node on screen
 
+**Id:** 92910b32-91a0-4f3f-af42-0256d9aff5c6
 **Type:** decision
 **Status:** active
-**Evidence:** confirmed. Before the fix, reproduced in a browser: a button drawn on PR 86 survived a move to PR 87 that nothing saw; its body was pressed and the header rebuilt while the request was out, the rebuilt button was free, and a second press sent the same request again. After it, on a live page (the real scripts injected into github.com's main world, `chrome` stubbed, trusted clicks and keys): two Enters sent one message and body and caret stayed busy until the answer; a refused press's reason left the tooltip when a note was sent during its ❌, did not come back when the refused run's timer fired, and the note's run sent exactly one message
+**Evidence:** confirmed
+**Evidence note:** Before the fix, reproduced in a browser: a button drawn on PR 86 survived a move to PR 87 that nothing saw; its body was pressed and the header rebuilt while the request was out, the rebuilt button was free, and a second press sent the same request again. After it, on a live page (the real scripts injected into github.com's main world, `chrome` stubbed, trusted clicks and keys): two Enters sent one message and body and caret stayed busy until the answer; a refused press's reason left the tooltip when a note was sent during its ❌, did not come back when the refused run's timer fired, and the note's run sent exactly one message
 **Source:** PR #90; `splitButtonRun` and `createSplitButtonRuns` in `extension/defaults.js`; `runSplitButton` and `paintSplitButton` in `extension/content.js`; `tests/claude-note.test.js` (`a drawing that outlived a page change holds and shows the run of the page it now sends for`, `a run refused before it sent keeps its reason for its own marker only: not for the next run, whatever the old timer does`)
 **Revisit when:** buttons gain a persistent id in the stored schema
 
@@ -375,9 +417,11 @@ Every way into a button — its body, its caret, the popover's send button, Ente
 
 ## The popover lists the stored inputs a note follows from the list that is sent
 
+**Id:** d4bff9cb-3d2c-4404-9bf1-97101b58ff1a
 **Type:** decision
 **Status:** active
-**Evidence:** confirmed; on a live page (the real scripts injected into github.com's main world, `chrome` stubbed) `pr.review`'s popover listed its two `!` templates above the note in their order, the message sent carried the same inputs in its fingerprint, and four long inputs wrapped inside the popover's width while the list scrolled on its own
+**Evidence:** confirmed
+**Evidence note:** on a live page (the real scripts injected into github.com's main world, `chrome` stubbed) `pr.review`'s popover listed its two `!` templates above the note in their order, the message sent carried the same inputs in its fingerprint, and four long inputs wrapped inside the popover's width while the list scrolled on its own
 **Source:** PR #90; `claudeInputsBeforeNote` in `extension/defaults.js`; `noteBeforeList` in `extension/content.js`; `tests/claude-note.test.js` (`a popover lists the inputs a note follows exactly as the click sends them, and the fingerprint vouches for that list`)
 **Revisit when:** the popover has to show inputs the fingerprint does not cover
 
@@ -389,6 +433,7 @@ Above the note's box the popover lists the button's stored inputs in the order t
 
 ## Residuals kept rather than closed
 
+**Id:** c656c71f-77a8-40d4-ba71-75d5ce3ab28d
 **Type:** constraint
 **Status:** active
 **Evidence:** confirmed

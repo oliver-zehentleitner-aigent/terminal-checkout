@@ -4,9 +4,11 @@ This file holds test-design constraints that are not recoverable from a test cou
 
 ## Source-audit claims are typed and derived
 
+**Id:** 085470eb-b6b7-4d3e-b08b-bc55ba7f0371
 **Type:** constraint
 **Status:** active
-**Evidence:** confirmed — `node --test tests/source-audit.test.js` derives 20 typed-door sites, finds no lexical program-source read outside the door, and passes the source/data fixture
+**Evidence:** confirmed
+**Evidence note:** `node --test tests/source-audit.test.js` derives 20 typed-door sites, finds no lexical program-source read outside the door, and passes the source/data fixture
 **Source:** PR #41 (closing change); `app/Sources/TestSupport/SourceAudit.swift`, `tests/source-audit.test.js`, and the source-reading tests under `app/Tests/`
 **Revisit when:** a test target needs a source-reading path that cannot go through `auditSource(_:claim:)`, or the Swift package gains a compiler-enforced test-support boundary
 
@@ -18,6 +20,7 @@ This is deliberately a contract gate, not a runtime claim about what a source-on
 
 ## The third instance of a defect class becomes a source audit instead of a third fix
 
+**Id:** 35e43292-1df6-4dbd-9586-42373be0b8ec
 **Type:** decision
 **Status:** active
 **Evidence:** confirmed
@@ -34,12 +37,15 @@ A button in the setup window wrote its own result into the live cmux status labe
 
 ## When authority moves between two stores, the gates stay on the old one and everything passes
 
+**Id:** 90ea6ade-88ee-49de-8881-ed3fd9721d97
 **Type:** constraint
 **Type:** incident
 **Status:** active
-**Evidence:** confirmed — three mutations of `_locales` (a command literal, a Simplified-for-Traditional replacement, an HTML attribute escape) left every gate green while the gate named for each defect read the frozen `_i18n` instead
+**Evidence:** confirmed
+**Evidence note:** three mutations of `_locales` (a command literal, a Simplified-for-Traditional replacement, an HTML attribute escape) left every gate green while the gate named for each defect read the frozen `_i18n` instead
 **Source:** PR #41 (ledger D296, D297, D300); `tests/i18n.test.js`, `extension/_locales/`, `extension/_i18n/`
 **Revisit when:** the compatibility passengers are retired (a second authority move, in the opposite direction), or a third catalogue surface appears
+**See:** localization.md#the-compatibility-passenger-protected-a-state-chrome-refuses-to-construct — e40c7f67-54ad-4205-b786-08a95492195f — as of 2026-10-02
 
 The extension's canonical store moved from `_i18n` to `_locales`. The runtime followed. The content gates did not, and **nothing went red**, because `_i18n` is pinned byte-for-byte and therefore cannot change — a gate reading a frozen file is green forever.
 
@@ -80,10 +86,12 @@ These rows are self-contained. They keep the numbers they were given in a longer
 
 ## A layout gate that drives its own layout is not measuring the window that ships
 
+**Id:** 7de21f05-20ce-4964-8186-c51c27f60101
 **Type:** incident
 **Type:** constraint
 **Status:** active
-**Evidence:** confirmed — six setup-window cases were green while the shipped window was visibly clipped; removing one forced traversal produced eight failures across seven cases at the sizes measured on the device, and the pending-work signal fires between 0 and 4 times per run
+**Evidence:** confirmed
+**Evidence note:** six setup-window cases were green while the shipped window was visibly clipped; removing one forced traversal produced eight failures across seven cases at the sizes measured on the device, and the pending-work signal fires between 0 and 4 times per run
 **Source:** issue #34; PR #54 (commits `37887c7`, `5645d14`); `app/Tests/AppTests/SetupWindowTestSupport.swift`
 **Revisit when:** these tests gain a way to observe an AppKit display cycle without pumping wall-clock time, or the window stops changing its own size from inside a layout pass
 
@@ -103,9 +111,11 @@ The setup-window tests settled the tree by calling `layoutSubtreeIfNeeded()`. Th
 
 ## Some defects cannot be a red here, and saying so beats building a seam
 
+**Id:** 5b444741-0248-43f4-a25a-19a256ea9a4c
 **Type:** decision
 **Status:** active
-**Evidence:** confirmed — the two-display failure needs two attached screens whose visible frames disagree, which the suite cannot construct; the arithmetic it reduces to is pinned directly
+**Evidence:** confirmed
+**Evidence note:** the two-display failure needs two attached screens whose visible frames disagree, which the suite cannot construct; the arithmetic it reduces to is pinned directly
 **Source:** issue #34; PR #54 (commit `56baa0d`); `docs/new-terminal-checklist.md`
 **Revisit when:** the suite gains a way to present more than one screen geometry to `NSScreen`, or the placement logic stops depending on the attached displays
 
@@ -119,9 +129,11 @@ The same split applies to a step this work could *not* perform: whether a langua
 
 ## An out-of-tree DOM harness needs its own red toggles
 
+**Id:** ae25c2da-0541-4820-932b-9b192c77bc83
 **Type:** decision
 **Status:** active
-**Evidence:** confirmed (measured)
+**Evidence:** confirmed
+**Evidence note:** measured
 **Source:** PR #57 (commit `a24e27a`); `CLAUDE.md`; measured with a disposable out-of-tree jsdom harness that loaded the real `options.html` with only `chrome` stubbed; for the content script, PR #90 and the lints in `tests/claude-note.test.js` those harnesses backed
 **Revisit when:** the suite gains a faithful DOM harness, or browser automation can complete a native `drop`
 
@@ -135,10 +147,12 @@ The harness's checks need toggles just as the committed suite's checks do. The c
 
 ## A fixture's input values choose the branch, so a route can be green and never run
 
+**Id:** f02d6472-3859-496a-97e9-482ec39c3af8
 **Type:** decision
 **Type:** incident
 **Status:** active
-**Evidence:** confirmed (measured)
+**Evidence:** confirmed
+**Evidence note:** measured
 **Source:** issue #69; `app/Tests/CoreTests/CmuxGroupedExecutionTests.swift`; the cold review of the finished branch and the driver's live E2E on 2026-09-01
 **Revisit when:** the grouped placement routes gain an in-suite oracle that runs a real cmux server, or a new route is added without a live case
 
@@ -152,9 +166,11 @@ Grouped cmux placement shipped 630 green tests, and one of its three arrangement
 
 ## Help text is checked against the variable contract, not against ten strings
 
+**Id:** 399a8f37-cc00-42d8-9fef-9e6e29ed57c1
 **Type:** decision
 **Status:** active
-**Evidence:** confirmed (measured — the contract test failed on exactly the ten list-section strings before the edit, passed after, and failed again with the edit reverted)
+**Evidence:** confirmed
+**Evidence note:** measured — the contract test failed on exactly the ten list-section strings before the edit, passed after, and failed again with the edit reverted
 **Source:** issue #78; PR #82 (commit `855a4c7`); `tests/i18n.test.js` (`every page kind help advertises its variables in every locale`)
 **Revisit when:** a kind's help legitimately needs to leave out a variable it accepts, or the help strings gain a structured variable list the options page renders itself
 

@@ -2,9 +2,11 @@
 
 ## A whole-batch rejection keeps the app's words and never asserts the app's age
 
+**Id:** e1cf6a71-3e7b-4bd4-9888-f4ce5913a046
 **Type:** decision
 **Status:** active
-**Evidence:** confirmed (measured — the app's two no-items answers are read from `app/Sources/Core/Request.swift`, and both fixtures went red before the branch and green after)
+**Evidence:** confirmed
+**Evidence note:** measured — the app's two no-items answers are read from `app/Sources/Core/Request.swift`, and both fixtures went red before the branch and green after
 **Source:** issue #79; PR #82 (commit `345635f`); `interpretListBatchResponse` in `extension/defaults.js`
 **Revisit when:** the app starts returning `items` on a request-shape rejection, or a visible display path for whole-batch errors is added to the list button
 

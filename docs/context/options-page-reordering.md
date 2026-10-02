@@ -4,9 +4,11 @@ The implementation and invariants live in `CLAUDE.md`; this file preserves the f
 
 ## A row drag stays in its card
 
+**Id:** 10864b16-6bd6-4b3e-a4ab-458a89b9cf58
 **Type:** decision
 **Status:** active
-**Evidence:** confirmed (measured)
+**Evidence:** confirmed
+**Evidence note:** measured
 **Source:** PR #57 (commit `53d49e4`); measured with a disposable out-of-tree jsdom harness, not committed — see the testing entry for its shape and limits
 **Revisit when:** cross-card row moves become an explicit product requirement
 
@@ -18,9 +20,11 @@ The same-card guard does not protect what its name might suggest. `reorderClaude
 
 ## A redraw cancels an in-flight drag
 
+**Id:** 28b293be-48ed-4241-809e-7fb7916e4346
 **Type:** decision
 **Status:** active
-**Evidence:** confirmed (measured)
+**Evidence:** confirmed
+**Evidence note:** measured
 **Source:** PR #57 (commit `a24e27a`); measured with a disposable out-of-tree jsdom harness, not committed — see the testing entry for its shape and limits
 **Revisit when:** the options page gains another redraw path or the drag state no longer shares one render lifecycle
 
@@ -34,6 +38,7 @@ A same-length replacement proves the difference. With cancellation enabled, repl
 
 ## The tooltip key names the meaning, not one call site
 
+**Id:** 1dbc9f6d-474e-4d65-87f2-b9f0ff8704fa
 **Type:** decision
 **Status:** active
 **Evidence:** confirmed

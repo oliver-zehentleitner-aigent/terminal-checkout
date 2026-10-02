@@ -4,6 +4,7 @@
 
 ## The timeout's bound is closing the pipe readers, not killing a process group
 
+**Id:** abea6f6f-fab6-4f71-8169-a1ea29a3a5fb
 **Type:** constraint
 **Status:** active
 **Evidence:** confirmed
@@ -20,6 +21,7 @@
 
 ## Output decodes lossily, and the invalid bytes are logged rather than repaired
 
+**Id:** 362b14e2-b0ef-473c-8e65-aa044a2d9cf1
 **Type:** decision
 **Status:** active
 **Evidence:** confirmed
@@ -36,9 +38,11 @@ Output is decoded with `String(decoding:as: UTF8.self)`, which substitutes repla
 
 ## The exit is observed with `terminationHandler`, not `waitUntilExit()`
 
+**Id:** 8fa3e653-4860-4c90-a040-2ad224f264ac
 **Type:** decision
 **Status:** active
-**Evidence:** confirmed (measured on this machine, 10–1000 calls per variant)
+**Evidence:** confirmed
+**Evidence note:** measured on this machine, 10–1000 calls per variant
 **Source:** the delivery-speed investigation that followed the maintainer's question about the marker
 **Revisit when:** a caller needs `NSTaskDidTerminateNotification`, which a handler suppresses
 
@@ -50,9 +54,11 @@ Output is decoded with `String(decoding:as: UTF8.self)`, which substitutes repla
 
 ## The session gate's `ps` and `stty` get their own short limits, and a failure is logged
 
+**Id:** 4fb8d572-6dba-44a5-afdc-0f589c8049af
 **Type:** decision
 **Status:** active
-**Evidence:** confirmed for the symptom; the cause is not established
+**Evidence:** confirmed
+**Evidence note:** for the symptom; the cause is not established
 **Source:** field deliveries on cmux, the app's unified log, and a `sample` of the app during a stall
 **Revisit when:** a stall of the old length shows up again with these limits in place
 

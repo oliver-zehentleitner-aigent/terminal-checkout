@@ -2,10 +2,12 @@
 
 ## The repository crumb is found through the banner landmark, from one set of selectors
 
+**Id:** cbe0221a-f3e0-44ed-af81-62af9c328fbf
 **Type:** incident
 **Type:** decision
 **Status:** active
-**Evidence:** confirmed (measured on github.com, 2026-09-24 — the redesigned global header is `<header class="GlobalNav …" aria-label="Global navigation menu">` with no `role`, and Chrome's accessibility tree still reports it as `banner`; the page header inside `<main>` also holds the repository link and the lock icon; a 404 has the banner and neither)
+**Evidence:** confirmed
+**Evidence note:** measured on github.com, 2026-09-24 — the redesigned global header is `<header class="GlobalNav …" aria-label="Global navigation menu">` with no `role`, and Chrome's accessibility tree still reports it as `banner`; the page header inside `<main>` also holds the repository link and the lock icon; a 404 has the banner and neither
 **Source:** PR #85; `repoCrumbSelectors` in `extension/defaults.js`; `tests/buttons.test.js` (`the repository crumb selectors have one home, and both readers take them from it`)
 **Revisit when:** GitHub's global header stops being a `<header>` outside `<main>` or stops carrying the repository crumb, or the extension gains a build step that could inline shared code into an injected function
 
@@ -31,10 +33,12 @@ On 2026-09-24 the repository buttons disappeared from every repository, PR, issu
 
 ## A PR header's branch links are picked by document order, never by screen position
 
+**Id:** b650e7ed-8f9d-4496-ba10-2f6d80c0fe9d
 **Type:** incident
 **Type:** decision
 **Status:** active
-**Evidence:** confirmed (measured on github.com, 2026-09-24 — on a PR with a three-line title the head link sat at 257px until GitHub's stack notice loaded, then at 328px, and no PR button appeared within 8 seconds; the header's `a[data-component="BranchName"]` pair reads base then head in document order on the conversation and changes tabs and on a merged PR, followed by a hidden 0×0 copy; scrolled 1000px down, the pair still reads base `main` and the PR's head; the commits tab carries 33 `/tree/` links, browse-at-commit ones included, and the selector matches only the header pair and its copy)
+**Evidence:** confirmed
+**Evidence note:** measured on github.com, 2026-09-24 — on a PR with a three-line title the head link sat at 257px until GitHub's stack notice loaded, then at 328px, and no PR button appeared within 8 seconds; the header's `a[data-component="BranchName"]` pair reads base then head in document order on the conversation and changes tabs and on a merged PR, followed by a hidden 0×0 copy; scrolled 1000px down, the pair still reads base `main` and the PR's head; the commits tab carries 33 `/tree/` links, browse-at-commit ones included, and the selector matches only the header pair and its copy
 **Source:** PR #86; `PR_BRANCH_LINK_SELECTOR` in `extension/defaults.js`; `tests/buttons.test.js` (`the PR branch links have one home, and neither reader finds them by screen position`)
 **Revisit when:** GitHub's PR header stops naming the base before the head, or stops rendering the branches as links
 
@@ -54,9 +58,11 @@ The band stood in for "the links in the PR header" as opposed to `/tree/` links 
 
 ## GitHub's own navigation is noticed by the insert passes, not only by the history wrappers
 
+**Id:** 1b700745-e9b9-4447-b927-c91e165270ec
 **Type:** decision
 **Status:** active
-**Evidence:** confirmed for what was measured. Before the fix, a move made through a `pushState` taken before the wrappers left the previous PR's buttons on the next PR; that an open note popover stayed with them was read from the code (its caret stayed connected), not observed. After it, on a live page — the real scripts injected into github.com's main world, `chrome` stubbed, trusted clicks and keys, in a hidden tab whose throttled poll was helped by passes started by hand — the same move from PR 86 to PR 87 closed an open popover and redrew the buttons at an insert pass within 2.5 seconds, the draft was back when the popover was opened on PR 86 again, and moving from the PR list to the issue list closed the popover and removed the row badges. That GitHub's own navigation goes past the wrappers follows from Chrome's isolated worlds and was not measured
+**Evidence:** confirmed
+**Evidence note:** for what was measured. Before the fix, a move made through a `pushState` taken before the wrappers left the previous PR's buttons on the next PR; that an open note popover stayed with them was read from the code (its caret stayed connected), not observed. After it, on a live page — the real scripts injected into github.com's main world, `chrome` stubbed, trusted clicks and keys, in a hidden tab whose throttled poll was helped by passes started by hand — the same move from PR 86 to PR 87 closed an open popover and redrew the buttons at an insert pass within 2.5 seconds, the draft was back when the popover was opened on PR 86 again, and moving from the PR list to the issue list closed the popover and removed the row badges. That GitHub's own navigation goes past the wrappers follows from Chrome's isolated worlds and was not measured
 **Source:** PR #90; `tryInsertButton` and `onUrlChange` in `extension/content.js`; `tests/claude-note.test.js` (`every insert pass asks whether the page moved before it draws, so a move the history wrappers missed is seen (lint)`)
 **Revisit when:** the extension gains a main-world script, or GitHub's navigation starts firing an event a content script can hear
 
@@ -66,9 +72,11 @@ The content script wraps `history.pushState` and `replaceState`, but a content s
 
 ## An insert pass that waited through a move draws nothing: a page generation, kept apart from the list generation
 
+**Id:** 99f9de38-7cec-426d-b1ae-9400a8fb7f12
 **Type:** decision
 **Status:** active
-**Evidence:** confirmed in a DOM harness only — the real content script under jsdom with `chrome` stubbed and the storage read held. The live page check above saw the generation move on a real page change but did not produce the race itself, whose window is one storage read wide
+**Evidence:** confirmed
+**Evidence note:** in a DOM harness only — the real content script under jsdom with `chrome` stubbed and the storage read held. The live page check above saw the generation move on a real page change but did not produce the race itself, whose window is one storage read wide
 **Source:** PR #90; `pageGeneration`, `pageChangedSince` and `removeInsertedButtons` in `extension/content.js`; `tests/claude-note.test.js` (`a pass that started on a page draws nothing once that page is gone: every await in it is followed by a page check (lint)`)
 **Revisit when:** an insert pass gains an await of a new kind, or the list generation changes meaning
 

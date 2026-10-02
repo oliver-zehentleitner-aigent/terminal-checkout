@@ -2,9 +2,11 @@
 
 ## Three toolbar panes with per-pane previews
 
+**Id:** 9d1a0602-aa6b-4dbf-9355-8043b1abe92c
 **Type:** decision
 **Status:** active
-**Evidence:** confirmed — the user chose B2 on 2026-10-03 and said they liked B with explanatory illustrations added; the dimensions below are from the mockups, not the shipped window
+**Evidence:** confirmed
+**Evidence note:** the user chose B2 on 2026-10-03 and said they liked B with explanatory illustrations added; the dimensions below are from the mockups, not the shipped window
 **Source:** user decision (2026-10-03); PR #108; mockups A, B, B2 and C, not kept in the repository; `app/Sources/App/SetupWindowController.swift`, `app/Sources/App/SetupWindowGeneralPane.swift`, `app/Sources/App/SetupWindowGitHubPane.swift`, `app/Sources/App/SetupWindowSlackPane.swift`, and `app/Sources/App/SetupWindowPreviewView.swift`
 **Revisit when:** the user chooses a different settings-window structure or preview treatment
 
@@ -18,9 +20,11 @@ The old setup window stacked eleven equally weighted cards into a 600 × 1410 pt
 
 ## A request record, not a pipeline health claim
 
+**Id:** 725c242f-0b19-4703-8129-467bd9daa15e
 **Type:** decision
 **Status:** active
-**Evidence:** confirmed — the user decided that the status must report receipt of an extension request rather than say “normal”; the app records arrival, not command success
+**Evidence:** confirmed
+**Evidence note:** the user decided that the status must report receipt of an extension request rather than say “normal”; the app records arrival, not command success
 **Source:** user decision (2026-10-03); PR #108; `app/Sources/App/SetupWindowPresentation.swift` and `app/Sources/App/SetupWindowGeneralPane.swift`
 **Revisit when:** the recorded event changes from request arrival to evidence of command completion
 
@@ -30,9 +34,11 @@ The status says that an extension request reached the app and gives its relative
 
 ## Problems appear first and use a status dot
 
+**Id:** e2ec6698-f449-4732-8a94-2743be9198b8
 **Type:** decision
 **Status:** active
-**Evidence:** confirmed — the user chose opening reasons first, newest first, followed by errors and warnings, and rejected a colored edge strip as “AI-like”
+**Evidence:** confirmed
+**Evidence note:** the user chose opening reasons first, newest first, followed by errors and warnings, and rejected a colored edge strip as “AI-like”
 **Source:** user decisions (2026-10-03); PR #108; `app/Sources/App/SetupWindowPresentation.swift`, `app/Sources/App/SetupWindowSharedPanel.swift`, and `app/Sources/App/SetupWindowController.swift`
 **Revisit when:** problem ordering, opening-reason lifetime, or the shared problem area's placement changes
 
@@ -42,9 +48,11 @@ The common problem area sits below the toolbar and before every pane. It lists t
 
 ## The repository base folder speaks only when unusable
 
+**Id:** e17f4c9c-1399-4202-8266-efe7ce7b67a4
 **Type:** decision
 **Status:** active
-**Evidence:** confirmed — the user said the window does not need to explain repository lookup order and should show a notice only when the setting cannot be used
+**Evidence:** confirmed
+**Evidence note:** the user said the window does not need to explain repository lookup order and should show a notice only when the setting cannot be used
 **Source:** user decision (2026-10-03); PR #108; `app/Sources/App/SetupWindowPresentation.swift` and `app/Sources/App/SetupWindowGitHubPane.swift`
 **Revisit when:** the user asks for repository lookup guidance or the base-folder fallback changes
 
@@ -54,9 +62,11 @@ The GitHub pane keeps the repository base-folder field without a help paragraph 
 
 ## Initial selection follows the opening cause
 
+**Id:** d7f85f34-c1df-4d3f-8bc7-bc4a593a7203
 **Type:** decision
 **Status:** active
-**Evidence:** confirmed — the user chose Slack for a Slack-request failure, General for a claude-input rejection, and otherwise the last pane selected during this app run, defaulting to General
+**Evidence:** confirmed
+**Evidence note:** the user chose Slack for a Slack-request failure, General for a claude-input rejection, and otherwise the last pane selected during this app run, defaulting to General
 **Source:** user decision (2026-10-03); PR #108; `app/Sources/App/AppDelegate.swift` and `app/Sources/App/SetupWindowController.swift`
 **Revisit when:** the opening causes or pane-selection behavior changes
 
@@ -66,9 +76,11 @@ The selected pane is temporary navigation context for the current app run, not a
 
 ## App and extension icon identity
 
+**Id:** 98b1070f-51a6-4826-814d-e623bea584b1
 **Type:** decision
 **Status:** active
-**Evidence:** confirmed — the user asked for more app identity in the settings window and specified app-derived Chrome extension icons while preserving the extension ID
+**Evidence:** confirmed
+**Evidence note:** the user asked for more app identity in the settings window and specified app-derived Chrome extension icons while preserving the extension ID
 **Source:** user decisions (2026-10-03); PR #108; `app/AppIcon.icns`, `docs/assets/icon.png`, `app/Sources/App/SetupWindowGeneralPane.swift`, `app/Sources/App/SetupWindowPreviewView.swift`, and `extension/manifest.json`
 **Revisit when:** the source app icon is replaced or the user changes the icon treatment
 

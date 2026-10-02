@@ -4,9 +4,11 @@ How the app decides which language it renders in, where the catalogues live, and
 
 ## Catalogues live in `Contents/Resources/<tag>.lproj` and are read with `Bundle(path:)`
 
+**Id:** f67231e9-fb4e-4423-b469-2c782e17952f
 **Type:** decision
 **Status:** active
-**Evidence:** confirmed (measured)
+**Evidence:** confirmed
+**Evidence note:** measured
 **Source:** issue #24, which prescribed the opposite; PR #41; `app/Sources/App/Localization.swift`, `app/Package.swift:15-21`, `app/verify-bundle.sh`
 **Revisit when:** the `.app` stops being assembled by hand in `build.sh`, or SwiftPM's generated accessor stops falling back to a build-machine path
 
@@ -18,9 +20,11 @@ That choice forces `exclude: ["Resources"]` in `Package.swift`. SwiftPM demands 
 
 ## The app owns the language, and it flows one way to the extension
 
+**Id:** 39fe9aa5-5acc-4a61-9629-958bd12d643c
 **Type:** decision
-**Status:** superseded — see "Each surface follows its own platform" below
-**Superseded by:** user decision, 2026-08-24; PR #41
+**Status:** superseded
+**Status note:** see "Each surface follows its own platform" below; user decision, 2026-08-24; PR #41
+**Superseded by:** 27f28f36-ca2c-4747-8137-c2a0e0e7d66a
 **Evidence:** confirmed
 **Source:** issue #24; PR #41; the picker in `app/Sources/App/SetupWindowController.swift`
 **Revisit when:** the setup window stops being the first screen a user sees, or the extension gains a way to answer before the app can
@@ -39,9 +43,11 @@ The requirement is one language across the app and the extension, chosen by the 
 
 ## Each surface follows its own platform: macOS answers for the app, Chrome for the extension
 
+**Id:** 27f28f36-ca2c-4747-8137-c2a0e0e7d66a
 **Type:** decision
 **Status:** active
-**Evidence:** confirmed (measured — `chrome.i18n` has no per-extension language setting; the display language is `chrome://settings/languages`, checked on Chrome 151.0.7922.172)
+**Evidence:** confirmed
+**Evidence note:** measured — `chrome.i18n` has no per-extension language setting; the display language is `chrome://settings/languages`, checked on Chrome 151.0.7922.172
 **Source:** user decision, 2026-08-24; PR #41; `extension/i18n.js`, `extension/_locales/`
 **Revisit when:** Chrome gains a per-extension language setting, or the product decides that one language across both surfaces is worth a synchronization protocol again
 
@@ -57,12 +63,15 @@ The extension asks `chrome.i18n` and the app asks macOS. Neither tells the other
 
 ## The compatibility passenger protected a state Chrome refuses to construct
 
+**Id:** e40c7f67-54ad-4205-b786-08a95492195f
 **Type:** incident
 **Type:** decision
 **Status:** active
-**Evidence:** confirmed — Chrome refused to load the unpacked extension with "Cannot load extension with file or directory name _i18n. Filenames starting with \"_\" are reserved for use by the system", on the first real load after PR #41 shipped
+**Evidence:** confirmed
+**Evidence note:** Chrome refused to load the unpacked extension with "Cannot load extension with file or directory name _i18n. Filenames starting with \"_\" are reserved for use by the system", on the first real load after PR #41 shipped
 **Source:** issue #45; `tests/i18n.test.js` (the extension-root reserved-name gate); PR #41 for what was retired
 **Revisit when:** a future release removes or renames a file that the previous release's manifest or `importScripts` list names
+**See:** localization.md#what-the-atomic-extension-folder-swap-does-not-buy — 22e55e5d-9eb8-475c-b31f-f309b8db9502 — as of 2026-10-02
 
 PR #41 shipped `extension/_i18n/*.js` pinned byte-for-byte as a compatibility passenger, so that a service worker of the adjacent generation — the one whose `importScripts` names those files — would survive a folder swap. Every VM-based gate loaded that folder happily. Chrome's real loader refused the entire folder: any extension-root name starting with `_` is reserved for the system (`_locales`, `_metadata`), and only the real loader enforces this. The failure surfaced on a user machine at first load, exactly the class PR #41's "needs a device" list existed for.
 
@@ -79,9 +88,12 @@ PR #41 shipped `extension/_i18n/*.js` pinned byte-for-byte as a compatibility pa
 
 > Superseded 2026-08-25: the compatibility passenger was retired — Chrome refuses any extension root name starting with `_` other than its own, so no Chrome ever loaded a generation containing `_i18n` and the passenger protected a state that cannot exist. See "The compatibility passenger protected a state Chrome refuses to construct" below. Two stores remain: `.lproj` for the app, `_locales` for the extension, with `en` the argument-identity source for the other locales.
 
+**Id:** 81124b9f-7683-4020-bcfb-c210929e86db
 **Type:** decision
 **Status:** superseded
-**Evidence:** confirmed — the ownership gate checks the app catalogues, the live Chrome catalogues and the compatibility passengers separately; the live argument-identity gate reads `_locales` itself
+**Superseded by:** e40c7f67-54ad-4205-b786-08a95492195f
+**Evidence:** confirmed
+**Evidence note:** the ownership gate checks the app catalogues, the live Chrome catalogues and the compatibility passengers separately; the live argument-identity gate reads `_locales` itself
 **Source:** PR #41; `app/Tests/AppTests/CatalogueOwnershipTests.swift`, `tools/check-locales.js`, `extension/_locales/`
 **Revisit when:** —
 
@@ -93,9 +105,11 @@ An intentional `_locales` translation edit keeps the compatibility checker green
 
 ## The boundary for `AppleLanguages` is the first localization lookup, not the existence of AppKit
 
+**Id:** 30245858-67c9-494a-ba50-0031cad924c8
 **Type:** decision
 **Status:** active
-**Evidence:** confirmed (measured with a windowless probe bundle)
+**Evidence:** confirmed
+**Evidence note:** measured with a windowless probe bundle
 **Source:** PR #41 (ledger D301–D309); `applyStoredLanguageToAppKit` in `app/Sources/App/main.swift`, `AppLocalization` in `app/Sources/App/Localization.swift`
 **Revisit when:** AppKit starts honouring a language change mid-process, or the app gains a second entry point that draws UI
 
@@ -119,9 +133,13 @@ The unit test stages the production `persistentDomain(forName: UserDefaults.glob
 
 ## Retired: the published locale was one value under one key
 
+**Id:** 44af6d9a-05d9-471a-bd1e-c712b99d3fa7
 **Type:** decision
-**Status:** superseded by A6 — the app-to-extension publication protocol was removed; this entry records the retired design
-**Evidence:** confirmed at the API level — the torn read was reproduced as a failing test before the change; the cross-process and crash behaviour underneath it was not measured
+**Status:** superseded
+**Status note:** by A6 — the app-to-extension publication protocol was removed; this entry records the retired design
+**Superseded by:** none — A6 removed the app-to-extension publication protocol; this entry records the retired design
+**Evidence:** confirmed
+**Evidence note:** at the API level — the torn read was reproduced as a failing test before the change; the cross-process and crash behaviour underneath it was not measured
 **Source:** round 9 review; PR #41; the pre-A6 `LocaleState` implementation and its focused tests
 **Disposition:** A6 removed the compatibility publication protocol after current extension consumers stopped reading it; `LocaleRestartGate` remains because it protects delivery lifetime, not publication
 
@@ -141,6 +159,7 @@ In the retired design, one key held one dictionary, and what that bought had two
 
 ## The Warp tab-config marker is a permanent machine protocol token
 
+**Id:** 87bbeb80-7c9a-4dc8-8bfa-e7bc9926cc2f
 **Type:** decision
 **Status:** active
 **Evidence:** confirmed
@@ -161,9 +180,11 @@ The marker is `#!terminal-checkout/tab-config/v1`. `#` is a TOML comment, so War
 
 ## The bytes a user typed are carried, not normalized
 
+**Id:** de14faad-28a5-4358-a45d-fcccaab7e218
 **Type:** decision
 **Status:** active
-**Evidence:** confirmed (measured); the last hop into the terminal is unmeasured and marked so below
+**Evidence:** confirmed
+**Evidence note:** (measured); the last hop into the terminal is unmeasured and marked so below
 **Source:** PR #41; `runAppleScript` in `app/Sources/Core/AppleScriptSupport.swift`, `wezTermFallbackArguments` in `app/Sources/Core/TerminalRunner.swift`
 **Revisit when:** a value that is not a path has to cross `Process.arguments` or the environment, or Foundation stops re-encoding them
 
@@ -179,6 +200,7 @@ Shipping five languages means users write to claude in Korean, Japanese and Chin
 
 ## A localized string may never become machine input, and the type says so
 
+**Id:** 64355dd5-9db1-49aa-b267-6c578542e9d3
 **Type:** constraint
 **Status:** active
 **Evidence:** confirmed
@@ -193,6 +215,7 @@ The rule that came out of it is that a localized catalogue value never reaches a
 
 ## The installer scripts stay English
 
+**Id:** 72562a08-7ce1-4e24-8087-abbf89ab5be5
 **Type:** decision
 **Status:** active
 **Evidence:** confirmed
@@ -205,6 +228,7 @@ The transitional Korean glosses these scripts and `README.md` carried while the 
 
 ## Rejected: deferring a language restart instead of refusing it
 
+**Id:** 3e576a5f-2483-4721-aeac-3cb0236cfb78
 **Type:** decision
 **Status:** active
 **Evidence:** confirmed
@@ -217,9 +241,11 @@ A language change moves AppKit's own chrome only on the next launch, so the Gene
 
 ## Restart notes use a closed state
 
+**Id:** 8d1f6fed-eb5f-44fe-90f7-33a8f597f44b
 **Type:** constraint
 **Status:** active
-**Evidence:** confirmed by the implementation
+**Evidence:** confirmed
+**Evidence note:** by the implementation
 **Source:** PR #41 (closing change); `LanguageNoteState` and `languageNote` in `app/Sources/App/SetupWindowController.swift`
 **Revisit when:** the General pane's language row gains another mutually exclusive restart outcome
 
@@ -229,9 +255,12 @@ The General pane's language row has three outcomes: the ordinary note, a restart
 
 > Superseded 2026-08-25: the cache and its fence were removed with the compatibility passenger — the adjacent generation that would have called the preserved writer was never loadable by Chrome (see the incident entry above), so the residual left with its subject.
 
+**Id:** 635a33a2-2775-4497-ac6b-18c298ed5c24
 **Type:** constraint
 **Status:** superseded
-**Evidence:** unknown — the interleaving is a reviewer's scenario and was not reproduced
+**Superseded by:** e40c7f67-54ad-4205-b786-08a95492195f
+**Evidence:** unknown
+**Evidence note:** the interleaving is a reviewer's scenario and was not reproduced
 **Source:** PR #41
 **Revisit when:** —
 
@@ -243,9 +272,11 @@ It is written down rather than fixed because it cannot be observed from where we
 
 ## What the atomic extension-folder swap does not buy
 
+**Id:** 22e55e5d-9eb8-475c-b31f-f309b8db9502
 **Type:** constraint
 **Status:** active
-**Evidence:** confirmed (measured — one mixed read in roughly 10,200)
+**Evidence:** confirmed
+**Evidence note:** measured — one mixed read in roughly 10,200
 **Source:** PR #41 (measured replacement probe); `app/Sources/App/Installer.swift`
 **Revisit when:** Chrome gains a way to snapshot an unpacked extension folder, or the folder stops being read file by file
 

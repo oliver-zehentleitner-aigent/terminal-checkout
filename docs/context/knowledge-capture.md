@@ -6,6 +6,7 @@ Why this repository keeps a `docs/context/` at all, and how the tooling around i
 
 ## The skill is vendored into the repository
 
+**Id:** 70ed5c23-86d4-4719-82ef-2dbfbbf8f629
 **Type:** decision
 **Status:** active
 **Evidence:** confirmed
@@ -26,6 +27,7 @@ The Keep the Why skill is committed here — the 16 source files under `.agents/
 
 ## Personal preferences live outside the repository
 
+**Id:** 0363fd6d-1d12-4a5c-b65c-52712eebd698
 **Type:** decision
 **Status:** active
 **Evidence:** confirmed
@@ -42,6 +44,7 @@ Per-developer settings are imported from `~/.claude/local/{owner}-{repo}.md` rat
 
 ## No session-start hook
 
+**Id:** ff9babaa-e04a-4a2e-8f9f-4fa76c64787f
 **Type:** decision
 **Status:** active
 **Evidence:** confirmed

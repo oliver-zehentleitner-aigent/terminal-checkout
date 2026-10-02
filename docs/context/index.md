@@ -1,20 +1,100 @@
 # Context index
 
-- [claude-input-delivery.md](claude-input-delivery.md) — how scheduled input reaches a claude session, and the routes that were tried and dropped; why a click-time note is plain text with no variables and never takes one of a button's stored input slots, what ✅ does and does not promise, which page a note goes to, what holds a split button's run, and why the popover lists the inputs before a note from the list that is sent
-- [slack-thread-shortcut.md](slack-thread-shortcut.md) — why the Slack thread workflow is Copy link plus a global shortcut the app registers, why the Shortcuts app and its URL scheme were dropped, and why the clipboard carries only a validated link
-- [cmux-integration.md](cmux-integration.md) — why the app asks the user to set one cmux option instead of setting it, why `rpc` is the only control path, how a launch retry is decided, and the measured placement contract for batch fan-out
-- [tab-activation.md](tab-activation.md) — why a button's tab can open behind the screen you are on, why iTerm2 and WezTerm select your tab again, and why Warp always opens in front
-- [subprocess-execution.md](subprocess-execution.md) — what actually bounds a timed-out child process, and why its output is decoded lossily
-- [localization.md](localization.md) — where the catalogues live, how macOS and Chrome independently choose each surface's language, the adjacent-generation compatibility boundary, and which strings may never become machine input
-- [options-page-reordering.md](options-page-reordering.md) — why claude input rows stay in one card, why a redraw cancels a drag, and why the reorder tooltip key is shared by meaning
-- [options-page-design.md](options-page-design.md) — why the options page shows GitHub placement, keeps example scenery fixed while editing live buttons, and separates page-specific rules from app-owned themes
-- [testing.md](testing.md) — the typed source-audit boundary, the distinction between a source lint and a runtime oracle, why a gate goes on passing after the thing it describes moves, what a harness that drives its own layout stops measuring, what an out-of-tree harness of the content script can and cannot show, and why options-page help is checked against the variable contract rather than as strings
-- [repository-entry.md](repository-entry.md) — why `{cd}` enters the zoxide folder named exactly `{repo}` instead of running `z {repo}`, why z.sh was dropped, and why the appended-prompt scanner judges `{cd}` as one word
-- [github-page-reading.md](github-page-reading.md) — why the repository buttons find GitHub's header as the banner landmark rather than by an attribute, why a PR's branch links are picked by document order rather than screen position, why those selectors reach the worker's injected functions as arguments, how a navigation the history wrappers cannot see is noticed, and why an insert pass that waited through one draws nothing
+Only decisions made or recovered so far are here; this is not yet a complete account of the project. `CLAUDE.md` still holds the mechanisms, invariants, and measured pitfalls — this directory holds the forks behind them.
+
+## 0
+
+## 1
+
+## 2
+
+## 3
+
+## 4
+
+## 5
+
+## 6
+
+## 7
+
+## 8
+
+## 9
+
+## A
+
+## B
+
 - [batch-fan-out.md](batch-fan-out.md) — why a whole-batch rejection keeps the app's own error text and hedges about the app's age instead of asserting it
-- [setup-window-placement.md](setup-window-placement.md) — why the window's measured size is applied outside the pass that measured it, and why one layout cycle gets one screen decision
-- [setup-window-design.md](setup-window-design.md) — why the setup window uses three toolbar panes, shared problems and pane previews
-- [signing-and-permissions.md](signing-and-permissions.md) — the ad-hoc signing churn, and the permission it silently revoked
+
+## C
+
+- [claude-input-delivery.md](claude-input-delivery.md) — how scheduled input reaches a claude session, and the routes that were tried and dropped; why a click-time note is plain text with no variables and never takes one of a button's stored input slots, what ✅ does and does not promise, which page a note goes to, what holds a split button's run, and why the popover lists the inputs before a note from the list that is sent
+- [cmux-integration.md](cmux-integration.md) — why the app asks the user to set one cmux option instead of setting it, why `rpc` is the only control path, how a launch retry is decided, and the measured placement contract for batch fan-out
+
+## D
+
+## E
+
+## F
+
+## G
+
+- [github-page-reading.md](github-page-reading.md) — why the repository buttons find GitHub's header as the banner landmark rather than by an attribute, why a PR's branch links are picked by document order rather than screen position, why those selectors reach the worker's injected functions as arguments, how a navigation the history wrappers cannot see is noticed, and why an insert pass that waited through one draws nothing
+
+## H
+
+## I
+
+## J
+
+## K
+
 - [knowledge-capture.md](knowledge-capture.md) — why this directory exists and how its tooling is installed
 
-Only decisions made or recovered so far are here; this is not yet a complete account of the project. `CLAUDE.md` still holds the mechanisms, invariants, and measured pitfalls — this directory holds the forks behind them.
+## L
+
+- [localization.md](localization.md) — where the catalogues live, how macOS and Chrome independently choose each surface's language, the adjacent-generation compatibility boundary, and which strings may never become machine input
+
+## M
+
+## N
+
+## O
+
+- [options-page-design.md](options-page-design.md) — why the options page shows GitHub placement, keeps example scenery fixed while editing live buttons, and separates page-specific rules from app-owned themes
+- [options-page-reordering.md](options-page-reordering.md) — why claude input rows stay in one card, why a redraw cancels a drag, and why the reorder tooltip key is shared by meaning
+
+## P
+
+## Q
+
+## R
+
+- [repository-entry.md](repository-entry.md) — why `{cd}` enters the zoxide folder named exactly `{repo}` instead of running `z {repo}`, why z.sh was dropped, and why the appended-prompt scanner judges `{cd}` as one word
+
+## S
+
+- [setup-window-design.md](setup-window-design.md) — why the setup window uses three toolbar panes, shared problems and pane previews
+- [setup-window-placement.md](setup-window-placement.md) — why the window's measured size is applied outside the pass that measured it, and why one layout cycle gets one screen decision
+- [signing-and-permissions.md](signing-and-permissions.md) — the ad-hoc signing churn, and the permission it silently revoked
+- [slack-thread-shortcut.md](slack-thread-shortcut.md) — why the Slack thread workflow is Copy link plus a global shortcut the app registers, why the Shortcuts app and its URL scheme were dropped, and why the clipboard carries only a validated link
+- [subprocess-execution.md](subprocess-execution.md) — what actually bounds a timed-out child process, and why its output is decoded lossily
+
+## T
+
+- [tab-activation.md](tab-activation.md) — why a button's tab can open behind the screen you are on, why iTerm2 and WezTerm select your tab again, and why Warp always opens in front
+- [testing.md](testing.md) — the typed source-audit boundary, the distinction between a source lint and a runtime oracle, why a gate goes on passing after the thing it describes moves, what a harness that drives its own layout stops measuring, what an out-of-tree harness of the content script can and cannot show, and why options-page help is checked against the variable contract rather than as strings
+
+## U
+
+## V
+
+## W
+
+## X
+
+## Y
+
+## Z

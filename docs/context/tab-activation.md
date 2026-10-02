@@ -4,9 +4,11 @@ Whether a button's new session comes to the front. The mechanisms are in `TabAct
 
 ## New tabs can open in the background
 
+**Id:** bf12b3d1-9479-4a02-9698-abc108f34a58
 **Type:** decision
 **Status:** active
-**Evidence:** confirmed for cmux (measured, `cmux-integration.md`); iTerm2 and WezTerm follow their documented commands and are a `docs/new-terminal-checklist.md` item until measured
+**Evidence:** confirmed
+**Evidence note:** for cmux (measured, `cmux-integration.md`); iTerm2 and WezTerm follow their documented commands and are a `docs/new-terminal-checklist.md` item until measured
 **Source:** maintainer request after a delivery test
 **Revisit when:** a terminal gains a way to create a tab that never takes focus, or Warp gains a way to read a tab that is not focused
 

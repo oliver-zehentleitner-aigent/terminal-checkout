@@ -4,10 +4,12 @@ This file holds the forks behind how the setup window arrives at its size and it
 
 ## The measured size is applied outside the layout pass it was measured in
 
+**Id:** 3fdaeac2-1787-4d0d-a957-4728f52280ed
 **Type:** decision
 **Type:** incident
 **Status:** active
-**Evidence:** confirmed — reverting only the deferral turns 12 assertions red in the measured shapes; a 155pt shrink applied inside the pass left the window at 702 points with a 547-point clip, and the fixture clip read 0 against a 437-point window
+**Evidence:** confirmed
+**Evidence note:** reverting only the deferral turns 12 assertions red in the measured shapes; a 155pt shrink applied inside the pass left the window at 702 points with a 547-point clip, and the fixture clip read 0 against a 437-point window
 **Source:** issue #34; PR #54 (commits `37887c7`, `31fc333`); `FittedContentStackView` in `app/Sources/App/SetupWindowController.swift`
 **Revisit when:** AppKit gives the document view a way to re-dirty its enclosing scroll view from inside a layout pass, or the window stops being sized from its content
 
@@ -25,10 +27,12 @@ The current window uses a standard titlebar with a preference toolbar, so its co
 
 ## One screen decision per layout cycle, and only the first measured size is centred
 
+**Id:** d3930d8d-e7aa-4a62-ac2e-1407674c2244
 **Type:** decision
 **Type:** incident
 **Status:** active
-**Evidence:** confirmed — on a portrait plus landscape pair the window finished launch flush against the left edge at X=0 where centred on that display is X=420, and the final origin was exactly `visible.minX` for a window centred on the other screen; after the fix the window stays at the centre of one display while it grows
+**Evidence:** confirmed
+**Evidence note:** on a portrait plus landscape pair the window finished launch flush against the left edge at X=0 where centred on that display is X=420, and the final origin was exactly `visible.minX` for a window centred on the other screen; after the fix the window stays at the centre of one display while it grows
 **Source:** issue #34; PR #54 (commits `56baa0d`, `7b39ea9`, `5645d14`); `centerInside`, `moveInside` and `buildContent` in `app/Sources/App/SetupWindowController.swift`
 **Revisit when:** the window stops being `isMovableByWindowBackground`, or the launch display becomes something the user can choose
 

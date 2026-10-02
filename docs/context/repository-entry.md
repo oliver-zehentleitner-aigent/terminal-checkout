@@ -2,9 +2,11 @@
 
 ## `{cd}` enters the zoxide folder named exactly `{repo}`, never `z {repo}`
 
+**Id:** 05761228-c10d-4965-9d6a-9db3bb864590
 **Type:** decision
 **Status:** active
-**Evidence:** confirmed (measured — zoxide 0.10.0 against an isolated database in zsh 5.9 and bash 3.2; `filter_by_keywords`, `Stream::new` and `query_list` read at v0.10.0 and on main)
+**Evidence:** confirmed
+**Evidence note:** measured — zoxide 0.10.0 against an isolated database in zsh 5.9 and bash 3.2; `filter_by_keywords`, `Stream::new` and `query_list` read at v0.10.0 and on main
 **Source:** user decision, 2026-09-24, after a button meant for the main checkout landed in a worktree; `zoxideExactJump` in `app/Sources/Core/BaseDirectory.swift`; `RepoEntryRuntimeTests` in `app/Tests/CoreTests/CoreTests.swift`
 **Revisit when:** zoxide gains an anchored or exact query, or the presets stop creating `{repo}-<branch>` worktrees next to the checkout
 
@@ -35,9 +37,11 @@ So `{cd}` asks `zoxide query --list -- {repo}` — every match, highest score fi
 
 ## The appended-prompt scanner judges `{cd}` as the one word it stands for
 
+**Id:** 3c4f8c1b-ac28-45d8-a59b-c787bfba709c
 **Type:** decision
 **Status:** active
-**Evidence:** confirmed (measured — with the scanner judging the real command, `testTheEntryClauseDoesNotCostAClaudeButtonItsArgvPrompt` and `testTheAppendedPromptReachesClaudeInTheRepositoryFolder` failed, exit status 1 over 2 executed tests; with the stand-in they pass)
+**Evidence:** confirmed
+**Evidence note:** measured — with the scanner judging the real command, `testTheEntryClauseDoesNotCostAClaudeButtonItsArgvPrompt` and `testTheAppendedPromptReachesClaudeInTheRepositoryFolder` failed, exit status 1 over 2 executed tests; with the stand-in they pass
 **Source:** the same change; `commandJudgedForAppendedPrompt` on `ResolvedRequest` in `app/Sources/Core/Request.swift`, and its use in `prepareRequest` in `app/Sources/Core/ClaudeInputPlan.swift`
 **Revisit when:** the scanner starts modeling command substitution, or the app assembles a second fragment
 

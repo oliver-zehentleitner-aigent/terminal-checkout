@@ -17,15 +17,10 @@ git config core.hooksPath .githooks  # enable the CLAUDE.md → AGENTS.md symlin
 
 That file is one per checkout **of the machine**, not one per worktree — a gitignored `CLAUDE.local.md` would only exist in the worktree that created it, and this repository branches through worktrees. Claude Code asks once per project before loading an import from outside the working directory. If the file isn't there yet, the keep-the-why personal wizard creates it on first use.
 
-<!-- keep-the-why:config -->
-- context: `docs/context/`
-- init: complete
-- context-schema: 0.9.2
-- capture-confirmation: automatic
-- source-reference: never
-<!-- /keep-the-why:config -->
+Keep the Why's config for this project migrated to .keep-the-why on
+2026-10-02 — requires skill version 0.10.0 or later to read it.
 
-`source-reference: never` means the agent doesn't *ask* whether a related issue or PR exists — it looks itself with `gh` when an entry would benefit from one, and records what it finds.
+`source-reference: never` (in `.keep-the-why`) means the agent doesn't *ask* whether a related issue or PR exists — it looks itself with `gh` when an entry would benefit from one, and records what it finds.
 
 ## Architecture — TCC forces this shape
 

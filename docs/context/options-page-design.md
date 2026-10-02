@@ -2,81 +2,99 @@
 
 ## GitHub is the editing surface
 
+**Id:** ba8626d9-ce85-47e7-832e-08a05ea8c652
 **Type:** decision
 **Status:** active
-**Evidence:** confirmed — the 2026-10-02 session record ranks A and C below B without distinct criticism and records the later requests in order: visible button placement, one screen rather than separate sections, then a closer GitHub likeness.
+**Evidence:** confirmed
+**Evidence note:** the 2026-10-02 session record ranks A and C below B without distinct criticism and records the later requests in order: visible button placement, one screen rather than separate sections, then a closer GitHub likeness.
 **Revisit when:** the user changes the priority between seeing placement in context and editing a compact grouped list
 
 The page shows each button where it belongs on its corresponding GitHub page, so the user can see placement while editing. The user rejected B because it felt dense and splitting it into sections meant searching for a button. The session record ranks A and C below B but preserves no separate criticism of them. The user next asked to see each button's GitHub placement, then to keep the views together rather than split the page into sections that require searching, and finally for a page close to GitHub itself; that sequence led to D. The preset drawer and outside-click dismissal were added after that choice.
 
 ## The scenery is fixed; the buttons are live
 
+**Id:** 1d0e6af7-7d5e-4b26-9115-b54bdfb05d14
 **Type:** decision
 **Status:** active
-**Evidence:** confirmed — the selected design pairs one fixed example context with the current edit-state buttons; the stability rationale is inferred from that split.
+**Evidence:** confirmed
+**Evidence note:** the selected design pairs one fixed example context with the current edit-state buttons; the stability rationale is inferred from that split.
 **Revisit when:** the replica stops serving as an editing preview or the example is replaced with another explicit preview model
 
 A fixed example keeps the GitHub locations stable while the buttons show the values being edited. A completely hard-coded mockup would not preview the edits that Save will write; using live repository scenery would make the preview depend on which real page supplied it. The design keeps those roles separate so the page demonstrates placement without presenting sample scenery as a user's repository.
 
 ## Views project engine state and own confirmation
 
+**Id:** 3284b1f0-ada9-4681-bfab-e55027ed842a
 **Type:** decision
 **Status:** active
-**Evidence:** confirmed — the view contract reads engine snapshots and sends actions through dispatch; dispatch returns `needs-confirmation` instead of opening a browser dialog.
+**Evidence:** confirmed
+**Evidence note:** the view contract reads engine snapshots and sends actions through dispatch; dispatch returns `needs-confirmation` instead of opening a browser dialog.
 **Revisit when:** the options page no longer uses one engine as the source of edit state or its confirmation surface changes
 
 The engine owns edit state, and views render its snapshots and request changes through dispatch so validation and dirty state have one authority. Confirmation belongs to the view that presents the action: it can explain what will be replaced in context and send the confirmed action only after the user agrees. Having the engine call `confirm()` would move a view decision into a browser modal and prevent the view from owning that interaction.
 
 ## A spot's + adds to that spot; the drawer is for browsing
 
+**Id:** d01f5836-6275-4a1b-a126-61b0ecc43dc8
 **Type:** decision
 **Status:** active
-**Evidence:** confirmed — on 2026-10-05 the user could not tell what the area that opened below the page was for when + showed the whole preset drawer; shown the approved mockup's flow beside two alternatives (no drawer at all, or the drawer opened under the spot with only its presets), the user chose the mockup.
+**Evidence:** confirmed
+**Evidence note:** on 2026-10-05 the user could not tell what the area that opened below the page was for when + showed the whole preset drawer; shown the approved mockup's flow beside two alternatives (no drawer at all, or the drawer opened under the spot with only its presets), the user chose the mockup.
 **Revisit when:** the user asks for + to browse every page kind again, or the drawer stops opening from the edit bar
 
 Pressing + opens a small picker beside that spot with only what can go there — that kind's presets and a blank button — and choosing one adds it at the end of the spot and opens the new button's editor. The preset drawer lists every page kind and opens only from the edit bar; its cards add to the end of their spot or are dragged, and a preset dropped on a button is replaced in that button's editor, so replacing has one confirmation surface instead of one per surface. Wiring + to the drawer had made a control on one spot open presets for five pages below the page, and the drawer's own Replace hid which button it would replace until it was pressed.
 
 ## Hidden content stays hidden across modules
 
+**Id:** 23ab0230-c09b-42ac-b8c9-8b4522b0af2b
 **Type:** incident
 **Status:** active
-**Evidence:** confirmed — after a successful load, the load-failure panel still appeared because its `display: flex` author rule overrode the browser's default styling for the `hidden` attribute.
+**Evidence:** confirmed
+**Evidence note:** after a successful load, the load-failure panel still appeared because its `display: flex` author rule overrode the browser's default styling for the `hidden` attribute.
 **Revisit when:** module visibility no longer uses the HTML `hidden` attribute
 
 The page-level `[hidden] { display: none !important; }` rule gives the state attribute the last word over display rules in every module. Fixing only the load-failure panel would leave the same cascade defect available to the next module that combines `hidden` with an explicit display value.
 
 ## Word-boundary breaking applies only to Korean
 
+**Id:** bf9dc78d-2810-4937-a567-99139d40942d
 **Type:** decision
 **Status:** active
-**Evidence:** confirmed — Korean labels were observed breaking between syllables, while Japanese and Chinese have no spaces at which `keep-all` could break.
+**Evidence:** confirmed
+**Evidence note:** Korean labels were observed breaking between syllables, while Japanese and Chinese have no spaces at which `keep-all` could break.
 **Revisit when:** another page language needs language-specific word-boundary behavior
 
 The page applies `word-break: keep-all` under `:lang(ko)` and permits emergency wrapping with `overflow-wrap: anywhere`. Keeping that rule on a shared module would also affect Japanese and Chinese and could leave a sentence unable to wrap; the language selector applies the correction only where word boundaries need it.
 
 ## GitHub copy and extension copy have different owners
 
+**Id:** 20035a4a-da93-46af-9ca0-a0d264c39812
 **Type:** decision
 **Status:** active
-**Evidence:** inferred — the design centralizes GitHub's replica labels as English copy and puts extension-authored text in the five locale catalogues.
+**Evidence:** inferred
+**Evidence note:** the design centralizes GitHub's replica labels as English copy and puts extension-authored text in the five locale catalogues.
 **Revisit when:** the replica follows GitHub's localized UI instead of using its fixed English scenery
 
 GitHub's labels describe the scenery being imitated, so one English table keeps that borrowed UI vocabulary consistent. Buttons, instructions, status and confirmation text belong to the extension and use its catalogues so they follow the extension's selected language. Translating both sets as extension copy would make the replica claim control over GitHub's language; scattering the GitHub terms through the renderer would let the copied vocabulary drift.
 
 ## GitHub colors do not mirror the app palette
 
+**Id:** a050483d-7063-437e-807b-18f7a71b5f54
 **Type:** decision
 **Status:** active
-**Evidence:** confirmed — the `--gh-` tokens represent GitHub's page colors; the extension-owned options surfaces retain their `Theme.swift` mirror relationship.
+**Evidence:** confirmed
+**Evidence note:** the `--gh-` tokens represent GitHub's page colors; the extension-owned options surfaces retain their `Theme.swift` mirror relationship.
 **Revisit when:** the replica stops imitating GitHub's palette or the app and extension theme ownership changes
 
 The app palette describes the extension's own surfaces. The replica uses GitHub colors to make the example recognizable, so its `--gh-` tokens stay independent; making them mirror `Theme.swift` would couple two different surfaces and change the page being imitated when the app theme changes.
 
 ## Discard reloads saved settings without writing
 
+**Id:** ce1f101a-38d9-4a12-a373-f4ffd3ced0c3
 **Type:** decision
 **Status:** active
-**Evidence:** confirmed — discard reads settings again through the existing load path and updates edit state; storage writes remain on Save.
+**Evidence:** confirmed
+**Evidence note:** discard reads settings again through the existing load path and updates edit state; storage writes remain on Save.
 **Revisit when:** the meaning of discard changes or settings stop being read from the existing load path
 
 Discard means abandoning the local draft and returning to saved settings, so it uses the normal load path rather than writing a saved snapshot back to storage. A write would make Cancel itself a sync mutation and could overwrite settings that changed elsewhere since the page loaded. Reloading changes only the page's edit state; Save remains the sole write action.
