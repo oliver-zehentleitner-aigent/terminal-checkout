@@ -1,0 +1,3609 @@
+{
+ "state-json": 2,
+ "generated": "2026-10-02T11:52:20Z",
+ "dashboard": "0.6.8",
+ "linter": "0.18.2.0",
+ "project": {
+  "id": "dazebug---terminal-checkout",
+  "name": "terminal-checkout",
+  "context": "docs/context/",
+  "schema": "0.18.2",
+  "config": {
+   "id": "dazebug---terminal-checkout",
+   "canonical": "https://github.com/dazebug/terminal-checkout",
+   "context": "`docs/context/`",
+   "init": "complete",
+   "context-schema": "0.18.2",
+   "capture-confirmation": "automatic",
+   "source-reference": "never"
+  },
+  "personal_defaults": {},
+  "config_file": ".keep-the-why",
+  "canonical": "https://github.com/dazebug/terminal-checkout",
+  "root": "",
+  "parent": "",
+  "dashboard_state": "",
+  "children": [],
+  "git": {
+   "available": true,
+   "head": "e04aba3",
+   "head_full": "e04aba33603d12f8c1046e55eff0d29245e279d6",
+   "branch": "keep-the-why-0.18.2",
+   "remote": "github.com/oliver-zehentleitner-aigent/terminal-checkout",
+   "upstream": "github.com/dazebug/terminal-checkout",
+   "fork": {
+    "of": "github.com/dazebug/terminal-checkout",
+    "by": "upstream"
+   },
+   "project_subdir": "",
+   "shallow": false
+  }
+ },
+ "topics": [
+  {
+   "file": "batch-fan-out.md",
+   "title": "Batch fan-out — the extension–app envelope",
+   "index_line": "why a whole-batch rejection keeps the app's own error text and hedges about the app's age instead of asserting it",
+   "entries": 1,
+   "refs_out": [],
+   "refs_in": [],
+   "status": {
+    "active": 1
+   },
+   "evidence": {
+    "confirmed": 1
+   }
+  },
+  {
+   "file": "claude-input-delivery.md",
+   "title": "Claude input delivery",
+   "index_line": "how scheduled input reaches a claude session, and the routes that were tried and dropped; why a click-time note is plain text with no variables and never takes one of a button's stored input slots, what ✅ does and does not promise, which page a note goes to, what holds a split button's run, and why the popover lists the inputs before a note from the list that is sent",
+   "entries": 23,
+   "refs_out": [
+    "localization.md"
+   ],
+   "refs_in": [
+    "cmux-integration.md"
+   ],
+   "status": {
+    "active": 20,
+    "superseded": 3
+   },
+   "evidence": {
+    "confirmed": 23
+   }
+  },
+  {
+   "file": "cmux-integration.md",
+   "title": "cmux integration",
+   "index_line": "why the app asks the user to set one cmux option instead of setting it, why `rpc` is the only control path, how a launch retry is decided, and the measured placement contract for batch fan-out",
+   "entries": 11,
+   "refs_out": [
+    "tab-activation.md",
+    "claude-input-delivery.md"
+   ],
+   "refs_in": [
+    "tab-activation.md"
+   ],
+   "status": {
+    "active": 10,
+    "": 1
+   },
+   "evidence": {
+    "confirmed": 10,
+    "": 1
+   }
+  },
+  {
+   "file": "github-page-reading.md",
+   "title": "Reading GitHub pages",
+   "index_line": "why the repository buttons find GitHub's header as the banner landmark rather than by an attribute, why a PR's branch links are picked by document order rather than screen position, why those selectors reach the worker's injected functions as arguments, how a navigation the history wrappers cannot see is noticed, and why an insert pass that waited through one draws nothing",
+   "entries": 4,
+   "refs_out": [
+    "testing.md"
+   ],
+   "refs_in": [],
+   "status": {
+    "active": 4
+   },
+   "evidence": {
+    "confirmed": 4
+   }
+  },
+  {
+   "file": "knowledge-capture.md",
+   "title": "Knowledge capture",
+   "index_line": "why this directory exists and how its tooling is installed",
+   "entries": 3,
+   "refs_out": [],
+   "refs_in": [],
+   "status": {
+    "active": 3
+   },
+   "evidence": {
+    "confirmed": 3
+   }
+  },
+  {
+   "file": "localization.md",
+   "title": "Localization",
+   "index_line": "where the catalogues live, how macOS and Chrome independently choose each surface's language, the adjacent-generation compatibility boundary, and which strings may never become machine input",
+   "entries": 17,
+   "refs_out": [
+    "testing.md"
+   ],
+   "refs_in": [
+    "claude-input-delivery.md",
+    "testing.md"
+   ],
+   "status": {
+    "active": 11,
+    "superseded": 4,
+    "": 2
+   },
+   "evidence": {
+    "confirmed": 14,
+    "unknown": 1,
+    "": 2
+   }
+  },
+  {
+   "file": "options-page-reordering.md",
+   "title": "Options-page reordering",
+   "index_line": "why claude input rows stay in one card, why a redraw cancels a drag, and why the reorder tooltip key is shared by meaning",
+   "entries": 3,
+   "refs_out": [],
+   "refs_in": [],
+   "status": {
+    "active": 3
+   },
+   "evidence": {
+    "confirmed": 3
+   }
+  },
+  {
+   "file": "repository-entry.md",
+   "title": "Repository entry — how `{cd}` finds the repository",
+   "index_line": "why `{cd}` enters the zoxide folder named exactly `{repo}` instead of running `z {repo}`, why z.sh was dropped, and why the appended-prompt scanner judges `{cd}` as one word",
+   "entries": 2,
+   "refs_out": [],
+   "refs_in": [],
+   "status": {
+    "active": 2
+   },
+   "evidence": {
+    "confirmed": 2
+   }
+  },
+  {
+   "file": "setup-window-placement.md",
+   "title": "Setup window sizing and placement",
+   "index_line": "why the window's measured size is applied outside the pass that measured it, and why one layout cycle gets one screen decision",
+   "entries": 2,
+   "refs_out": [],
+   "refs_in": [],
+   "status": {
+    "active": 2
+   },
+   "evidence": {
+    "confirmed": 2
+   }
+  },
+  {
+   "file": "signing-and-permissions.md",
+   "title": "Signing and permissions",
+   "index_line": "the ad-hoc signing churn, and the permission it silently revoked",
+   "entries": 1,
+   "refs_out": [],
+   "refs_in": [],
+   "status": {
+    "active": 1
+   },
+   "evidence": {
+    "confirmed": 1
+   }
+  },
+  {
+   "file": "subprocess-execution.md",
+   "title": "Subprocess execution",
+   "index_line": "what actually bounds a timed-out child process, and why its output is decoded lossily",
+   "entries": 4,
+   "refs_out": [],
+   "refs_in": [],
+   "status": {
+    "active": 4
+   },
+   "evidence": {
+    "confirmed": 4
+   }
+  },
+  {
+   "file": "tab-activation.md",
+   "title": "Tab activation",
+   "index_line": "why a button's tab can open behind the screen you are on, why iTerm2 and WezTerm select your tab again, and why Warp always opens in front",
+   "entries": 1,
+   "refs_out": [
+    "cmux-integration.md"
+   ],
+   "refs_in": [
+    "cmux-integration.md"
+   ],
+   "status": {
+    "active": 1
+   },
+   "evidence": {
+    "confirmed": 1
+   }
+  },
+  {
+   "file": "testing.md",
+   "title": "Testing decisions",
+   "index_line": "the typed source-audit boundary, the distinction between a source lint and a runtime oracle, why a gate goes on passing after the thing it describes moves, what a harness that drives its own layout stops measuring, what an out-of-tree harness of the content script can and cannot show, and why options-page help is checked against the variable contract rather than as strings",
+   "entries": 9,
+   "refs_out": [
+    "localization.md"
+   ],
+   "refs_in": [
+    "github-page-reading.md",
+    "localization.md"
+   ],
+   "status": {
+    "active": 8,
+    "": 1
+   },
+   "evidence": {
+    "confirmed": 8,
+    "": 1
+   }
+  }
+ ],
+ "entries": [
+  {
+   "id": "batch-fan-out.md#a-whole-batch-rejection-keeps-the-app-s-words-and-never-asserts-the-app-s-age",
+   "uuid": "e1cf6a71-3e7b-4bd4-9888-f4ce5913a046",
+   "file": "batch-fan-out.md",
+   "line": 3,
+   "end_line": 21,
+   "title": "A whole-batch rejection keeps the app's words and never asserts the app's age",
+   "type": [
+    "decision"
+   ],
+   "status": "active",
+   "evidence": "confirmed",
+   "source": "issue #79; PR #82 (commit `345635f`); `interpretListBatchResponse` in `extension/defaults.js`",
+   "verification": null,
+   "revisit_when": "the app starts returning `items` on a request-shape rejection, or a visible display path for whole-batch errors is added to the list button",
+   "see": [],
+   "superseded_by": null,
+   "refs": [],
+   "git": {
+    "created": {
+     "author": "author-1",
+     "date": "2026-09-03",
+     "commit": "cee8d0b"
+    },
+    "last_touched": {
+     "author": "author-2",
+     "date": "2026-10-02",
+     "commit": "e04aba3"
+    },
+    "status_history": [
+     {
+      "status": "active",
+      "author": "author-1",
+      "date": "2026-09-03",
+      "commit": "cee8d0b"
+     }
+    ]
+   },
+   "findings": []
+  },
+  {
+   "id": "claude-input-delivery.md#inputs-are-typed-into-claude-s-shell-mode-never-pre-run-and-pasted",
+   "uuid": "ec25f742-95c1-4b07-8afb-6eb563f5d696",
+   "file": "claude-input-delivery.md",
+   "line": 5,
+   "end_line": 23,
+   "title": "`!` inputs are typed into claude's shell mode, never pre-run and pasted",
+   "type": [
+    "decision"
+   ],
+   "status": "active",
+   "evidence": "confirmed",
+   "source": "PR #36 (`da37339`); measured in a pty against claude 2.1.238",
+   "verification": null,
+   "revisit_when": "claude gains a documented way to enter shell mode from argv, or the `!` prefix stops meaning shell mode",
+   "see": [],
+   "superseded_by": null,
+   "refs": [],
+   "git": {
+    "created": {
+     "author": "author-1",
+     "date": "2026-08-22",
+     "commit": "92a2354"
+    },
+    "last_touched": {
+     "author": "author-2",
+     "date": "2026-10-02",
+     "commit": "e04aba3"
+    },
+    "status_history": [
+     {
+      "status": "active",
+      "author": "author-1",
+      "date": "2026-08-22",
+      "commit": "92a2354"
+     }
+    ]
+   },
+   "findings": []
+  },
+  {
+   "id": "claude-input-delivery.md#consecutive-inputs-merge-into-one-typed-line-joined-with",
+   "uuid": "7f83af80-a0bb-4d85-9989-352d5c521135",
+   "file": "claude-input-delivery.md",
+   "line": 24,
+   "end_line": 40,
+   "title": "Consecutive `!` inputs merge into one typed line, joined with `;`",
+   "type": [
+    "decision"
+   ],
+   "status": "active",
+   "evidence": "confirmed",
+   "source": "PR #36; `claudeTypedInputs` and `claudeBodyJoinsSafely` in `app/Sources/Core/ClaudeInputPlan.swift`",
+   "verification": null,
+   "revisit_when": "the delivery cycle stops being the dominant cost, or claude's shell mode starts sharing state across submissions",
+   "see": [],
+   "superseded_by": null,
+   "refs": [],
+   "git": {
+    "created": {
+     "author": "author-1",
+     "date": "2026-08-22",
+     "commit": "92a2354"
+    },
+    "last_touched": {
+     "author": "author-2",
+     "date": "2026-10-02",
+     "commit": "e04aba3"
+    },
+    "status_history": [
+     {
+      "status": "active",
+      "author": "author-1",
+      "date": "2026-08-22",
+      "commit": "92a2354"
+     }
+    ]
+   },
+   "findings": []
+  },
+  {
+   "id": "claude-input-delivery.md#the-gate-makes-no-judgement-about-where-a-character-sits",
+   "uuid": "40ec8942-502a-4d9a-a382-33546566f996",
+   "file": "claude-input-delivery.md",
+   "line": 41,
+   "end_line": 55,
+   "title": "The gate makes no judgement about where a character sits",
+   "type": [
+    "decision"
+   ],
+   "status": "active",
+   "evidence": "confirmed",
+   "source": "PR #36; reviewer reproductions, measured in zsh, bash and dash",
+   "verification": null,
+   "revisit_when": "someone proposes teaching the gate to parse the user's shell",
+   "see": [],
+   "superseded_by": null,
+   "refs": [],
+   "git": {
+    "created": {
+     "author": "author-1",
+     "date": "2026-08-22",
+     "commit": "92a2354"
+    },
+    "last_touched": {
+     "author": "author-2",
+     "date": "2026-10-02",
+     "commit": "e04aba3"
+    },
+    "status_history": [
+     {
+      "status": "active",
+      "author": "author-1",
+      "date": "2026-08-22",
+      "commit": "92a2354"
+     }
+    ]
+   },
+   "findings": []
+  },
+  {
+   "id": "claude-input-delivery.md#argv-carries-the-opening-message-only-when-every-input-is-plain-text",
+   "uuid": "6b8f3f2f-342b-41b5-841b-a4dedcf52fd3",
+   "file": "claude-input-delivery.md",
+   "line": 56,
+   "end_line": 72,
+   "title": "argv carries the opening message only when every input is plain text",
+   "type": [
+    "decision"
+   ],
+   "status": "active",
+   "evidence": "confirmed",
+   "source": "PR #36; measured on claude 2.1.238 (32 runs)",
+   "verification": null,
+   "revisit_when": "claude stops clearing the input box when it submits an argv message",
+   "see": [],
+   "superseded_by": null,
+   "refs": [],
+   "git": {
+    "created": {
+     "author": "author-1",
+     "date": "2026-08-22",
+     "commit": "92a2354"
+    },
+    "last_touched": {
+     "author": "author-2",
+     "date": "2026-10-02",
+     "commit": "e04aba3"
+    },
+    "status_history": [
+     {
+      "status": "active",
+      "author": "author-1",
+      "date": "2026-08-22",
+      "commit": "92a2354"
+     }
+    ]
+   },
+   "findings": []
+  },
+  {
+   "id": "claude-input-delivery.md#delivery-proves-the-input-box-by-experiment-not-by-reading-the-screen",
+   "uuid": "bd8c18bd-a6f6-4652-a895-7ca3b134af62",
+   "file": "claude-input-delivery.md",
+   "line": 73,
+   "end_line": 90,
+   "title": "Delivery proves the input box by experiment, not by reading the screen",
+   "type": [
+    "decision",
+    "workaround"
+   ],
+   "status": "active",
+   "evidence": "confirmed",
+   "source": "PR #36; two independent reviewers reached the same reproduction",
+   "verification": null,
+   "revisit_when": "a terminal gains a way to read a specific pane's input box directly",
+   "see": [],
+   "superseded_by": null,
+   "refs": [],
+   "git": {
+    "created": {
+     "author": "author-1",
+     "date": "2026-08-22",
+     "commit": "92a2354"
+    },
+    "last_touched": {
+     "author": "author-2",
+     "date": "2026-10-02",
+     "commit": "e04aba3"
+    },
+    "status_history": [
+     {
+      "status": "active",
+      "author": "author-1",
+      "date": "2026-08-22",
+      "commit": "92a2354"
+     }
+    ]
+   },
+   "findings": []
+  },
+  {
+   "id": "claude-input-delivery.md#the-input-box-is-cleared-with-ctrl-u-then-backspace",
+   "uuid": "d5587028-bcdd-4ac1-869c-0ccacbbe56f5",
+   "file": "claude-input-delivery.md",
+   "line": 91,
+   "end_line": 103,
+   "title": "The input box is cleared with Ctrl+U **then** Backspace",
+   "type": [
+    "workaround"
+   ],
+   "status": "active",
+   "evidence": "confirmed",
+   "source": "measured in a pty on claude 2.1.238; only `!` was measured",
+   "verification": null,
+   "revisit_when": "claude changes how its `!` shell mode is entered or exited",
+   "see": [],
+   "superseded_by": null,
+   "refs": [],
+   "git": {
+    "created": {
+     "author": "author-1",
+     "date": "2026-08-22",
+     "commit": "92a2354"
+    },
+    "last_touched": {
+     "author": "author-2",
+     "date": "2026-10-02",
+     "commit": "e04aba3"
+    },
+    "status_history": [
+     {
+      "status": "active",
+      "author": "author-1",
+      "date": "2026-08-22",
+      "commit": "92a2354"
+     }
+    ]
+   },
+   "findings": []
+  },
+  {
+   "id": "claude-input-delivery.md#on-cmux-those-two-bytes-are-two-separate-one-byte-text-calls-because-the-key-path-is-dead-under-claude",
+   "uuid": "b8cc4c8f-3144-4035-90de-40ea8c2c44b0",
+   "file": "claude-input-delivery.md",
+   "line": 104,
+   "end_line": 125,
+   "title": "On cmux those two bytes are two separate one-byte text calls, because the key path is dead under claude",
+   "type": [
+    "incident",
+    "decision"
+   ],
+   "status": "active",
+   "evidence": "confirmed",
+   "source": "PR #60; reproduced on an installed build against cmux 0.64.22 and Claude Code 2.1.246",
+   "verification": null,
+   "revisit_when": "cmux's key encoder learns the kitty keyboard protocol state of the surface it is writing to",
+   "see": [],
+   "superseded_by": null,
+   "refs": [],
+   "git": {
+    "created": {
+     "author": "author-1",
+     "date": "2026-08-27",
+     "commit": "b929568"
+    },
+    "last_touched": {
+     "author": "author-2",
+     "date": "2026-10-02",
+     "commit": "e04aba3"
+    },
+    "status_history": [
+     {
+      "status": "active",
+      "author": "author-1",
+      "date": "2026-08-27",
+      "commit": "b929568"
+     }
+    ]
+   },
+   "findings": []
+  },
+  {
+   "id": "claude-input-delivery.md#the-marker-is-gone-is-checked-over-every-6-character-window-not-the-whole-string",
+   "uuid": "2bbac675-7b12-4428-8ff9-0ee38fd3e930",
+   "file": "claude-input-delivery.md",
+   "line": 126,
+   "end_line": 143,
+   "title": "\"The marker is gone\" is checked over every 6-character window, not the whole string",
+   "type": [
+    "decision"
+   ],
+   "status": "superseded",
+   "evidence": "confirmed",
+   "source": "PR #60; the defect above",
+   "verification": null,
+   "revisit_when": null,
+   "see": [],
+   "superseded_by": "51db08c5-a7ff-4849-9174-f65811f4301f",
+   "refs": [],
+   "git": {
+    "created": {
+     "author": "author-1",
+     "date": "2026-08-27",
+     "commit": "b929568"
+    },
+    "last_touched": {
+     "author": "author-2",
+     "date": "2026-10-02",
+     "commit": "e04aba3"
+    },
+    "status_history": [
+     {
+      "status": "active",
+      "author": "author-1",
+      "date": "2026-08-27",
+      "commit": "b929568"
+     },
+     {
+      "status": "superseded",
+      "author": "author-1",
+      "date": "2026-09-28",
+      "commit": "fed4f98"
+     }
+    ]
+   },
+   "findings": []
+  },
+  {
+   "id": "claude-input-delivery.md#the-marker-is-three-runic-letters-and-the-erase-check-counts-single-characters",
+   "uuid": "51db08c5-a7ff-4849-9174-f65811f4301f",
+   "file": "claude-input-delivery.md",
+   "line": 144,
+   "end_line": 163,
+   "title": "The marker is three Runic letters, and the erase check counts single characters",
+   "type": [
+    "decision"
+   ],
+   "status": "active",
+   "evidence": "confirmed",
+   "source": "maintainer request to shorten the marker, and the Codex review that raised dialog key bindings",
+   "verification": null,
+   "revisit_when": "claude's screen starts drawing Runic, or a supported terminal cannot round-trip it",
+   "see": [],
+   "superseded_by": null,
+   "refs": [],
+   "git": {
+    "created": {
+     "author": "author-1",
+     "date": "2026-09-28",
+     "commit": "fed4f98"
+    },
+    "last_touched": {
+     "author": "author-2",
+     "date": "2026-10-02",
+     "commit": "e04aba3"
+    },
+    "status_history": [
+     {
+      "status": "active",
+      "author": "author-1",
+      "date": "2026-09-28",
+      "commit": "fed4f98"
+     }
+    ]
+   },
+   "findings": []
+  },
+  {
+   "id": "claude-input-delivery.md#polling-reads-first-and-subtracts-what-the-read-cost",
+   "uuid": "ee0449bd-18ae-4258-868c-1164c707078a",
+   "file": "claude-input-delivery.md",
+   "line": 164,
+   "end_line": 178,
+   "title": "Polling reads first and subtracts what the read cost",
+   "type": [
+    "decision"
+   ],
+   "status": "active",
+   "evidence": "confirmed",
+   "source": "three timed field runs on Warp; first message 11.6s → 10.5s → 6.8s",
+   "verification": null,
+   "revisit_when": "a terminal's screen read gets much cheaper or much more expensive than ~140ms",
+   "see": [],
+   "superseded_by": null,
+   "refs": [],
+   "git": {
+    "created": {
+     "author": "author-1",
+     "date": "2026-08-22",
+     "commit": "92a2354"
+    },
+    "last_touched": {
+     "author": "author-2",
+     "date": "2026-10-02",
+     "commit": "e04aba3"
+    },
+    "status_history": [
+     {
+      "status": "active",
+      "author": "author-1",
+      "date": "2026-08-22",
+      "commit": "92a2354"
+     }
+    ]
+   },
+   "findings": []
+  },
+  {
+   "id": "claude-input-delivery.md#an-unreadable-stty-used-to-open-gate",
+   "uuid": "1bb5a787-a6f9-4b27-8e64-079da9ed79d4",
+   "file": "claude-input-delivery.md",
+   "line": 179,
+   "end_line": 192,
+   "title": "An unreadable `stty` used to open gate ②",
+   "type": [
+    "decision"
+   ],
+   "status": "superseded",
+   "evidence": "confirmed",
+   "source": "PR #3, which introduced both the gate and the fallback; superseded by PR #41",
+   "verification": null,
+   "revisit_when": "never on its own — it is here so the replacement is read as an expiry rather than as a discovery",
+   "see": [],
+   "superseded_by": "33e7a359-1078-4583-bc2c-45e25eac1146",
+   "refs": [],
+   "git": {
+    "created": {
+     "author": "author-1",
+     "date": "2026-08-25",
+     "commit": "0112613"
+    },
+    "last_touched": {
+     "author": "author-2",
+     "date": "2026-10-02",
+     "commit": "e04aba3"
+    },
+    "status_history": [
+     {
+      "status": "superseded",
+      "author": "author-1",
+      "date": "2026-08-25",
+      "commit": "0112613"
+     }
+    ]
+   },
+   "findings": []
+  },
+  {
+   "id": "claude-input-delivery.md#gate-stays-closed-when-raw-mode-cannot-be-decided",
+   "uuid": "33e7a359-1078-4583-bc2c-45e25eac1146",
+   "file": "claude-input-delivery.md",
+   "line": 193,
+   "end_line": 210,
+   "title": "Gate ② stays closed when raw mode cannot be decided",
+   "type": [
+    "decision"
+   ],
+   "status": "active",
+   "evidence": "confirmed",
+   "source": "PR #41; `app/Sources/Core/ClaudeInjector.swift:52` and `:73`",
+   "verification": null,
+   "revisit_when": "a terminal appears where `stty` cannot be read while the tty is genuinely usable",
+   "see": [],
+   "superseded_by": null,
+   "refs": [],
+   "git": {
+    "created": {
+     "author": "author-1",
+     "date": "2026-08-25",
+     "commit": "0112613"
+    },
+    "last_touched": {
+     "author": "author-2",
+     "date": "2026-10-02",
+     "commit": "e04aba3"
+    },
+    "status_history": [
+     {
+      "status": "active",
+      "author": "author-1",
+      "date": "2026-08-25",
+      "commit": "0112613"
+     }
+    ]
+   },
+   "findings": []
+  },
+  {
+   "id": "claude-input-delivery.md#the-foreground-check-has-three-states-and-unknown-is-not-different",
+   "uuid": "754d493b-1b19-47e0-848d-f11694c867ad",
+   "file": "claude-input-delivery.md",
+   "line": 211,
+   "end_line": 227,
+   "title": "The foreground check has three states, and `unknown` is not `different`",
+   "type": [
+    "decision"
+   ],
+   "status": "active",
+   "evidence": "confirmed",
+   "source": "PR #41; `WarpForeground` in `app/Sources/Core/WarpHelperProtocol.swift:83-91`, its `diagnosis` at `:98`, `app/Sources/WarpHelper/main.swift:110`",
+   "verification": null,
+   "revisit_when": "a caller appears that needs to act differently on `.different` and `.unknown`, rather than only to say something different",
+   "see": [],
+   "superseded_by": null,
+   "refs": [],
+   "git": {
+    "created": {
+     "author": "author-1",
+     "date": "2026-08-25",
+     "commit": "0112613"
+    },
+    "last_touched": {
+     "author": "author-2",
+     "date": "2026-10-02",
+     "commit": "e04aba3"
+    },
+    "status_history": [
+     {
+      "status": "active",
+      "author": "author-1",
+      "date": "2026-08-25",
+      "commit": "0112613"
+     }
+    ]
+   },
+   "findings": []
+  },
+  {
+   "id": "claude-input-delivery.md#non-ascii-text-changes-normalization-when-it-crosses-process-arguments",
+   "uuid": "86ac0104-3baa-42d4-be85-f92f19be5ab7",
+   "file": "claude-input-delivery.md",
+   "line": 228,
+   "end_line": 249,
+   "title": "Non-ASCII text changes normalization when it crosses `Process.arguments`",
+   "type": [
+    "constraint"
+   ],
+   "status": "superseded",
+   "evidence": "confirmed",
+   "source": "PR #41; `ProcessArgumentBoundaryTests` in `app/Tests/CoreTests/CoreTests.swift`",
+   "verification": null,
+   "revisit_when": "a delivery path has to put a value that is not a path into `Process.arguments` or the environment again",
+   "see": [],
+   "superseded_by": "none — the delivery paths no longer cross this boundary (PR #41, commit `682b6c7`)",
+   "refs": [
+    "localization.md"
+   ],
+   "git": {
+    "created": {
+     "author": "author-1",
+     "date": "2026-08-25",
+     "commit": "0112613"
+    },
+    "last_touched": {
+     "author": "author-2",
+     "date": "2026-10-02",
+     "commit": "e04aba3"
+    },
+    "status_history": [
+     {
+      "status": "superseded",
+      "author": "author-1",
+      "date": "2026-08-25",
+      "commit": "0112613"
+     }
+    ]
+   },
+   "findings": []
+  },
+  {
+   "id": "claude-input-delivery.md#a-click-time-note-is-one-more-claude-input-and-only-plain-text",
+   "uuid": "980a96f8-1201-461d-8aaa-59b239ef3749",
+   "file": "claude-input-delivery.md",
+   "line": 250,
+   "end_line": 267,
+   "title": "A click-time note is one more claude input, and only plain text",
+   "type": [
+    "decision"
+   ],
+   "status": "active",
+   "evidence": "confirmed",
+   "source": "PR #90; `claudeNoteVerdict` in `extension/defaults.js`; `testEveryLeadingScalarTheTrimStripsIsASeparatorOrOther` in `app/Tests/CoreTests/CoreTests.swift`; `tests/claude-note.test.js` (`no first character the app could strip or read as a directive gets through`)",
+   "verification": null,
+   "revisit_when": "the app changes its trim, the order of its render and trim, or what a leading `!`, `/` or `#` means",
+   "see": [],
+   "superseded_by": null,
+   "refs": [],
+   "git": {
+    "created": {
+     "author": "author-1",
+     "date": "2026-09-28",
+     "commit": "7925905"
+    },
+    "last_touched": {
+     "author": "author-2",
+     "date": "2026-10-02",
+     "commit": "e04aba3"
+    },
+    "status_history": [
+     {
+      "status": "active",
+      "author": "author-1",
+      "date": "2026-09-28",
+      "commit": "7925905"
+     }
+    ]
+   },
+   "findings": []
+  },
+  {
+   "id": "claude-input-delivery.md#a-click-time-note-has-a-slot-above-the-button-s-stored-inputs",
+   "uuid": "c96b9ff2-db7c-43eb-820e-1ca93f6668b0",
+   "file": "claude-input-delivery.md",
+   "line": 268,
+   "end_line": 289,
+   "title": "A click-time note has a slot above the button's stored inputs",
+   "type": [
+    "decision"
+   ],
+   "status": "active",
+   "evidence": "confirmed",
+   "source": "PR #99; `buttonTakesClaudeNote` and `MAX_CLAUDE_INPUTS` in `extension/defaults.js`; the two tests above; `maxLifetime` in `app/Sources/WarpHelper/main.swift`",
+   "verification": null,
+   "revisit_when": "the app begins enforcing a `claude_inputs` count limit, the Warp helper lifetime cap changes, or the storage format can block outdated readers",
+   "see": [],
+   "superseded_by": null,
+   "refs": [],
+   "git": {
+    "created": {
+     "author": "author-1",
+     "date": "2026-10-02",
+     "commit": "21382f5"
+    },
+    "last_touched": {
+     "author": "author-2",
+     "date": "2026-10-02",
+     "commit": "e04aba3"
+    },
+    "status_history": [
+     {
+      "status": "active",
+      "author": "author-1",
+      "date": "2026-10-02",
+      "commit": "21382f5"
+     }
+    ]
+   },
+   "findings": []
+  },
+  {
+   "id": "claude-input-delivery.md#a-note-carries-no-variables-any-closed-brace-span-is-refused",
+   "uuid": "5b303862-71fc-4ab4-97a9-cd8c1ad352b7",
+   "file": "claude-input-delivery.md",
+   "line": 290,
+   "end_line": 309,
+   "title": "A note carries no variables: any closed brace span is refused",
+   "type": [
+    "decision"
+   ],
+   "status": "active",
+   "evidence": "confirmed",
+   "source": "PR #90; `variableRegex` and `renderCommand` in `app/Sources/Core/CommandRenderer.swift`; `claudeNoteVerdict` in `extension/defaults.js`; `tests/claude-note.test.js` (`any closed brace span is refused, whatever is inside it`)",
+   "verification": null,
+   "revisit_when": "the app's renderer gains an escape, or stops rendering claude inputs as templates",
+   "see": [],
+   "superseded_by": null,
+   "refs": [],
+   "git": {
+    "created": {
+     "author": "author-1",
+     "date": "2026-09-28",
+     "commit": "7925905"
+    },
+    "last_touched": {
+     "author": "author-2",
+     "date": "2026-10-02",
+     "commit": "e04aba3"
+    },
+    "status_history": [
+     {
+      "status": "active",
+      "author": "author-1",
+      "date": "2026-09-28",
+      "commit": "7925905"
+     }
+    ]
+   },
+   "findings": []
+  },
+  {
+   "id": "claude-input-delivery.md#on-the-page-means-the-terminal-opened-not-that-claude-received-anything",
+   "uuid": "0b871300-a750-4e61-97cd-597e7d75b03f",
+   "file": "claude-input-delivery.md",
+   "line": 310,
+   "end_line": 323,
+   "title": "✅ on the page means the terminal opened, not that claude received anything",
+   "type": [
+    "decision"
+   ],
+   "status": "active",
+   "evidence": "confirmed",
+   "source": "PR #90; `serve(fd:)` in `app/Sources/App/HostServer.swift`; `handleBatchRequest` in `app/Sources/Core/Request.swift`",
+   "verification": null,
+   "revisit_when": "the app answers a request only after delivery, or keeps the session handle to report on it later",
+   "see": [],
+   "superseded_by": null,
+   "refs": [],
+   "git": {
+    "created": {
+     "author": "author-1",
+     "date": "2026-09-28",
+     "commit": "7925905"
+    },
+    "last_touched": {
+     "author": "author-2",
+     "date": "2026-10-02",
+     "commit": "e04aba3"
+    },
+    "status_history": [
+     {
+      "status": "active",
+      "author": "author-1",
+      "date": "2026-09-28",
+      "commit": "7925905"
+     }
+    ]
+   },
+   "findings": []
+  },
+  {
+   "id": "claude-input-delivery.md#whether-a-note-is-typed-or-rides-in-argv-is-the-app-s-decision-and-nothing-promises-it",
+   "uuid": "d0f3807e-3fe7-46fb-957c-cceb228b69fd",
+   "file": "claude-input-delivery.md",
+   "line": 324,
+   "end_line": 337,
+   "title": "Whether a note is typed or rides in argv is the app's decision, and nothing promises it",
+   "type": [
+    "decision"
+   ],
+   "status": "active",
+   "evidence": "confirmed",
+   "source": "PR #90; `executionPayload` and `buttonTakesClaudeNote` in `extension/defaults.js`",
+   "verification": null,
+   "revisit_when": "the extension and the app come to share one normalization of stored inputs",
+   "see": [],
+   "superseded_by": null,
+   "refs": [],
+   "git": {
+    "created": {
+     "author": "author-1",
+     "date": "2026-09-28",
+     "commit": "7925905"
+    },
+    "last_touched": {
+     "author": "author-2",
+     "date": "2026-10-02",
+     "commit": "e04aba3"
+    },
+    "status_history": [
+     {
+      "status": "active",
+      "author": "author-1",
+      "date": "2026-09-28",
+      "commit": "7925905"
+     }
+    ]
+   },
+   "findings": []
+  },
+  {
+   "id": "claude-input-delivery.md#a-note-goes-to-the-page-its-popover-opened-on-and-a-draft-stays-with-that-page",
+   "uuid": "08058a59-9667-4d55-9721-9e84553edc4a",
+   "file": "claude-input-delivery.md",
+   "line": 338,
+   "end_line": 351,
+   "title": "A note goes to the page its popover opened on, and a draft stays with that page",
+   "type": [
+    "decision"
+   ],
+   "status": "active",
+   "evidence": "confirmed",
+   "source": "PR #90; `openNotePopover` and `submitNote` in `extension/content.js`; `tests/claude-note.test.js` (`a note is for the page its popover opened on, read once, and judged before anything is sent (lint)`)",
+   "verification": null,
+   "revisit_when": "the popover starts following the page instead of closing when the page moves",
+   "see": [],
+   "superseded_by": null,
+   "refs": [],
+   "git": {
+    "created": {
+     "author": "author-1",
+     "date": "2026-09-28",
+     "commit": "7925905"
+    },
+    "last_touched": {
+     "author": "author-2",
+     "date": "2026-10-02",
+     "commit": "e04aba3"
+    },
+    "status_history": [
+     {
+      "status": "active",
+      "author": "author-1",
+      "date": "2026-09-28",
+      "commit": "7925905"
+     }
+    ]
+   },
+   "findings": []
+  },
+  {
+   "id": "claude-input-delivery.md#a-split-button-s-run-is-held-by-page-and-button-never-by-the-node-on-screen",
+   "uuid": "92910b32-91a0-4f3f-af42-0256d9aff5c6",
+   "file": "claude-input-delivery.md",
+   "line": 352,
+   "end_line": 369,
+   "title": "A split button's run is held by page and button, never by the node on screen",
+   "type": [
+    "decision"
+   ],
+   "status": "active",
+   "evidence": "confirmed",
+   "source": "PR #90; `splitButtonRun` and `createSplitButtonRuns` in `extension/defaults.js`; `runSplitButton` and `paintSplitButton` in `extension/content.js`; `tests/claude-note.test.js` (`a drawing that outlived a page change holds and shows the run of the page it now sends for`, `a run refused before it sent keeps its reason for its own marker only: not for the next run, whatever the old timer does`)",
+   "verification": null,
+   "revisit_when": "buttons gain a persistent id in the stored schema",
+   "see": [],
+   "superseded_by": null,
+   "refs": [],
+   "git": {
+    "created": {
+     "author": "author-1",
+     "date": "2026-09-28",
+     "commit": "7925905"
+    },
+    "last_touched": {
+     "author": "author-2",
+     "date": "2026-10-02",
+     "commit": "e04aba3"
+    },
+    "status_history": [
+     {
+      "status": "active",
+      "author": "author-1",
+      "date": "2026-09-28",
+      "commit": "7925905"
+     }
+    ]
+   },
+   "findings": []
+  },
+  {
+   "id": "claude-input-delivery.md#the-popover-lists-the-stored-inputs-a-note-follows-from-the-list-that-is-sent",
+   "uuid": "d4bff9cb-3d2c-4404-9bf1-97101b58ff1a",
+   "file": "claude-input-delivery.md",
+   "line": 370,
+   "end_line": 385,
+   "title": "The popover lists the stored inputs a note follows from the list that is sent",
+   "type": [
+    "decision"
+   ],
+   "status": "active",
+   "evidence": "confirmed",
+   "source": "PR #90; `claudeInputsBeforeNote` in `extension/defaults.js`; `noteBeforeList` in `extension/content.js`; `tests/claude-note.test.js` (`a popover lists the inputs a note follows exactly as the click sends them, and the fingerprint vouches for that list`)",
+   "verification": null,
+   "revisit_when": "the popover has to show inputs the fingerprint does not cover",
+   "see": [],
+   "superseded_by": null,
+   "refs": [],
+   "git": {
+    "created": {
+     "author": "author-1",
+     "date": "2026-09-28",
+     "commit": "7925905"
+    },
+    "last_touched": {
+     "author": "author-2",
+     "date": "2026-10-02",
+     "commit": "e04aba3"
+    },
+    "status_history": [
+     {
+      "status": "active",
+      "author": "author-1",
+      "date": "2026-09-28",
+      "commit": "7925905"
+     }
+    ]
+   },
+   "findings": []
+  },
+  {
+   "id": "claude-input-delivery.md#residuals-kept-rather-than-closed",
+   "uuid": "c656c71f-77a8-40d4-ba71-75d5ce3ab28d",
+   "file": "claude-input-delivery.md",
+   "line": 386,
+   "end_line": 396,
+   "title": "Residuals kept rather than closed",
+   "type": [
+    "constraint"
+   ],
+   "status": "active",
+   "evidence": "confirmed",
+   "source": "PR #36; issue #16",
+   "verification": null,
+   "revisit_when": null,
+   "see": [],
+   "superseded_by": null,
+   "refs": [],
+   "git": {
+    "created": {
+     "author": "author-1",
+     "date": "2026-08-22",
+     "commit": "92a2354"
+    },
+    "last_touched": {
+     "author": "author-2",
+     "date": "2026-10-02",
+     "commit": "e04aba3"
+    },
+    "status_history": [
+     {
+      "status": "active",
+      "author": "author-1",
+      "date": "2026-08-22",
+      "commit": "92a2354"
+     }
+    ]
+   },
+   "findings": []
+  },
+  {
+   "id": "cmux-integration.md#the-socket-control-mode-is-the-user-s-setting-and-the-app-stopped-short-of-writing-it",
+   "uuid": "2b2b6e42-aa5e-446d-8644-2ba7c0ae60e1",
+   "file": "cmux-integration.md",
+   "line": 5,
+   "end_line": 27,
+   "title": "The socket control mode is the user's setting, and the app stopped short of writing it",
+   "type": [
+    "decision"
+   ],
+   "status": "active",
+   "evidence": "confirmed",
+   "source": "PR #60; `app/Sources/App/CmuxConfigHelp.swift`; denial measured from an external shell",
+   "verification": null,
+   "revisit_when": "cmux gains a supported way for an outside process to request automation mode, or `cmux settings automation` stops requiring a socket that automation mode is what grants",
+   "see": [],
+   "superseded_by": null,
+   "refs": [],
+   "git": {
+    "created": {
+     "author": "author-1",
+     "date": "2026-08-27",
+     "commit": "b929568"
+    },
+    "last_touched": {
+     "author": "author-2",
+     "date": "2026-10-02",
+     "commit": "e04aba3"
+    },
+    "status_history": [
+     {
+      "status": "active",
+      "author": "author-1",
+      "date": "2026-08-27",
+      "commit": "b929568"
+     }
+    ]
+   },
+   "findings": []
+  },
+  {
+   "id": "cmux-integration.md#only-an-oversized-send-waits-for-raw-mode-because-the-writer-cannot-see-the-truncation",
+   "uuid": "1f1d8a06-a0d3-42b8-923e-c154a91e335a",
+   "file": "cmux-integration.md",
+   "line": 28,
+   "end_line": 50,
+   "title": "Only an oversized send waits for raw mode, because the writer cannot see the truncation",
+   "type": [
+    "decision"
+   ],
+   "status": "active",
+   "evidence": "confirmed",
+   "source": "`app/Sources/Core/TerminalRunner.swift`, `app/Sources/Core/CmuxControl.swift`; Darwin 25.4.0 pty probe with the master drained as a terminal; PR #64; 2026-08-30 unified log",
+   "verification": null,
+   "revisit_when": "cmux exposes a reliable indication that the shell line editor is reading the new surface",
+   "see": [],
+   "superseded_by": null,
+   "refs": [],
+   "git": {
+    "created": {
+     "author": "author-1",
+     "date": "2026-08-29",
+     "commit": "42ba068"
+    },
+    "last_touched": {
+     "author": "author-2",
+     "date": "2026-10-02",
+     "commit": "e04aba3"
+    },
+    "status_history": [
+     {
+      "status": "active",
+      "author": "author-1",
+      "date": "2026-08-29",
+      "commit": "0a9e142"
+     }
+    ]
+   },
+   "findings": []
+  },
+  {
+   "id": "cmux-integration.md#each-cmux-channel-is-pinned-to-its-own-socket-because-discovery-crosses-channels",
+   "uuid": "e861eff1-4759-4c9b-8396-6d6500acb5aa",
+   "file": "cmux-integration.md",
+   "line": 51,
+   "end_line": 75,
+   "title": "Each cmux channel is pinned to its own socket, because discovery crosses channels",
+   "type": [
+    "decision"
+   ],
+   "status": "active",
+   "evidence": "confirmed",
+   "source": "`app/Sources/Core/CmuxControl.swift`, `app/Sources/Core/TerminalRunner.swift`, `app/Sources/App/PermissionChecker.swift`; stable/NIGHTLY pointer and cross-channel PONG measurements; PR #64",
+   "verification": null,
+   "revisit_when": "cmux changes its per-channel pointer files or makes CLI discovery channel-safe without an explicit socket",
+   "see": [],
+   "superseded_by": null,
+   "refs": [],
+   "git": {
+    "created": {
+     "author": "author-1",
+     "date": "2026-08-29",
+     "commit": "0a9e142"
+    },
+    "last_touched": {
+     "author": "author-2",
+     "date": "2026-10-02",
+     "commit": "e04aba3"
+    },
+    "status_history": [
+     {
+      "status": "active",
+      "author": "author-1",
+      "date": "2026-08-29",
+      "commit": "0a9e142"
+     }
+    ]
+   },
+   "findings": []
+  },
+  {
+   "id": "cmux-integration.md#cmux-rpc-is-the-only-control-path-and-it-carries-nine-methods",
+   "uuid": "024b2041-cb20-486b-b5d3-e2412c2728ce",
+   "file": "cmux-integration.md",
+   "line": 76,
+   "end_line": 93,
+   "title": "`cmux rpc` is the only control path, and it carries nine methods",
+   "type": [
+    "decision"
+   ],
+   "status": "active",
+   "evidence": "confirmed",
+   "source": "Issue #68 measurement round and PR #60; https://github.com/dazebug/terminal-checkout/issues/68#issuecomment-5487928294",
+   "verification": null,
+   "revisit_when": "the pinned cmux version moves — the raw v2 method names are not a stable public API",
+   "see": [],
+   "superseded_by": null,
+   "refs": [],
+   "git": {
+    "created": {
+     "author": "author-1",
+     "date": "2026-09-01",
+     "commit": "eb70d54"
+    },
+    "last_touched": {
+     "author": "author-2",
+     "date": "2026-10-02",
+     "commit": "e04aba3"
+    },
+    "status_history": [
+     {
+      "status": "active",
+      "author": "author-1",
+      "date": "2026-08-27",
+      "commit": "b929568"
+     }
+    ]
+   },
+   "findings": []
+  },
+  {
+   "id": "cmux-integration.md#grouped-placement-prefers-layout-creation-and-found-workspaces-use-balanced-target-splits",
+   "uuid": "a77a7192-b495-4b00-a093-d0869f0d8a6d",
+   "file": "cmux-integration.md",
+   "line": 94,
+   "end_line": 117,
+   "title": "Grouped placement prefers layout creation, and found workspaces use balanced target splits",
+   "type": [
+    "decision"
+   ],
+   "status": "active",
+   "evidence": "confirmed",
+   "source": "Issue #68 measurement comment and issue #69 driver measurements, 2026-09-01; https://github.com/dazebug/terminal-checkout/issues/68#issuecomment-5487928294",
+   "verification": null,
+   "revisit_when": "cmux changes layout execution, split targeting or ordering, `operation_id` validation, or the window scope of an unaddressed `workspace.list`",
+   "see": [],
+   "superseded_by": null,
+   "refs": [],
+   "git": {
+    "created": {
+     "author": "author-1",
+     "date": "2026-09-01",
+     "commit": "eb70d54"
+    },
+    "last_touched": {
+     "author": "author-2",
+     "date": "2026-10-02",
+     "commit": "e04aba3"
+    },
+    "status_history": [
+     {
+      "status": "active",
+      "author": "author-1",
+      "date": "2026-09-01",
+      "commit": "eb70d54"
+     }
+    ]
+   },
+   "findings": []
+  },
+  {
+   "id": "cmux-integration.md#a-launch-retry-is-decided-by-the-transport-failure-never-by-matching-a-message",
+   "uuid": "eab377e9-e7c7-42b6-a4d2-2dae534210e4",
+   "file": "cmux-integration.md",
+   "line": 118,
+   "end_line": 142,
+   "title": "A launch retry is decided by the transport failure, never by matching a message",
+   "type": [
+    "decision"
+   ],
+   "status": "active",
+   "evidence": "confirmed",
+   "source": "Issue #68 measurement item 3 and PR #60; https://github.com/dazebug/terminal-checkout/issues/68#issuecomment-5487928294",
+   "verification": null,
+   "revisit_when": "cmux changes either connection-phase error string, or gains an exit code that distinguishes them",
+   "see": [],
+   "superseded_by": null,
+   "refs": [],
+   "git": {
+    "created": {
+     "author": "author-1",
+     "date": "2026-08-27",
+     "commit": "b929568"
+    },
+    "last_touched": {
+     "author": "author-2",
+     "date": "2026-10-02",
+     "commit": "e04aba3"
+    },
+    "status_history": [
+     {
+      "status": "active",
+      "author": "author-1",
+      "date": "2026-08-27",
+      "commit": "b929568"
+     }
+    ]
+   },
+   "findings": []
+  },
+  {
+   "id": "cmux-integration.md#the-workspace-is-created-focused-and-unaddressed",
+   "uuid": "6d8dbc15-63fe-4d83-b70c-818b815e6a95",
+   "file": "cmux-integration.md",
+   "line": 143,
+   "end_line": 160,
+   "title": "The workspace is created focused and unaddressed",
+   "type": [
+    "decision"
+   ],
+   "status": "active",
+   "evidence": "confirmed",
+   "source": "Issue #68 measurement item 1 and PR #60; https://github.com/dazebug/terminal-checkout/issues/68#issuecomment-5487928294",
+   "verification": null,
+   "revisit_when": "cmux changes how an unaddressed or addressed `workspace.create` pick their window target",
+   "see": [],
+   "superseded_by": null,
+   "refs": [
+    "tab-activation.md"
+   ],
+   "git": {
+    "created": {
+     "author": "author-1",
+     "date": "2026-08-27",
+     "commit": "b929568"
+    },
+    "last_touched": {
+     "author": "author-2",
+     "date": "2026-10-02",
+     "commit": "e04aba3"
+    },
+    "status_history": [
+     {
+      "status": "active",
+      "author": "author-1",
+      "date": "2026-08-27",
+      "commit": "b929568"
+     }
+    ]
+   },
+   "findings": []
+  },
+  {
+   "id": "cmux-integration.md#the-tty-comes-from-debug-terminals-not-from-the-pane",
+   "uuid": "c89fcdd5-d141-4617-b942-5007ee4a2277",
+   "file": "cmux-integration.md",
+   "line": 161,
+   "end_line": 182,
+   "title": "The tty comes from `debug.terminals`, not from the pane",
+   "type": [
+    "decision"
+   ],
+   "status": "active",
+   "evidence": "confirmed",
+   "source": "Issue #68 measurement items 2 and 6 and PR #60; https://github.com/dazebug/terminal-checkout/issues/68#issuecomment-5487928294",
+   "verification": null,
+   "revisit_when": "cmux exposes the tty on the workspace-creation response or changes `debug.terminals` semantics",
+   "see": [],
+   "superseded_by": null,
+   "refs": [],
+   "git": {
+    "created": {
+     "author": "author-1",
+     "date": "2026-08-27",
+     "commit": "b929568"
+    },
+    "last_touched": {
+     "author": "author-2",
+     "date": "2026-10-02",
+     "commit": "e04aba3"
+    },
+    "status_history": [
+     {
+      "status": "active",
+      "author": "author-1",
+      "date": "2026-08-27",
+      "commit": "b929568"
+     }
+    ]
+   },
+   "findings": []
+  },
+  {
+   "id": "cmux-integration.md#split-order-halves-the-active-pane-balanced-order-or-layout-preserves-width-and-equalization-normalizes-a-linear-chain",
+   "uuid": "d95f34cd-d7e2-4d24-933b-796136f91e49",
+   "file": "cmux-integration.md",
+   "line": 183,
+   "end_line": 225,
+   "title": "Split order halves the active pane; balanced order or layout preserves width, and equalization normalizes a linear chain",
+   "type": [
+    "decision"
+   ],
+   "status": "active",
+   "evidence": "confirmed",
+   "source": "Issue #68 items 5, 7, 8, 9, 10, 11, 12, and 13; https://github.com/dazebug/terminal-checkout/issues/68#issuecomment-5487928294",
+   "verification": null,
+   "revisit_when": "layout geometry, minimum shell column rules, or cmux split defaults move on this machine",
+   "see": [],
+   "superseded_by": null,
+   "refs": [],
+   "git": {
+    "created": {
+     "author": "author-1",
+     "date": "2026-09-01",
+     "commit": "e5b1b9b"
+    },
+    "last_touched": {
+     "author": "author-2",
+     "date": "2026-10-02",
+     "commit": "e04aba3"
+    },
+    "status_history": [
+     {
+      "status": "active",
+      "author": "author-1",
+      "date": "2026-09-01",
+      "commit": "e5b1b9b"
+     }
+    ]
+   },
+   "findings": []
+  },
+  {
+   "id": "cmux-integration.md#cmux-needs-no-pane-proof-so-delivery-continues-in-a-background-tab",
+   "uuid": "0af4adab-5942-4019-9a12-3894e0285dd4",
+   "file": "cmux-integration.md",
+   "line": 226,
+   "end_line": 243,
+   "title": "cmux needs no pane proof, so delivery continues in a background tab",
+   "type": [
+    "decision"
+   ],
+   "status": "active",
+   "evidence": "confirmed",
+   "source": "Issue #68 item 6 and PR #60; contrasted with the Warp path in `claude-input-delivery.md`; https://github.com/dazebug/terminal-checkout/issues/68#issuecomment-5487928294",
+   "verification": null,
+   "revisit_when": "`surface.read_text` no longer accepts an explicit surface id or no longer accepts `surface_id`",
+   "see": [],
+   "superseded_by": null,
+   "refs": [
+    "claude-input-delivery.md"
+   ],
+   "git": {
+    "created": {
+     "author": "author-1",
+     "date": "2026-08-27",
+     "commit": "b929568"
+    },
+    "last_touched": {
+     "author": "author-2",
+     "date": "2026-10-02",
+     "commit": "e04aba3"
+    },
+    "status_history": [
+     {
+      "status": "active",
+      "author": "author-1",
+      "date": "2026-08-27",
+      "commit": "b929568"
+     }
+    ]
+   },
+   "findings": []
+  },
+  {
+   "id": "cmux-integration.md#placement-contract-matrix-for-cmux-0-64-22-102-ddd4a01bc",
+   "uuid": null,
+   "file": "cmux-integration.md",
+   "line": 244,
+   "end_line": 264,
+   "title": "Placement contract matrix for cmux 0.64.22 (102) [ddd4a01bc]",
+   "type": [],
+   "status": "",
+   "evidence": "",
+   "source": null,
+   "verification": null,
+   "revisit_when": null,
+   "see": [],
+   "superseded_by": null,
+   "refs": [],
+   "git": {
+    "created": {
+     "author": "author-1",
+     "date": "2026-09-01",
+     "commit": "e5b1b9b"
+    },
+    "last_touched": {
+     "author": "author-1",
+     "date": "2026-09-01",
+     "commit": "eb70d54"
+    },
+    "status_history": []
+   },
+   "findings": [
+    {
+     "severity": "warning",
+     "code": "W102",
+     "line": 244,
+     "message": "'Placement contract matrix for cmux 0.64.22 (102) [ddd4a01bc]': level-2 heading without any schema fields — fine for a prose section, an error if this was meant to be an entry"
+    }
+   ]
+  },
+  {
+   "id": "github-page-reading.md#the-repository-crumb-is-found-through-the-banner-landmark-from-one-set-of-selectors",
+   "uuid": "cbe0221a-f3e0-44ed-af81-62af9c328fbf",
+   "file": "github-page-reading.md",
+   "line": 3,
+   "end_line": 33,
+   "title": "The repository crumb is found through the banner landmark, from one set of selectors",
+   "type": [
+    "incident",
+    "decision"
+   ],
+   "status": "active",
+   "evidence": "confirmed",
+   "source": "PR #85; `repoCrumbSelectors` in `extension/defaults.js`; `tests/buttons.test.js` (`the repository crumb selectors have one home, and both readers take them from it`)",
+   "verification": null,
+   "revisit_when": "GitHub's global header stops being a `<header>` outside `<main>` or stops carrying the repository crumb, or the extension gains a build step that could inline shared code into an injected function",
+   "see": [],
+   "superseded_by": null,
+   "refs": [
+    "testing.md"
+   ],
+   "git": {
+    "created": {
+     "author": "author-1",
+     "date": "2026-09-24",
+     "commit": "3a38b3c"
+    },
+    "last_touched": {
+     "author": "author-2",
+     "date": "2026-10-02",
+     "commit": "e04aba3"
+    },
+    "status_history": [
+     {
+      "status": "active",
+      "author": "author-1",
+      "date": "2026-09-24",
+      "commit": "3a38b3c"
+     }
+    ]
+   },
+   "findings": []
+  },
+  {
+   "id": "github-page-reading.md#a-pr-header-s-branch-links-are-picked-by-document-order-never-by-screen-position",
+   "uuid": "b650e7ed-8f9d-4496-ba10-2f6d80c0fe9d",
+   "file": "github-page-reading.md",
+   "line": 34,
+   "end_line": 58,
+   "title": "A PR header's branch links are picked by document order, never by screen position",
+   "type": [
+    "incident",
+    "decision"
+   ],
+   "status": "active",
+   "evidence": "confirmed",
+   "source": "PR #86; `PR_BRANCH_LINK_SELECTOR` in `extension/defaults.js`; `tests/buttons.test.js` (`the PR branch links have one home, and neither reader finds them by screen position`)",
+   "verification": null,
+   "revisit_when": "GitHub's PR header stops naming the base before the head, or stops rendering the branches as links",
+   "see": [],
+   "superseded_by": null,
+   "refs": [],
+   "git": {
+    "created": {
+     "author": "author-1",
+     "date": "2026-09-24",
+     "commit": "3aa6c98"
+    },
+    "last_touched": {
+     "author": "author-2",
+     "date": "2026-10-02",
+     "commit": "e04aba3"
+    },
+    "status_history": [
+     {
+      "status": "active",
+      "author": "author-1",
+      "date": "2026-09-24",
+      "commit": "3aa6c98"
+     }
+    ]
+   },
+   "findings": []
+  },
+  {
+   "id": "github-page-reading.md#github-s-own-navigation-is-noticed-by-the-insert-passes-not-only-by-the-history-wrappers",
+   "uuid": "1b700745-e9b9-4447-b927-c91e165270ec",
+   "file": "github-page-reading.md",
+   "line": 59,
+   "end_line": 72,
+   "title": "GitHub's own navigation is noticed by the insert passes, not only by the history wrappers",
+   "type": [
+    "decision"
+   ],
+   "status": "active",
+   "evidence": "confirmed",
+   "source": "PR #90; `tryInsertButton` and `onUrlChange` in `extension/content.js`; `tests/claude-note.test.js` (`every insert pass asks whether the page moved before it draws, so a move the history wrappers missed is seen (lint)`)",
+   "verification": null,
+   "revisit_when": "the extension gains a main-world script, or GitHub's navigation starts firing an event a content script can hear",
+   "see": [],
+   "superseded_by": null,
+   "refs": [],
+   "git": {
+    "created": {
+     "author": "author-1",
+     "date": "2026-09-28",
+     "commit": "7925905"
+    },
+    "last_touched": {
+     "author": "author-2",
+     "date": "2026-10-02",
+     "commit": "e04aba3"
+    },
+    "status_history": [
+     {
+      "status": "active",
+      "author": "author-1",
+      "date": "2026-09-28",
+      "commit": "7925905"
+     }
+    ]
+   },
+   "findings": []
+  },
+  {
+   "id": "github-page-reading.md#an-insert-pass-that-waited-through-a-move-draws-nothing-a-page-generation-kept-apart-from-the-list-generation",
+   "uuid": "99f9de38-7cec-426d-b1ae-9400a8fb7f12",
+   "file": "github-page-reading.md",
+   "line": 73,
+   "end_line": 91,
+   "title": "An insert pass that waited through a move draws nothing: a page generation, kept apart from the list generation",
+   "type": [
+    "decision"
+   ],
+   "status": "active",
+   "evidence": "confirmed",
+   "source": "PR #90; `pageGeneration`, `pageChangedSince` and `removeInsertedButtons` in `extension/content.js`; `tests/claude-note.test.js` (`a pass that started on a page draws nothing once that page is gone: every await in it is followed by a page check (lint)`)",
+   "verification": null,
+   "revisit_when": "an insert pass gains an await of a new kind, or the list generation changes meaning",
+   "see": [],
+   "superseded_by": null,
+   "refs": [],
+   "git": {
+    "created": {
+     "author": "author-1",
+     "date": "2026-09-28",
+     "commit": "7925905"
+    },
+    "last_touched": {
+     "author": "author-2",
+     "date": "2026-10-02",
+     "commit": "e04aba3"
+    },
+    "status_history": [
+     {
+      "status": "active",
+      "author": "author-1",
+      "date": "2026-09-28",
+      "commit": "7925905"
+     }
+    ]
+   },
+   "findings": []
+  },
+  {
+   "id": "knowledge-capture.md#the-skill-is-vendored-into-the-repository",
+   "uuid": "70ed5c23-86d4-4719-82ef-2dbfbbf8f629",
+   "file": "knowledge-capture.md",
+   "line": 7,
+   "end_line": 27,
+   "title": "The skill is vendored into the repository",
+   "type": [
+    "decision"
+   ],
+   "status": "active",
+   "evidence": "confirmed",
+   "source": "`skills-lock.json`; `.agents/skills/keep-the-why/`",
+   "verification": null,
+   "revisit_when": "the skill gains a release cadence that makes manual updates a burden, or a shared marketplace copy exists",
+   "see": [],
+   "superseded_by": null,
+   "refs": [],
+   "git": {
+    "created": {
+     "author": "author-1",
+     "date": "2026-08-22",
+     "commit": "92a2354"
+    },
+    "last_touched": {
+     "author": "author-2",
+     "date": "2026-10-02",
+     "commit": "e04aba3"
+    },
+    "status_history": [
+     {
+      "status": "active",
+      "author": "author-1",
+      "date": "2026-08-22",
+      "commit": "92a2354"
+     }
+    ]
+   },
+   "findings": []
+  },
+  {
+   "id": "knowledge-capture.md#personal-preferences-live-outside-the-repository",
+   "uuid": "0363fd6d-1d12-4a5c-b65c-52712eebd698",
+   "file": "knowledge-capture.md",
+   "line": 28,
+   "end_line": 44,
+   "title": "Personal preferences live outside the repository",
+   "type": [
+    "decision"
+   ],
+   "status": "active",
+   "evidence": "confirmed",
+   "source": "`CLAUDE.md` import line; Claude Code memory documentation",
+   "verification": null,
+   "revisit_when": "this repository stops using worktrees, or Claude Code changes how local instruction files resolve",
+   "see": [],
+   "superseded_by": null,
+   "refs": [],
+   "git": {
+    "created": {
+     "author": "author-1",
+     "date": "2026-08-22",
+     "commit": "92a2354"
+    },
+    "last_touched": {
+     "author": "author-2",
+     "date": "2026-10-02",
+     "commit": "e04aba3"
+    },
+    "status_history": [
+     {
+      "status": "active",
+      "author": "author-1",
+      "date": "2026-08-22",
+      "commit": "92a2354"
+     }
+    ]
+   },
+   "findings": []
+  },
+  {
+   "id": "knowledge-capture.md#no-session-start-hook",
+   "uuid": "ff9babaa-e04a-4a2e-8f9f-4fa76c64787f",
+   "file": "knowledge-capture.md",
+   "line": 45,
+   "end_line": 57,
+   "title": "No session-start hook",
+   "type": [
+    "decision"
+   ],
+   "status": "active",
+   "evidence": "confirmed",
+   "source": null,
+   "verification": null,
+   "revisit_when": "`context/` is observably going stale because the skill is not being reached for",
+   "see": [],
+   "superseded_by": null,
+   "refs": [],
+   "git": {
+    "created": {
+     "author": "author-1",
+     "date": "2026-08-22",
+     "commit": "92a2354"
+    },
+    "last_touched": {
+     "author": "author-2",
+     "date": "2026-10-02",
+     "commit": "e04aba3"
+    },
+    "status_history": [
+     {
+      "status": "active",
+      "author": "author-1",
+      "date": "2026-08-22",
+      "commit": "92a2354"
+     }
+    ]
+   },
+   "findings": []
+  },
+  {
+   "id": "localization.md#catalogues-live-in-contents-resources-tag-lproj-and-are-read-with-bundle-path",
+   "uuid": "f67231e9-fb4e-4423-b469-2c782e17952f",
+   "file": "localization.md",
+   "line": 5,
+   "end_line": 20,
+   "title": "Catalogues live in `Contents/Resources/<tag>.lproj` and are read with `Bundle(path:)`",
+   "type": [
+    "decision"
+   ],
+   "status": "active",
+   "evidence": "confirmed",
+   "source": "issue #24, which prescribed the opposite; PR #41; `app/Sources/App/Localization.swift`, `app/Package.swift:15-21`, `app/verify-bundle.sh`",
+   "verification": null,
+   "revisit_when": "the `.app` stops being assembled by hand in `build.sh`, or SwiftPM's generated accessor stops falling back to a build-machine path",
+   "see": [],
+   "superseded_by": null,
+   "refs": [],
+   "git": {
+    "created": {
+     "author": "author-1",
+     "date": "2026-08-25",
+     "commit": "0112613"
+    },
+    "last_touched": {
+     "author": "author-2",
+     "date": "2026-10-02",
+     "commit": "e04aba3"
+    },
+    "status_history": [
+     {
+      "status": "active",
+      "author": "author-1",
+      "date": "2026-08-25",
+      "commit": "0112613"
+     }
+    ]
+   },
+   "findings": []
+  },
+  {
+   "id": "localization.md#the-app-owns-the-language-and-it-flows-one-way-to-the-extension",
+   "uuid": "39fe9aa5-5acc-4a61-9629-958bd12d643c",
+   "file": "localization.md",
+   "line": 21,
+   "end_line": 43,
+   "title": "The app owns the language, and it flows one way to the extension",
+   "type": [
+    "decision"
+   ],
+   "status": "superseded",
+   "evidence": "confirmed",
+   "source": "issue #24; PR #41; the picker in `app/Sources/App/SetupWindowController.swift`",
+   "verification": null,
+   "revisit_when": "the setup window stops being the first screen a user sees, or the extension gains a way to answer before the app can",
+   "see": [],
+   "superseded_by": "27f28f36-ca2c-4747-8137-c2a0e0e7d66a",
+   "refs": [],
+   "git": {
+    "created": {
+     "author": "author-1",
+     "date": "2026-08-25",
+     "commit": "0112613"
+    },
+    "last_touched": {
+     "author": "author-2",
+     "date": "2026-10-02",
+     "commit": "e04aba3"
+    },
+    "status_history": [
+     {
+      "status": "superseded",
+      "author": "author-1",
+      "date": "2026-08-25",
+      "commit": "0112613"
+     }
+    ]
+   },
+   "findings": []
+  },
+  {
+   "id": "localization.md#each-surface-follows-its-own-platform-macos-answers-for-the-app-chrome-for-the-extension",
+   "uuid": "27f28f36-ca2c-4747-8137-c2a0e0e7d66a",
+   "file": "localization.md",
+   "line": 44,
+   "end_line": 63,
+   "title": "Each surface follows its own platform: macOS answers for the app, Chrome for the extension",
+   "type": [
+    "decision"
+   ],
+   "status": "active",
+   "evidence": "confirmed",
+   "source": "user decision, 2026-08-24; PR #41; `extension/i18n.js`, `extension/_locales/`",
+   "verification": null,
+   "revisit_when": "Chrome gains a per-extension language setting, or the product decides that one language across both surfaces is worth a synchronization protocol again",
+   "see": [],
+   "superseded_by": null,
+   "refs": [],
+   "git": {
+    "created": {
+     "author": "author-1",
+     "date": "2026-08-25",
+     "commit": "0112613"
+    },
+    "last_touched": {
+     "author": "author-2",
+     "date": "2026-10-02",
+     "commit": "e04aba3"
+    },
+    "status_history": [
+     {
+      "status": "active",
+      "author": "author-1",
+      "date": "2026-08-25",
+      "commit": "0112613"
+     }
+    ]
+   },
+   "findings": []
+  },
+  {
+   "id": "localization.md#the-compatibility-passenger-protected-a-state-chrome-refuses-to-construct",
+   "uuid": "e40c7f67-54ad-4205-b786-08a95492195f",
+   "file": "localization.md",
+   "line": 64,
+   "end_line": 86,
+   "title": "The compatibility passenger protected a state Chrome refuses to construct",
+   "type": [
+    "incident",
+    "decision"
+   ],
+   "status": "active",
+   "evidence": "confirmed",
+   "source": "issue #45; `tests/i18n.test.js` (the extension-root reserved-name gate); PR #41 for what was retired",
+   "verification": null,
+   "revisit_when": "a future release removes or renames a file that the previous release's manifest or `importScripts` list names",
+   "see": [
+    {
+     "locator": "localization.md#what-the-atomic-extension-folder-swap-does-not-buy",
+     "uuid": "22e55e5d-9eb8-475c-b31f-f309b8db9502",
+     "date": "2026-10-02",
+     "file": "localization.md",
+     "anchor": "what-the-atomic-extension-folder-swap-does-not-buy",
+     "remote": null
+    }
+   ],
+   "superseded_by": null,
+   "refs": [],
+   "git": {
+    "created": {
+     "author": "author-1",
+     "date": "2026-08-25",
+     "commit": "a13fa48"
+    },
+    "last_touched": {
+     "author": "author-2",
+     "date": "2026-10-02",
+     "commit": "e04aba3"
+    },
+    "status_history": [
+     {
+      "status": "active",
+      "author": "author-1",
+      "date": "2026-08-25",
+      "commit": "0112613"
+     }
+    ]
+   },
+   "findings": []
+  },
+  {
+   "id": "localization.md#three-stores-three-verdicts",
+   "uuid": "81124b9f-7683-4020-bcfb-c210929e86db",
+   "file": "localization.md",
+   "line": 87,
+   "end_line": 105,
+   "title": "Three stores, three verdicts",
+   "type": [
+    "decision"
+   ],
+   "status": "superseded",
+   "evidence": "confirmed",
+   "source": "PR #41; `app/Tests/AppTests/CatalogueOwnershipTests.swift`, `tools/check-locales.js`, `extension/_locales/`",
+   "verification": null,
+   "revisit_when": "—",
+   "see": [],
+   "superseded_by": "e40c7f67-54ad-4205-b786-08a95492195f",
+   "refs": [],
+   "git": {
+    "created": {
+     "author": "author-1",
+     "date": "2026-08-25",
+     "commit": "0112613"
+    },
+    "last_touched": {
+     "author": "author-2",
+     "date": "2026-10-02",
+     "commit": "e04aba3"
+    },
+    "status_history": [
+     {
+      "status": "superseded",
+      "author": "author-1",
+      "date": "2026-08-25",
+      "commit": "a13fa48"
+     }
+    ]
+   },
+   "findings": []
+  },
+  {
+   "id": "localization.md#the-boundary-for-applelanguages-is-the-first-localization-lookup-not-the-existence-of-appkit",
+   "uuid": "30245858-67c9-494a-ba50-0031cad924c8",
+   "file": "localization.md",
+   "line": 106,
+   "end_line": 133,
+   "title": "The boundary for `AppleLanguages` is the first localization lookup, not the existence of AppKit",
+   "type": [
+    "decision"
+   ],
+   "status": "active",
+   "evidence": "confirmed",
+   "source": "PR #41 (ledger D301–D309); `applyStoredLanguageToAppKit` in `app/Sources/App/main.swift`, `AppLocalization` in `app/Sources/App/Localization.swift`",
+   "verification": null,
+   "revisit_when": "AppKit starts honouring a language change mid-process, or the app gains a second entry point that draws UI",
+   "see": [],
+   "superseded_by": null,
+   "refs": [],
+   "git": {
+    "created": {
+     "author": "author-1",
+     "date": "2026-08-25",
+     "commit": "0112613"
+    },
+    "last_touched": {
+     "author": "author-2",
+     "date": "2026-10-02",
+     "commit": "e04aba3"
+    },
+    "status_history": [
+     {
+      "status": "active",
+      "author": "author-1",
+      "date": "2026-08-25",
+      "commit": "0112613"
+     }
+    ]
+   },
+   "findings": []
+  },
+  {
+   "id": "localization.md#retired-the-published-locale-was-one-value-under-one-key",
+   "uuid": "44af6d9a-05d9-471a-bd1e-c712b99d3fa7",
+   "file": "localization.md",
+   "line": 134,
+   "end_line": 159,
+   "title": "Retired: the published locale was one value under one key",
+   "type": [
+    "decision"
+   ],
+   "status": "superseded",
+   "evidence": "confirmed",
+   "source": "round 9 review; PR #41; the pre-A6 `LocaleState` implementation and its focused tests",
+   "verification": null,
+   "revisit_when": null,
+   "see": [],
+   "superseded_by": "none — A6 removed the app-to-extension publication protocol; this entry records the retired design",
+   "refs": [],
+   "git": {
+    "created": {
+     "author": "author-1",
+     "date": "2026-08-25",
+     "commit": "0112613"
+    },
+    "last_touched": {
+     "author": "author-2",
+     "date": "2026-10-02",
+     "commit": "e04aba3"
+    },
+    "status_history": [
+     {
+      "status": "superseded",
+      "author": "author-1",
+      "date": "2026-08-25",
+      "commit": "0112613"
+     }
+    ]
+   },
+   "findings": []
+  },
+  {
+   "id": "localization.md#the-warp-tab-config-marker-is-a-permanent-machine-protocol-token",
+   "uuid": "87bbeb80-7c9a-4dc8-8bfa-e7bc9926cc2f",
+   "file": "localization.md",
+   "line": 160,
+   "end_line": 180,
+   "title": "The Warp tab-config marker is a permanent machine protocol token",
+   "type": [
+    "decision"
+   ],
+   "status": "active",
+   "evidence": "confirmed",
+   "source": "PR #41; `app/Sources/Core/WarpControl.swift:24` and `:63-73`, `uninstall.sh:69-70`",
+   "verification": null,
+   "revisit_when": "the tab-config file format changes, or Warp starts giving `#!` lines a meaning",
+   "see": [],
+   "superseded_by": null,
+   "refs": [],
+   "git": {
+    "created": {
+     "author": "author-1",
+     "date": "2026-08-25",
+     "commit": "0112613"
+    },
+    "last_touched": {
+     "author": "author-2",
+     "date": "2026-10-02",
+     "commit": "e04aba3"
+    },
+    "status_history": [
+     {
+      "status": "active",
+      "author": "author-1",
+      "date": "2026-08-25",
+      "commit": "0112613"
+     }
+    ]
+   },
+   "findings": []
+  },
+  {
+   "id": "localization.md#the-bytes-a-user-typed-are-carried-not-normalized",
+   "uuid": "de14faad-28a5-4358-a45d-fcccaab7e218",
+   "file": "localization.md",
+   "line": 181,
+   "end_line": 200,
+   "title": "The bytes a user typed are carried, not normalized",
+   "type": [
+    "decision"
+   ],
+   "status": "active",
+   "evidence": "confirmed",
+   "source": "PR #41; `runAppleScript` in `app/Sources/Core/AppleScriptSupport.swift`, `wezTermFallbackArguments` in `app/Sources/Core/TerminalRunner.swift`",
+   "verification": null,
+   "revisit_when": "a value that is not a path has to cross `Process.arguments` or the environment, or Foundation stops re-encoding them",
+   "see": [],
+   "superseded_by": null,
+   "refs": [],
+   "git": {
+    "created": {
+     "author": "author-1",
+     "date": "2026-08-25",
+     "commit": "0112613"
+    },
+    "last_touched": {
+     "author": "author-2",
+     "date": "2026-10-02",
+     "commit": "e04aba3"
+    },
+    "status_history": [
+     {
+      "status": "active",
+      "author": "author-1",
+      "date": "2026-08-25",
+      "commit": "0112613"
+     }
+    ]
+   },
+   "findings": []
+  },
+  {
+   "id": "localization.md#a-localized-string-may-never-become-machine-input-and-the-type-says-so",
+   "uuid": "64355dd5-9db1-49aa-b267-6c578542e9d3",
+   "file": "localization.md",
+   "line": 201,
+   "end_line": 215,
+   "title": "A localized string may never become machine input, and the type says so",
+   "type": [
+    "constraint"
+   ],
+   "status": "active",
+   "evidence": "confirmed",
+   "source": "PR #41; `ShellPayload` and `localized` in `app/Sources/App/Localization.swift`, `testCommand` in `app/Sources/App/SetupWindowController.swift:177`, `renderCommand` in `app/Sources/Core/CommandRenderer.swift`",
+   "verification": null,
+   "revisit_when": "a string has to be both translated and executed, or a second value earns the whitelist exemption",
+   "see": [],
+   "superseded_by": null,
+   "refs": [],
+   "git": {
+    "created": {
+     "author": "author-1",
+     "date": "2026-08-25",
+     "commit": "0112613"
+    },
+    "last_touched": {
+     "author": "author-2",
+     "date": "2026-10-02",
+     "commit": "e04aba3"
+    },
+    "status_history": [
+     {
+      "status": "active",
+      "author": "author-1",
+      "date": "2026-08-25",
+      "commit": "0112613"
+     }
+    ]
+   },
+   "findings": []
+  },
+  {
+   "id": "localization.md#the-installer-scripts-stay-english",
+   "uuid": "72562a08-7ce1-4e24-8087-abbf89ab5be5",
+   "file": "localization.md",
+   "line": 216,
+   "end_line": 228,
+   "title": "The installer scripts stay English",
+   "type": [
+    "decision"
+   ],
+   "status": "active",
+   "evidence": "confirmed",
+   "source": "`install.sh:117-120`, `uninstall.sh:122-125`; issue #24's checklist item on removing the transitional label glosses",
+   "verification": null,
+   "revisit_when": "the app gains a way to be configured before its first launch, or installation stops going through a shell script",
+   "see": [],
+   "superseded_by": null,
+   "refs": [],
+   "git": {
+    "created": {
+     "author": "author-1",
+     "date": "2026-08-25",
+     "commit": "0112613"
+    },
+    "last_touched": {
+     "author": "author-2",
+     "date": "2026-10-02",
+     "commit": "e04aba3"
+    },
+    "status_history": [
+     {
+      "status": "active",
+      "author": "author-1",
+      "date": "2026-08-25",
+      "commit": "0112613"
+     }
+    ]
+   },
+   "findings": []
+  },
+  {
+   "id": "localization.md#rejected-deferring-a-language-restart-instead-of-refusing-it",
+   "uuid": "3e576a5f-2483-4721-aeac-3cb0236cfb78",
+   "file": "localization.md",
+   "line": 229,
+   "end_line": 241,
+   "title": "Rejected: deferring a language restart instead of refusing it",
+   "type": [
+    "decision"
+   ],
+   "status": "active",
+   "evidence": "confirmed",
+   "source": "PR #41; `LocaleRestartGate` in `app/Sources/App/Settings.swift`, `restartForLanguage` in `app/Sources/App/SetupWindowController.swift`",
+   "verification": null,
+   "revisit_when": "claude input delivery gains a bounded worst case, or the restart stops being user-initiated",
+   "see": [],
+   "superseded_by": null,
+   "refs": [],
+   "git": {
+    "created": {
+     "author": "author-1",
+     "date": "2026-08-25",
+     "commit": "0112613"
+    },
+    "last_touched": {
+     "author": "author-2",
+     "date": "2026-10-02",
+     "commit": "e04aba3"
+    },
+    "status_history": [
+     {
+      "status": "active",
+      "author": "author-1",
+      "date": "2026-08-25",
+      "commit": "0112613"
+     }
+    ]
+   },
+   "findings": []
+  },
+  {
+   "id": "localization.md#restart-notes-use-a-closed-state",
+   "uuid": "8d1f6fed-eb5f-44fe-90f7-33a8f597f44b",
+   "file": "localization.md",
+   "line": 242,
+   "end_line": 253,
+   "title": "Restart notes use a closed state",
+   "type": [
+    "constraint"
+   ],
+   "status": "active",
+   "evidence": "confirmed",
+   "source": "PR #41 (closing change); `LanguageNoteState` and `languageNote` in `app/Sources/App/SetupWindowController.swift`",
+   "verification": null,
+   "revisit_when": "the language card gains another mutually exclusive restart outcome",
+   "see": [],
+   "superseded_by": null,
+   "refs": [],
+   "git": {
+    "created": {
+     "author": "author-1",
+     "date": "2026-08-25",
+     "commit": "0112613"
+    },
+    "last_touched": {
+     "author": "author-2",
+     "date": "2026-10-02",
+     "commit": "e04aba3"
+    },
+    "status_history": [
+     {
+      "status": "active",
+      "author": "author-1",
+      "date": "2026-08-25",
+      "commit": "0112613"
+     }
+    ]
+   },
+   "findings": []
+  },
+  {
+   "id": "localization.md#residual-the-compatibility-cache-s-fence-is-per-worker-not-per-account",
+   "uuid": "635a33a2-2775-4497-ac6b-18c298ed5c24",
+   "file": "localization.md",
+   "line": 254,
+   "end_line": 272,
+   "title": "Residual: the compatibility cache's fence is per worker, not per account",
+   "type": [
+    "constraint"
+   ],
+   "status": "superseded",
+   "evidence": "unknown",
+   "source": "PR #41",
+   "verification": null,
+   "revisit_when": "—",
+   "see": [],
+   "superseded_by": "e40c7f67-54ad-4205-b786-08a95492195f",
+   "refs": [],
+   "git": {
+    "created": {
+     "author": "author-1",
+     "date": "2026-08-25",
+     "commit": "0112613"
+    },
+    "last_touched": {
+     "author": "author-2",
+     "date": "2026-10-02",
+     "commit": "e04aba3"
+    },
+    "status_history": [
+     {
+      "status": "active",
+      "author": "author-1",
+      "date": "2026-08-25",
+      "commit": "0112613"
+     },
+     {
+      "status": "superseded",
+      "author": "author-1",
+      "date": "2026-08-25",
+      "commit": "a13fa48"
+     }
+    ]
+   },
+   "findings": []
+  },
+  {
+   "id": "localization.md#what-the-atomic-extension-folder-swap-does-not-buy",
+   "uuid": "22e55e5d-9eb8-475c-b31f-f309b8db9502",
+   "file": "localization.md",
+   "line": 273,
+   "end_line": 286,
+   "title": "What the atomic extension-folder swap does not buy",
+   "type": [
+    "constraint"
+   ],
+   "status": "active",
+   "evidence": "confirmed",
+   "source": "PR #41 (measured replacement probe); `app/Sources/App/Installer.swift`",
+   "verification": null,
+   "revisit_when": "Chrome gains a way to snapshot an unpacked extension folder, or the folder stops being read file by file",
+   "see": [],
+   "superseded_by": null,
+   "refs": [],
+   "git": {
+    "created": {
+     "author": "author-1",
+     "date": "2026-08-25",
+     "commit": "0112613"
+    },
+    "last_touched": {
+     "author": "author-2",
+     "date": "2026-10-02",
+     "commit": "e04aba3"
+    },
+    "status_history": [
+     {
+      "status": "active",
+      "author": "author-1",
+      "date": "2026-08-25",
+      "commit": "0112613"
+     }
+    ]
+   },
+   "findings": []
+  },
+  {
+   "id": "localization.md#closure-follow-up-seeds",
+   "uuid": null,
+   "file": "localization.md",
+   "line": 287,
+   "end_line": 296,
+   "title": "Closure follow-up seeds",
+   "type": [],
+   "status": "",
+   "evidence": "",
+   "source": null,
+   "verification": null,
+   "revisit_when": null,
+   "see": [],
+   "superseded_by": null,
+   "refs": [],
+   "git": {
+    "created": {
+     "author": "author-1",
+     "date": "2026-08-25",
+     "commit": "0112613"
+    },
+    "last_touched": {
+     "author": "author-1",
+     "date": "2026-08-25",
+     "commit": "0112613"
+    },
+    "status_history": []
+   },
+   "findings": [
+    {
+     "severity": "warning",
+     "code": "W102",
+     "line": 287,
+     "message": "'Closure follow-up seeds': level-2 heading without any schema fields — fine for a prose section, an error if this was meant to be an entry"
+    }
+   ]
+  },
+  {
+   "id": "localization.md#closure-dispositions-preserved-from-pr-41",
+   "uuid": null,
+   "file": "localization.md",
+   "line": 297,
+   "end_line": 315,
+   "title": "Closure dispositions preserved from PR #41",
+   "type": [],
+   "status": "",
+   "evidence": "",
+   "source": null,
+   "verification": null,
+   "revisit_when": null,
+   "see": [],
+   "superseded_by": null,
+   "refs": [
+    "testing.md"
+   ],
+   "git": {
+    "created": {
+     "author": "author-1",
+     "date": "2026-08-25",
+     "commit": "0112613"
+    },
+    "last_touched": {
+     "author": "author-1",
+     "date": "2026-08-25",
+     "commit": "0112613"
+    },
+    "status_history": []
+   },
+   "findings": [
+    {
+     "severity": "warning",
+     "code": "W102",
+     "line": 297,
+     "message": "'Closure dispositions preserved from PR #41': level-2 heading without any schema fields — fine for a prose section, an error if this was meant to be an entry"
+    }
+   ]
+  },
+  {
+   "id": "options-page-reordering.md#a-row-drag-stays-in-its-card",
+   "uuid": "10864b16-6bd6-4b3e-a4ab-458a89b9cf58",
+   "file": "options-page-reordering.md",
+   "line": 5,
+   "end_line": 20,
+   "title": "A row drag stays in its card",
+   "type": [
+    "decision"
+   ],
+   "status": "active",
+   "evidence": "confirmed",
+   "source": "PR #57 (commit `53d49e4`); measured with a disposable out-of-tree jsdom harness, not committed — see the testing entry for its shape and limits",
+   "verification": null,
+   "revisit_when": "cross-card row moves become an explicit product requirement",
+   "see": [],
+   "superseded_by": null,
+   "refs": [],
+   "git": {
+    "created": {
+     "author": "author-1",
+     "date": "2026-08-25",
+     "commit": "2f922d6"
+    },
+    "last_touched": {
+     "author": "author-2",
+     "date": "2026-10-02",
+     "commit": "e04aba3"
+    },
+    "status_history": [
+     {
+      "status": "active",
+      "author": "author-1",
+      "date": "2026-08-25",
+      "commit": "2f922d6"
+     }
+    ]
+   },
+   "findings": []
+  },
+  {
+   "id": "options-page-reordering.md#a-redraw-cancels-an-in-flight-drag",
+   "uuid": "28b293be-48ed-4241-809e-7fb7916e4346",
+   "file": "options-page-reordering.md",
+   "line": 21,
+   "end_line": 38,
+   "title": "A redraw cancels an in-flight drag",
+   "type": [
+    "decision"
+   ],
+   "status": "active",
+   "evidence": "confirmed",
+   "source": "PR #57 (commit `a24e27a`); measured with a disposable out-of-tree jsdom harness, not committed — see the testing entry for its shape and limits",
+   "verification": null,
+   "revisit_when": "the options page gains another redraw path or the drag state no longer shares one render lifecycle",
+   "see": [],
+   "superseded_by": null,
+   "refs": [],
+   "git": {
+    "created": {
+     "author": "author-1",
+     "date": "2026-08-25",
+     "commit": "2f922d6"
+    },
+    "last_touched": {
+     "author": "author-2",
+     "date": "2026-10-02",
+     "commit": "e04aba3"
+    },
+    "status_history": [
+     {
+      "status": "active",
+      "author": "author-1",
+      "date": "2026-08-25",
+      "commit": "2f922d6"
+     }
+    ]
+   },
+   "findings": []
+  },
+  {
+   "id": "options-page-reordering.md#the-tooltip-key-names-the-meaning-not-one-call-site",
+   "uuid": "1dbc9f6d-474e-4d65-87f2-b9f0ff8704fa",
+   "file": "options-page-reordering.md",
+   "line": 39,
+   "end_line": 52,
+   "title": "The tooltip key names the meaning, not one call site",
+   "type": [
+    "decision"
+   ],
+   "status": "active",
+   "evidence": "confirmed",
+   "source": "PR #57 (commits `fbdf584` and `4371901`)",
+   "verification": null,
+   "revisit_when": "the card and row tooltip sentences no longer have the same meaning, or the catalogue ownership model changes",
+   "see": [],
+   "superseded_by": null,
+   "refs": [],
+   "git": {
+    "created": {
+     "author": "author-1",
+     "date": "2026-08-25",
+     "commit": "2f922d6"
+    },
+    "last_touched": {
+     "author": "author-2",
+     "date": "2026-10-02",
+     "commit": "e04aba3"
+    },
+    "status_history": [
+     {
+      "status": "active",
+      "author": "author-1",
+      "date": "2026-08-25",
+      "commit": "2f922d6"
+     }
+    ]
+   },
+   "findings": []
+  },
+  {
+   "id": "repository-entry.md#cd-enters-the-zoxide-folder-named-exactly-repo-never-z-repo",
+   "uuid": "05761228-c10d-4965-9d6a-9db3bb864590",
+   "file": "repository-entry.md",
+   "line": 3,
+   "end_line": 37,
+   "title": "`{cd}` enters the zoxide folder named exactly `{repo}`, never `z {repo}`",
+   "type": [
+    "decision"
+   ],
+   "status": "active",
+   "evidence": "confirmed",
+   "source": "user decision, 2026-09-24, after a button meant for the main checkout landed in a worktree; `zoxideExactJump` in `app/Sources/Core/BaseDirectory.swift`; `RepoEntryRuntimeTests` in `app/Tests/CoreTests/CoreTests.swift`",
+   "verification": null,
+   "revisit_when": "zoxide gains an anchored or exact query, or the presets stop creating `{repo}-<branch>` worktrees next to the checkout",
+   "see": [],
+   "superseded_by": null,
+   "refs": [],
+   "git": {
+    "created": {
+     "author": "author-1",
+     "date": "2026-09-24",
+     "commit": "8e14016"
+    },
+    "last_touched": {
+     "author": "author-2",
+     "date": "2026-10-02",
+     "commit": "e04aba3"
+    },
+    "status_history": [
+     {
+      "status": "active",
+      "author": "author-1",
+      "date": "2026-09-24",
+      "commit": "8e14016"
+     }
+    ]
+   },
+   "findings": []
+  },
+  {
+   "id": "repository-entry.md#the-appended-prompt-scanner-judges-cd-as-the-one-word-it-stands-for",
+   "uuid": "3c4f8c1b-ac28-45d8-a59b-c787bfba709c",
+   "file": "repository-entry.md",
+   "line": 38,
+   "end_line": 54,
+   "title": "The appended-prompt scanner judges `{cd}` as the one word it stands for",
+   "type": [
+    "decision"
+   ],
+   "status": "active",
+   "evidence": "confirmed",
+   "source": "the same change; `commandJudgedForAppendedPrompt` on `ResolvedRequest` in `app/Sources/Core/Request.swift`, and its use in `prepareRequest` in `app/Sources/Core/ClaudeInputPlan.swift`",
+   "verification": null,
+   "revisit_when": "the scanner starts modeling command substitution, or the app assembles a second fragment",
+   "see": [],
+   "superseded_by": null,
+   "refs": [],
+   "git": {
+    "created": {
+     "author": "author-1",
+     "date": "2026-09-24",
+     "commit": "8e14016"
+    },
+    "last_touched": {
+     "author": "author-2",
+     "date": "2026-10-02",
+     "commit": "e04aba3"
+    },
+    "status_history": [
+     {
+      "status": "active",
+      "author": "author-1",
+      "date": "2026-09-24",
+      "commit": "8e14016"
+     }
+    ]
+   },
+   "findings": []
+  },
+  {
+   "id": "setup-window-placement.md#the-measured-size-is-applied-outside-the-layout-pass-it-was-measured-in",
+   "uuid": "3fdaeac2-1787-4d0d-a957-4728f52280ed",
+   "file": "setup-window-placement.md",
+   "line": 5,
+   "end_line": 25,
+   "title": "The measured size is applied outside the layout pass it was measured in",
+   "type": [
+    "decision",
+    "incident"
+   ],
+   "status": "active",
+   "evidence": "confirmed",
+   "source": "issue #34; PR #54 (commits `37887c7`, `31fc333`); `FittedContentStackView` in `app/Sources/App/SetupWindowController.swift`",
+   "verification": null,
+   "revisit_when": "AppKit gives the document view a way to re-dirty its enclosing scroll view from inside a layout pass, or the window stops being sized from its content",
+   "see": [],
+   "superseded_by": null,
+   "refs": [],
+   "git": {
+    "created": {
+     "author": "author-1",
+     "date": "2026-08-25",
+     "commit": "c7c61f4"
+    },
+    "last_touched": {
+     "author": "author-2",
+     "date": "2026-10-02",
+     "commit": "e04aba3"
+    },
+    "status_history": [
+     {
+      "status": "active",
+      "author": "author-1",
+      "date": "2026-08-25",
+      "commit": "c7c61f4"
+     }
+    ]
+   },
+   "findings": []
+  },
+  {
+   "id": "setup-window-placement.md#one-screen-decision-per-layout-cycle-and-only-the-first-measured-size-is-centred",
+   "uuid": "d3930d8d-e7aa-4a62-ac2e-1407674c2244",
+   "file": "setup-window-placement.md",
+   "line": 26,
+   "end_line": 47,
+   "title": "One screen decision per layout cycle, and only the first measured size is centred",
+   "type": [
+    "decision",
+    "incident"
+   ],
+   "status": "active",
+   "evidence": "confirmed",
+   "source": "issue #34; PR #54 (commits `56baa0d`, `7b39ea9`, `5645d14`); `centerInside`, `moveInside` and `buildContent` in `app/Sources/App/SetupWindowController.swift`",
+   "verification": null,
+   "revisit_when": "the window stops being `isMovableByWindowBackground`, or the launch display becomes something the user can choose",
+   "see": [],
+   "superseded_by": null,
+   "refs": [],
+   "git": {
+    "created": {
+     "author": "author-1",
+     "date": "2026-08-25",
+     "commit": "c7c61f4"
+    },
+    "last_touched": {
+     "author": "author-2",
+     "date": "2026-10-02",
+     "commit": "e04aba3"
+    },
+    "status_history": [
+     {
+      "status": "active",
+      "author": "author-1",
+      "date": "2026-08-25",
+      "commit": "c7c61f4"
+     }
+    ]
+   },
+   "findings": []
+  },
+  {
+   "id": "signing-and-permissions.md#reinstalling-silently-revoked-the-accessibility-permission",
+   "uuid": "848fc610-3a27-40bb-88fd-d006c06364e3",
+   "file": "signing-and-permissions.md",
+   "line": 3,
+   "end_line": 20,
+   "title": "Reinstalling silently revoked the Accessibility permission",
+   "type": [
+    "incident"
+   ],
+   "status": "active",
+   "evidence": "confirmed",
+   "source": "app log, 2026-08-21 14:56 — `손쉬운 사용 권한이 없어 Warp 주입 헬퍼를 띄우지 않음`; resolved by `tccutil reset Accessibility com.dazebug.terminal-checkout` plus a re-grant, confirmed at 15:21 by a successful delivery",
+   "verification": null,
+   "revisit_when": "the app gains a stable signing identity (issue #23, #33)",
+   "see": [],
+   "superseded_by": null,
+   "refs": [],
+   "git": {
+    "created": {
+     "author": "author-1",
+     "date": "2026-08-22",
+     "commit": "92a2354"
+    },
+    "last_touched": {
+     "author": "author-2",
+     "date": "2026-10-02",
+     "commit": "e04aba3"
+    },
+    "status_history": [
+     {
+      "status": "active",
+      "author": "author-1",
+      "date": "2026-08-22",
+      "commit": "92a2354"
+     }
+    ]
+   },
+   "findings": []
+  },
+  {
+   "id": "subprocess-execution.md#the-timeout-s-bound-is-closing-the-pipe-readers-not-killing-a-process-group",
+   "uuid": "abea6f6f-fab6-4f71-8169-a1ea29a3a5fb",
+   "file": "subprocess-execution.md",
+   "line": 5,
+   "end_line": 21,
+   "title": "The timeout's bound is closing the pipe readers, not killing a process group",
+   "type": [
+    "constraint"
+   ],
+   "status": "active",
+   "evidence": "confirmed",
+   "source": "PR #60; measured on Darwin 25.4.0 — `setpgid` from the parent, 20 attempts out of 20",
+   "verification": null,
+   "revisit_when": "a `runProcess` caller starts launching a long-lived GUI child directly, or Foundation exposes a child-side spawn attribute",
+   "see": [],
+   "superseded_by": null,
+   "refs": [],
+   "git": {
+    "created": {
+     "author": "author-1",
+     "date": "2026-08-27",
+     "commit": "b929568"
+    },
+    "last_touched": {
+     "author": "author-2",
+     "date": "2026-10-02",
+     "commit": "e04aba3"
+    },
+    "status_history": [
+     {
+      "status": "active",
+      "author": "author-1",
+      "date": "2026-08-27",
+      "commit": "b929568"
+     }
+    ]
+   },
+   "findings": []
+  },
+  {
+   "id": "subprocess-execution.md#output-decodes-lossily-and-the-invalid-bytes-are-logged-rather-than-repaired",
+   "uuid": "362b14e2-b0ef-473c-8e65-aa044a2d9cf1",
+   "file": "subprocess-execution.md",
+   "line": 22,
+   "end_line": 38,
+   "title": "Output decodes lossily, and the invalid bytes are logged rather than repaired",
+   "type": [
+    "decision"
+   ],
+   "status": "active",
+   "evidence": "confirmed",
+   "source": "PR #60; `decoded(_:stream:)` in `app/Sources/Core/TerminalRunner.swift`",
+   "verification": null,
+   "revisit_when": "a caller starts needing the exact original bytes of a child's output",
+   "see": [],
+   "superseded_by": null,
+   "refs": [],
+   "git": {
+    "created": {
+     "author": "author-1",
+     "date": "2026-08-27",
+     "commit": "b929568"
+    },
+    "last_touched": {
+     "author": "author-2",
+     "date": "2026-10-02",
+     "commit": "e04aba3"
+    },
+    "status_history": [
+     {
+      "status": "active",
+      "author": "author-1",
+      "date": "2026-08-27",
+      "commit": "b929568"
+     }
+    ]
+   },
+   "findings": []
+  },
+  {
+   "id": "subprocess-execution.md#the-exit-is-observed-with-terminationhandler-not-waituntilexit",
+   "uuid": "8fa3e653-4860-4c90-a040-2ad224f264ac",
+   "file": "subprocess-execution.md",
+   "line": 39,
+   "end_line": 54,
+   "title": "The exit is observed with `terminationHandler`, not `waitUntilExit()`",
+   "type": [
+    "decision"
+   ],
+   "status": "active",
+   "evidence": "confirmed",
+   "source": "the delivery-speed investigation that followed the maintainer's question about the marker",
+   "verification": null,
+   "revisit_when": "a caller needs `NSTaskDidTerminateNotification`, which a handler suppresses",
+   "see": [],
+   "superseded_by": null,
+   "refs": [],
+   "git": {
+    "created": {
+     "author": "author-1",
+     "date": "2026-09-28",
+     "commit": "fed4f98"
+    },
+    "last_touched": {
+     "author": "author-2",
+     "date": "2026-10-02",
+     "commit": "e04aba3"
+    },
+    "status_history": [
+     {
+      "status": "active",
+      "author": "author-1",
+      "date": "2026-09-28",
+      "commit": "fed4f98"
+     }
+    ]
+   },
+   "findings": []
+  },
+  {
+   "id": "subprocess-execution.md#the-session-gate-s-ps-and-stty-get-their-own-short-limits-and-a-failure-is-logged",
+   "uuid": "4fb8d572-6dba-44a5-afdc-0f589c8049af",
+   "file": "subprocess-execution.md",
+   "line": 55,
+   "end_line": 69,
+   "title": "The session gate's `ps` and `stty` get their own short limits, and a failure is logged",
+   "type": [
+    "decision"
+   ],
+   "status": "active",
+   "evidence": "confirmed",
+   "source": "field deliveries on cmux, the app's unified log, and a `sample` of the app during a stall",
+   "verification": null,
+   "revisit_when": "a stall of the old length shows up again with these limits in place",
+   "see": [],
+   "superseded_by": null,
+   "refs": [],
+   "git": {
+    "created": {
+     "author": "author-1",
+     "date": "2026-09-28",
+     "commit": "fed4f98"
+    },
+    "last_touched": {
+     "author": "author-2",
+     "date": "2026-10-02",
+     "commit": "e04aba3"
+    },
+    "status_history": [
+     {
+      "status": "active",
+      "author": "author-1",
+      "date": "2026-09-28",
+      "commit": "fed4f98"
+     }
+    ]
+   },
+   "findings": []
+  },
+  {
+   "id": "tab-activation.md#new-tabs-can-open-in-the-background",
+   "uuid": "bf12b3d1-9479-4a02-9698-abc108f34a58",
+   "file": "tab-activation.md",
+   "line": 5,
+   "end_line": 29,
+   "title": "New tabs can open in the background",
+   "type": [
+    "decision"
+   ],
+   "status": "active",
+   "evidence": "confirmed",
+   "source": "maintainer request after a delivery test",
+   "verification": null,
+   "revisit_when": "a terminal gains a way to create a tab that never takes focus, or Warp gains a way to read a tab that is not focused",
+   "see": [],
+   "superseded_by": null,
+   "refs": [
+    "cmux-integration.md"
+   ],
+   "git": {
+    "created": {
+     "author": "author-1",
+     "date": "2026-09-28",
+     "commit": "847ecde"
+    },
+    "last_touched": {
+     "author": "author-2",
+     "date": "2026-10-02",
+     "commit": "e04aba3"
+    },
+    "status_history": [
+     {
+      "status": "active",
+      "author": "author-1",
+      "date": "2026-09-28",
+      "commit": "847ecde"
+     }
+    ]
+   },
+   "findings": []
+  },
+  {
+   "id": "testing.md#source-audit-claims-are-typed-and-derived",
+   "uuid": "085470eb-b6b7-4d3e-b08b-bc55ba7f0371",
+   "file": "testing.md",
+   "line": 5,
+   "end_line": 20,
+   "title": "Source-audit claims are typed and derived",
+   "type": [
+    "constraint"
+   ],
+   "status": "active",
+   "evidence": "confirmed",
+   "source": "PR #41 (closing change); `app/Sources/TestSupport/SourceAudit.swift`, `tests/source-audit.test.js`, and the source-reading tests under `app/Tests/`",
+   "verification": null,
+   "revisit_when": "a test target needs a source-reading path that cannot go through `auditSource(_:claim:)`, or the Swift package gains a compiler-enforced test-support boundary",
+   "see": [],
+   "superseded_by": null,
+   "refs": [],
+   "git": {
+    "created": {
+     "author": "author-1",
+     "date": "2026-08-25",
+     "commit": "0112613"
+    },
+    "last_touched": {
+     "author": "author-2",
+     "date": "2026-10-02",
+     "commit": "e04aba3"
+    },
+    "status_history": [
+     {
+      "status": "active",
+      "author": "author-1",
+      "date": "2026-08-25",
+      "commit": "0112613"
+     }
+    ]
+   },
+   "findings": []
+  },
+  {
+   "id": "testing.md#the-third-instance-of-a-defect-class-becomes-a-source-audit-instead-of-a-third-fix",
+   "uuid": "35e43292-1df6-4dbd-9586-42373be0b8ec",
+   "file": "testing.md",
+   "line": 21,
+   "end_line": 37,
+   "title": "The third instance of a defect class becomes a source audit instead of a third fix",
+   "type": [
+    "decision"
+   ],
+   "status": "active",
+   "evidence": "confirmed",
+   "source": "PR #60; `app/Sources/App/SetupWindowController.swift`, and the earlier `/usr/bin/osascript` occurrence count",
+   "verification": null,
+   "revisit_when": "a source audit starts failing for a legitimate new call site often enough that the count is the thing being maintained",
+   "see": [],
+   "superseded_by": null,
+   "refs": [],
+   "git": {
+    "created": {
+     "author": "author-1",
+     "date": "2026-08-27",
+     "commit": "b929568"
+    },
+    "last_touched": {
+     "author": "author-2",
+     "date": "2026-10-02",
+     "commit": "e04aba3"
+    },
+    "status_history": [
+     {
+      "status": "active",
+      "author": "author-1",
+      "date": "2026-08-27",
+      "commit": "b929568"
+     }
+    ]
+   },
+   "findings": []
+  },
+  {
+   "id": "testing.md#when-authority-moves-between-two-stores-the-gates-stay-on-the-old-one-and-everything-passes",
+   "uuid": "90ea6ade-88ee-49de-8881-ed3fd9721d97",
+   "file": "testing.md",
+   "line": 38,
+   "end_line": 60,
+   "title": "When authority moves between two stores, the gates stay on the old one and everything passes",
+   "type": [
+    "constraint",
+    "incident"
+   ],
+   "status": "active",
+   "evidence": "confirmed",
+   "source": "PR #41 (ledger D296, D297, D300); `tests/i18n.test.js`, `extension/_locales/`, `extension/_i18n/`",
+   "verification": null,
+   "revisit_when": "the compatibility passengers are retired (a second authority move, in the opposite direction), or a third catalogue surface appears",
+   "see": [
+    {
+     "locator": "localization.md#the-compatibility-passenger-protected-a-state-chrome-refuses-to-construct",
+     "uuid": "e40c7f67-54ad-4205-b786-08a95492195f",
+     "date": "2026-10-02",
+     "file": "localization.md",
+     "anchor": "the-compatibility-passenger-protected-a-state-chrome-refuses-to-construct",
+     "remote": null
+    }
+   ],
+   "superseded_by": null,
+   "refs": [
+    "localization.md"
+   ],
+   "git": {
+    "created": {
+     "author": "author-1",
+     "date": "2026-08-25",
+     "commit": "0112613"
+    },
+    "last_touched": {
+     "author": "author-2",
+     "date": "2026-10-02",
+     "commit": "e04aba3"
+    },
+    "status_history": [
+     {
+      "status": "active",
+      "author": "author-1",
+      "date": "2026-08-25",
+      "commit": "0112613"
+     }
+    ]
+   },
+   "findings": []
+  },
+  {
+   "id": "testing.md#closure-decisions-preserved-from-pr-41",
+   "uuid": null,
+   "file": "testing.md",
+   "line": 61,
+   "end_line": 86,
+   "title": "Closure decisions preserved from PR #41",
+   "type": [],
+   "status": "",
+   "evidence": "",
+   "source": null,
+   "verification": null,
+   "revisit_when": null,
+   "see": [],
+   "superseded_by": null,
+   "refs": [],
+   "git": {
+    "created": {
+     "author": "author-1",
+     "date": "2026-08-25",
+     "commit": "0112613"
+    },
+    "last_touched": {
+     "author": "author-1",
+     "date": "2026-08-25",
+     "commit": "c7c61f4"
+    },
+    "status_history": []
+   },
+   "findings": [
+    {
+     "severity": "warning",
+     "code": "W102",
+     "line": 61,
+     "message": "'Closure decisions preserved from PR #41': level-2 heading without any schema fields — fine for a prose section, an error if this was meant to be an entry"
+    }
+   ]
+  },
+  {
+   "id": "testing.md#a-layout-gate-that-drives-its-own-layout-is-not-measuring-the-window-that-ships",
+   "uuid": "7de21f05-20ce-4964-8186-c51c27f60101",
+   "file": "testing.md",
+   "line": 87,
+   "end_line": 111,
+   "title": "A layout gate that drives its own layout is not measuring the window that ships",
+   "type": [
+    "incident",
+    "constraint"
+   ],
+   "status": "active",
+   "evidence": "confirmed",
+   "source": "issue #34; PR #54 (commits `37887c7`, `5645d14`); `app/Tests/AppTests/SetupWindowTestSupport.swift`",
+   "verification": null,
+   "revisit_when": "these tests gain a way to observe an AppKit display cycle without pumping wall-clock time, or the window stops changing its own size from inside a layout pass",
+   "see": [],
+   "superseded_by": null,
+   "refs": [],
+   "git": {
+    "created": {
+     "author": "author-1",
+     "date": "2026-08-25",
+     "commit": "c7c61f4"
+    },
+    "last_touched": {
+     "author": "author-2",
+     "date": "2026-10-02",
+     "commit": "e04aba3"
+    },
+    "status_history": [
+     {
+      "status": "active",
+      "author": "author-1",
+      "date": "2026-08-25",
+      "commit": "c7c61f4"
+     }
+    ]
+   },
+   "findings": []
+  },
+  {
+   "id": "testing.md#some-defects-cannot-be-a-red-here-and-saying-so-beats-building-a-seam",
+   "uuid": "5b444741-0248-43f4-a25a-19a256ea9a4c",
+   "file": "testing.md",
+   "line": 112,
+   "end_line": 129,
+   "title": "Some defects cannot be a red here, and saying so beats building a seam",
+   "type": [
+    "decision"
+   ],
+   "status": "active",
+   "evidence": "confirmed",
+   "source": "issue #34; PR #54 (commit `56baa0d`); `docs/new-terminal-checklist.md`",
+   "verification": null,
+   "revisit_when": "the suite gains a way to present more than one screen geometry to `NSScreen`, or the placement logic stops depending on the attached displays",
+   "see": [],
+   "superseded_by": null,
+   "refs": [],
+   "git": {
+    "created": {
+     "author": "author-1",
+     "date": "2026-08-25",
+     "commit": "c7c61f4"
+    },
+    "last_touched": {
+     "author": "author-2",
+     "date": "2026-10-02",
+     "commit": "e04aba3"
+    },
+    "status_history": [
+     {
+      "status": "active",
+      "author": "author-1",
+      "date": "2026-08-25",
+      "commit": "c7c61f4"
+     }
+    ]
+   },
+   "findings": []
+  },
+  {
+   "id": "testing.md#an-out-of-tree-dom-harness-needs-its-own-red-toggles",
+   "uuid": "ae25c2da-0541-4820-932b-9b192c77bc83",
+   "file": "testing.md",
+   "line": 130,
+   "end_line": 147,
+   "title": "An out-of-tree DOM harness needs its own red toggles",
+   "type": [
+    "decision"
+   ],
+   "status": "active",
+   "evidence": "confirmed",
+   "source": "PR #57 (commit `a24e27a`); `CLAUDE.md`; measured with a disposable out-of-tree jsdom harness that loaded the real `options.html` with only `chrome` stubbed; for the content script, PR #90 and the lints in `tests/claude-note.test.js` those harnesses backed",
+   "verification": null,
+   "revisit_when": "the suite gains a faithful DOM harness, or browser automation can complete a native `drop`",
+   "see": [],
+   "superseded_by": null,
+   "refs": [],
+   "git": {
+    "created": {
+     "author": "author-1",
+     "date": "2026-08-25",
+     "commit": "2f922d6"
+    },
+    "last_touched": {
+     "author": "author-2",
+     "date": "2026-10-02",
+     "commit": "e04aba3"
+    },
+    "status_history": [
+     {
+      "status": "active",
+      "author": "author-1",
+      "date": "2026-08-25",
+      "commit": "2f922d6"
+     }
+    ]
+   },
+   "findings": []
+  },
+  {
+   "id": "testing.md#a-fixture-s-input-values-choose-the-branch-so-a-route-can-be-green-and-never-run",
+   "uuid": "f02d6472-3859-496a-97e9-482ec39c3af8",
+   "file": "testing.md",
+   "line": 148,
+   "end_line": 166,
+   "title": "A fixture's input values choose the branch, so a route can be green and never run",
+   "type": [
+    "decision",
+    "incident"
+   ],
+   "status": "active",
+   "evidence": "confirmed",
+   "source": "issue #69; `app/Tests/CoreTests/CmuxGroupedExecutionTests.swift`; the cold review of the finished branch and the driver's live E2E on 2026-09-01",
+   "verification": null,
+   "revisit_when": "the grouped placement routes gain an in-suite oracle that runs a real cmux server, or a new route is added without a live case",
+   "see": [],
+   "superseded_by": null,
+   "refs": [],
+   "git": {
+    "created": {
+     "author": "author-1",
+     "date": "2026-09-01",
+     "commit": "eb70d54"
+    },
+    "last_touched": {
+     "author": "author-2",
+     "date": "2026-10-02",
+     "commit": "e04aba3"
+    },
+    "status_history": [
+     {
+      "status": "active",
+      "author": "author-1",
+      "date": "2026-09-01",
+      "commit": "eb70d54"
+     }
+    ]
+   },
+   "findings": []
+  },
+  {
+   "id": "testing.md#help-text-is-checked-against-the-variable-contract-not-against-ten-strings",
+   "uuid": "399a8f37-cc00-42d8-9fef-9e6e29ed57c1",
+   "file": "testing.md",
+   "line": 167,
+   "end_line": 183,
+   "title": "Help text is checked against the variable contract, not against ten strings",
+   "type": [
+    "decision"
+   ],
+   "status": "active",
+   "evidence": "confirmed",
+   "source": "issue #78; PR #82 (commit `855a4c7`); `tests/i18n.test.js` (`every page kind help advertises its variables in every locale`)",
+   "verification": null,
+   "revisit_when": "a kind's help legitimately needs to leave out a variable it accepts, or the help strings gain a structured variable list the options page renders itself",
+   "see": [],
+   "superseded_by": null,
+   "refs": [],
+   "git": {
+    "created": {
+     "author": "author-1",
+     "date": "2026-09-03",
+     "commit": "cee8d0b"
+    },
+    "last_touched": {
+     "author": "author-2",
+     "date": "2026-10-02",
+     "commit": "e04aba3"
+    },
+    "status_history": [
+     {
+      "status": "active",
+      "author": "author-1",
+      "date": "2026-09-03",
+      "commit": "cee8d0b"
+     }
+    ]
+   },
+   "findings": []
+  }
+ ],
+ "authors": [
+  {
+   "name": "author-1",
+   "created": 81,
+   "touched": 4,
+   "superseded": 7,
+   "first": "2026-08-22",
+   "last": "2026-10-02",
+   "evidence": {
+    "confirmed": 76,
+    "": 4,
+    "unknown": 1
+   }
+  },
+  {
+   "name": "author-2",
+   "created": 0,
+   "touched": 77,
+   "superseded": 0,
+   "first": "2026-10-02",
+   "last": "2026-10-02",
+   "evidence": {}
+  }
+ ],
+ "anonymized": true,
+ "findings": {
+  "errors": 0,
+  "warnings": 4,
+  "items": [
+   {
+    "severity": "warning",
+    "code": "W102",
+    "path": "docs/context/cmux-integration.md",
+    "line": 244,
+    "message": "'Placement contract matrix for cmux 0.64.22 (102) [ddd4a01bc]': level-2 heading without any schema fields — fine for a prose section, an error if this was meant to be an entry"
+   },
+   {
+    "severity": "warning",
+    "code": "W102",
+    "path": "docs/context/localization.md",
+    "line": 287,
+    "message": "'Closure follow-up seeds': level-2 heading without any schema fields — fine for a prose section, an error if this was meant to be an entry"
+   },
+   {
+    "severity": "warning",
+    "code": "W102",
+    "path": "docs/context/localization.md",
+    "line": 297,
+    "message": "'Closure dispositions preserved from PR #41': level-2 heading without any schema fields — fine for a prose section, an error if this was meant to be an entry"
+   },
+   {
+    "severity": "warning",
+    "code": "W102",
+    "path": "docs/context/testing.md",
+    "line": 61,
+    "message": "'Closure decisions preserved from PR #41': level-2 heading without any schema fields — fine for a prose section, an error if this was meant to be an entry"
+   }
+  ]
+ },
+ "exported": true,
+ "bodies": "state.body.json"
+}
