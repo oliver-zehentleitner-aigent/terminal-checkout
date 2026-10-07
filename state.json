@@ -1,19 +1,19 @@
 {
  "state-json": 2,
- "generated": "2026-10-02T11:52:20Z",
- "dashboard": "0.6.8",
- "linter": "0.18.2.0",
+ "generated": "2026-10-07T09:07:27Z",
+ "dashboard": "0.7.3",
+ "linter": "0.18.1.0",
  "project": {
   "id": "dazebug---terminal-checkout",
   "name": "terminal-checkout",
   "context": "docs/context/",
-  "schema": "0.18.2",
+  "schema": "0.20.0",
   "config": {
    "id": "dazebug---terminal-checkout",
    "canonical": "https://github.com/dazebug/terminal-checkout",
    "context": "`docs/context/`",
    "init": "complete",
-   "context-schema": "0.18.2",
+   "context-schema": "0.20.0",
    "capture-confirmation": "automatic",
    "source-reference": "never"
   },
@@ -26,9 +26,9 @@
   "children": [],
   "git": {
    "available": true,
-   "head": "e04aba3",
-   "head_full": "e04aba33603d12f8c1046e55eff0d29245e279d6",
-   "branch": "keep-the-why-0.18.2",
+   "head": "7bf22db",
+   "head_full": "7bf22db17a525e2ad2cdbfe351efb0b99ff24f64",
+   "branch": "keep-the-why-0.20.0",
    "remote": "github.com/oliver-zehentleitner-aigent/terminal-checkout",
    "upstream": "github.com/dazebug/terminal-checkout",
    "fork": {
@@ -58,39 +58,36 @@
    "file": "claude-input-delivery.md",
    "title": "Claude input delivery",
    "index_line": "how scheduled input reaches a claude session, and the routes that were tried and dropped; why a click-time note is plain text with no variables and never takes one of a button's stored input slots, what ✅ does and does not promise, which page a note goes to, what holds a split button's run, and why the popover lists the inputs before a note from the list that is sent",
-   "entries": 23,
+   "entries": 25,
    "refs_out": [
     "localization.md"
    ],
-   "refs_in": [
-    "cmux-integration.md"
-   ],
+   "refs_in": [],
    "status": {
-    "active": 20,
+    "active": 22,
     "superseded": 3
    },
    "evidence": {
-    "confirmed": 23
+    "confirmed": 25
    }
   },
   {
    "file": "cmux-integration.md",
    "title": "cmux integration",
    "index_line": "why the app asks the user to set one cmux option instead of setting it, why `rpc` is the only control path, how a launch retry is decided, and the measured placement contract for batch fan-out",
-   "entries": 11,
+   "entries": 12,
    "refs_out": [
-    "tab-activation.md",
-    "claude-input-delivery.md"
+    "tab-activation.md"
    ],
    "refs_in": [
     "tab-activation.md"
    ],
    "status": {
-    "active": 10,
+    "active": 11,
     "": 1
    },
    "evidence": {
-    "confirmed": 10,
+    "confirmed": 11,
     "": 1
    }
   },
@@ -148,6 +145,21 @@
    }
   },
   {
+   "file": "options-page-design.md",
+   "title": "Options page design",
+   "index_line": "why the options page shows GitHub placement, keeps example scenery fixed while editing live buttons, and separates page-specific rules from app-owned themes",
+   "entries": 9,
+   "refs_out": [],
+   "refs_in": [],
+   "status": {
+    "active": 9
+   },
+   "evidence": {
+    "confirmed": 8,
+    "inferred": 1
+   }
+  },
+  {
    "file": "options-page-reordering.md",
    "title": "Options-page reordering",
    "index_line": "why claude input rows stay in one card, why a redraw cancels a drag, and why the reorder tooltip key is shared by meaning",
@@ -176,6 +188,20 @@
    }
   },
   {
+   "file": "setup-window-design.md",
+   "title": "Setup window design",
+   "index_line": "why the setup window uses three toolbar panes, shared problems and pane previews",
+   "entries": 6,
+   "refs_out": [],
+   "refs_in": [],
+   "status": {
+    "active": 6
+   },
+   "evidence": {
+    "confirmed": 6
+   }
+  },
+  {
    "file": "setup-window-placement.md",
    "title": "Setup window sizing and placement",
    "index_line": "why the window's measured size is applied outside the pass that measured it, and why one layout cycle gets one screen decision",
@@ -201,6 +227,21 @@
    },
    "evidence": {
     "confirmed": 1
+   }
+  },
+  {
+   "file": "slack-thread-shortcut.md",
+   "title": "Slack thread shortcut",
+   "index_line": "why the Slack thread workflow is Copy link plus a global shortcut the app registers, why the Shortcuts app and its URL scheme were dropped, and why the clipboard carries only a validated link",
+   "entries": 5,
+   "refs_out": [],
+   "refs_in": [],
+   "status": {
+    "active": 3,
+    "superseded": 2
+   },
+   "evidence": {
+    "confirmed": 5
    }
   },
   {
@@ -285,7 +326,7 @@
     "last_touched": {
      "author": "author-2",
      "date": "2026-10-02",
-     "commit": "e04aba3"
+     "commit": "7bf22db"
     },
     "status_history": [
      {
@@ -325,7 +366,7 @@
     "last_touched": {
      "author": "author-2",
      "date": "2026-10-02",
-     "commit": "e04aba3"
+     "commit": "7bf22db"
     },
     "status_history": [
      {
@@ -339,11 +380,51 @@
    "findings": []
   },
   {
+   "id": "claude-input-delivery.md#a-leading-is-sent-in-its-own-write-before-a-long-input",
+   "uuid": "28125d56-1ebb-4bcf-ab97-0f0e18b88467",
+   "file": "claude-input-delivery.md",
+   "line": 24,
+   "end_line": 43,
+   "title": "A leading `!` is sent in its own write before a long input",
+   "type": [
+    "decision"
+   ],
+   "status": "active",
+   "evidence": "confirmed",
+   "source": "`typeAndSubmit` in `app/Sources/Core/ClaudeInjector.swift`; `testLeadingBangIsSentSeparatelyFromTheLongInputBody` in `app/Tests/CoreTests/CoreTests.swift`; a live delivery of the issue-list button's inputs to Claude in a 38×20 cmux pane",
+   "verification": null,
+   "revisit_when": "Claude Code changes shell-mode entry or how it handles a long typed chunk",
+   "see": [],
+   "superseded_by": null,
+   "refs": [],
+   "git": {
+    "created": {
+     "author": "author-1",
+     "date": "2026-10-02",
+     "commit": "a6fd63b"
+    },
+    "last_touched": {
+     "author": "author-1",
+     "date": "2026-10-02",
+     "commit": "a6fd63b"
+    },
+    "status_history": [
+     {
+      "status": "active",
+      "author": "author-1",
+      "date": "2026-10-02",
+      "commit": "a6fd63b"
+     }
+    ]
+   },
+   "findings": []
+  },
+  {
    "id": "claude-input-delivery.md#consecutive-inputs-merge-into-one-typed-line-joined-with",
    "uuid": "7f83af80-a0bb-4d85-9989-352d5c521135",
    "file": "claude-input-delivery.md",
-   "line": 24,
-   "end_line": 40,
+   "line": 44,
+   "end_line": 60,
    "title": "Consecutive `!` inputs merge into one typed line, joined with `;`",
    "type": [
     "decision"
@@ -365,7 +446,7 @@
     "last_touched": {
      "author": "author-2",
      "date": "2026-10-02",
-     "commit": "e04aba3"
+     "commit": "7bf22db"
     },
     "status_history": [
      {
@@ -382,8 +463,8 @@
    "id": "claude-input-delivery.md#the-gate-makes-no-judgement-about-where-a-character-sits",
    "uuid": "40ec8942-502a-4d9a-a382-33546566f996",
    "file": "claude-input-delivery.md",
-   "line": 41,
-   "end_line": 55,
+   "line": 61,
+   "end_line": 75,
    "title": "The gate makes no judgement about where a character sits",
    "type": [
     "decision"
@@ -405,7 +486,7 @@
     "last_touched": {
      "author": "author-2",
      "date": "2026-10-02",
-     "commit": "e04aba3"
+     "commit": "7bf22db"
     },
     "status_history": [
      {
@@ -422,8 +503,8 @@
    "id": "claude-input-delivery.md#argv-carries-the-opening-message-only-when-every-input-is-plain-text",
    "uuid": "6b8f3f2f-342b-41b5-841b-a4dedcf52fd3",
    "file": "claude-input-delivery.md",
-   "line": 56,
-   "end_line": 72,
+   "line": 76,
+   "end_line": 92,
    "title": "argv carries the opening message only when every input is plain text",
    "type": [
     "decision"
@@ -445,7 +526,7 @@
     "last_touched": {
      "author": "author-2",
      "date": "2026-10-02",
-     "commit": "e04aba3"
+     "commit": "7bf22db"
     },
     "status_history": [
      {
@@ -462,8 +543,8 @@
    "id": "claude-input-delivery.md#delivery-proves-the-input-box-by-experiment-not-by-reading-the-screen",
    "uuid": "bd8c18bd-a6f6-4652-a895-7ca3b134af62",
    "file": "claude-input-delivery.md",
-   "line": 73,
-   "end_line": 90,
+   "line": 93,
+   "end_line": 110,
    "title": "Delivery proves the input box by experiment, not by reading the screen",
    "type": [
     "decision",
@@ -486,7 +567,7 @@
     "last_touched": {
      "author": "author-2",
      "date": "2026-10-02",
-     "commit": "e04aba3"
+     "commit": "7bf22db"
     },
     "status_history": [
      {
@@ -500,33 +581,33 @@
    "findings": []
   },
   {
-   "id": "claude-input-delivery.md#the-input-box-is-cleared-with-ctrl-u-then-backspace",
+   "id": "claude-input-delivery.md#reflection-checks-the-tail-first-and-accepts-the-head-only-at-the-window-s-end",
    "uuid": "d5587028-bcdd-4ac1-869c-0ccacbbe56f5",
    "file": "claude-input-delivery.md",
-   "line": 91,
-   "end_line": 103,
-   "title": "The input box is cleared with Ctrl+U **then** Backspace",
+   "line": 111,
+   "end_line": 128,
+   "title": "Reflection checks the tail first and accepts the head only at the window's end",
    "type": [
-    "workaround"
+    "decision"
    ],
    "status": "active",
    "evidence": "confirmed",
-   "source": "measured in a pty on claude 2.1.238; only `!` was measured",
+   "source": "`claudeInputProbe`, `screenReflectsNewInput` and `inputBoxAfterSubmit` in `app/Sources/Core/ClaudeInjector.swift`; `testShortPaneTailReflectionSubmitsThe424CharacterMergedInputOnce` and `testCollapsedInputUsesHeadReflectionOnlyAfterTheWindowExpires` in `app/Tests/CoreTests/CoreTests.swift`; a live delivery of the issue-list button's inputs to Claude in a 38×20 cmux pane",
    "verification": null,
-   "revisit_when": "claude changes how its `!` shell mode is entered or exited",
+   "revisit_when": "Claude Code changes its composer scrolling or pasted-text rendering",
    "see": [],
    "superseded_by": null,
    "refs": [],
    "git": {
     "created": {
      "author": "author-1",
-     "date": "2026-08-22",
-     "commit": "92a2354"
+     "date": "2026-10-02",
+     "commit": "a6fd63b"
     },
     "last_touched": {
-     "author": "author-2",
+     "author": "author-1",
      "date": "2026-10-02",
-     "commit": "e04aba3"
+     "commit": "a6fd63b"
     },
     "status_history": [
      {
@@ -537,37 +618,109 @@
      }
     ]
    },
-   "findings": []
+   "findings": [
+    {
+     "severity": "warning",
+     "code": "W301",
+     "line": 118,
+     "message": "base64-looking blob (64 chars) — if it needs decoding to be read, it doesn't belong in an entry meant to be read"
+    },
+    {
+     "severity": "warning",
+     "code": "W301",
+     "line": 118,
+     "message": "base64-looking blob (61 chars) — if it needs decoding to be read, it doesn't belong in an entry meant to be read"
+    }
+   ]
   },
   {
-   "id": "claude-input-delivery.md#on-cmux-those-two-bytes-are-two-separate-one-byte-text-calls-because-the-key-path-is-dead-under-claude",
+   "id": "claude-input-delivery.md#the-input-box-is-cleared-by-counted-visual-lines-then-backspace",
+   "uuid": "4be3abbe-431b-41be-b559-aba3ac55e2f7",
+   "file": "claude-input-delivery.md",
+   "line": 129,
+   "end_line": 150,
+   "title": "The input box is cleared by counted visual lines, then Backspace",
+   "type": [
+    "decision"
+   ],
+   "status": "active",
+   "evidence": "confirmed",
+   "source": "`claudeClearBatches`, `InputBoxOwnership` and `clearAbandonedInput` in `app/Sources/Core/ClaudeInjector.swift`; `testRetryClearsWrappedRemainderBeforeRetypingInputAgain`, `testAbandonedWrappedInputIsFullyClearedAfterRetriesExhausted` and `testRetryClears120KoreanCharactersByCellWidthBeforeSubmittingOnce` in `app/Tests/CoreTests/CoreTests.swift`; `testItem10CmuxClearInputIsTwoSendTextCallsCtrlUThenBackspace` in `app/Tests/CoreTests/CmuxTests.swift`",
+   "verification": null,
+   "revisit_when": "Claude Code changes how Ctrl+U clears wrapped or collapsed input, or a terminal changes how it groups writes",
+   "see": [],
+   "superseded_by": null,
+   "refs": [],
+   "git": {
+    "created": {
+     "author": "author-1",
+     "date": "2026-10-02",
+     "commit": "a6fd63b"
+    },
+    "last_touched": {
+     "author": "author-1",
+     "date": "2026-10-02",
+     "commit": "a6fd63b"
+    },
+    "status_history": [
+     {
+      "status": "active",
+      "author": "author-1",
+      "date": "2026-10-02",
+      "commit": "a6fd63b"
+     }
+    ]
+   },
+   "findings": [
+    {
+     "severity": "warning",
+     "code": "W301",
+     "line": 136,
+     "message": "base64-looking blob (60 chars) — if it needs decoding to be read, it doesn't belong in an entry meant to be read"
+    },
+    {
+     "severity": "warning",
+     "code": "W301",
+     "line": 136,
+     "message": "base64-looking blob (65 chars) — if it needs decoding to be read, it doesn't belong in an entry meant to be read"
+    },
+    {
+     "severity": "warning",
+     "code": "W301",
+     "line": 136,
+     "message": "base64-looking blob (60 chars) — if it needs decoding to be read, it doesn't belong in an entry meant to be read"
+    }
+   ]
+  },
+  {
+   "id": "claude-input-delivery.md#cmux-sends-ctrl-u-bursts-as-text-and-backspace-in-a-separate-call",
    "uuid": "b8cc4c8f-3144-4035-90de-40ea8c2c44b0",
    "file": "claude-input-delivery.md",
-   "line": 104,
-   "end_line": 125,
-   "title": "On cmux those two bytes are two separate one-byte text calls, because the key path is dead under claude",
+   "line": 151,
+   "end_line": 173,
+   "title": "cmux sends Ctrl+U bursts as text and Backspace in a separate call",
    "type": [
     "incident",
     "decision"
    ],
    "status": "active",
    "evidence": "confirmed",
-   "source": "PR #60; reproduced on an installed build against cmux 0.64.22 and Claude Code 2.1.246",
+   "source": "PR #60; `cmuxSendOperations` in `app/Sources/Core/ClaudeInjector.swift`; `testItem10CmuxClearInputIsTwoSendTextCallsCtrlUThenBackspace` in `app/Tests/CoreTests/CmuxTests.swift`",
    "verification": null,
-   "revisit_when": "cmux's key encoder learns the kitty keyboard protocol state of the surface it is writing to",
+   "revisit_when": "cmux changes key encoding or the ordering of bytes and key events sent through `surface.send_text`",
    "see": [],
    "superseded_by": null,
    "refs": [],
    "git": {
     "created": {
      "author": "author-1",
-     "date": "2026-08-27",
-     "commit": "b929568"
+     "date": "2026-10-02",
+     "commit": "a6fd63b"
     },
     "last_touched": {
-     "author": "author-2",
+     "author": "author-1",
      "date": "2026-10-02",
-     "commit": "e04aba3"
+     "commit": "a6fd63b"
     },
     "status_history": [
      {
@@ -578,14 +731,21 @@
      }
     ]
    },
-   "findings": []
+   "findings": [
+    {
+     "severity": "warning",
+     "code": "W301",
+     "line": 159,
+     "message": "base64-looking blob (60 chars) — if it needs decoding to be read, it doesn't belong in an entry meant to be read"
+    }
+   ]
   },
   {
    "id": "claude-input-delivery.md#the-marker-is-gone-is-checked-over-every-6-character-window-not-the-whole-string",
    "uuid": "2bbac675-7b12-4428-8ff9-0ee38fd3e930",
    "file": "claude-input-delivery.md",
-   "line": 126,
-   "end_line": 143,
+   "line": 174,
+   "end_line": 191,
    "title": "\"The marker is gone\" is checked over every 6-character window, not the whole string",
    "type": [
     "decision"
@@ -607,7 +767,7 @@
     "last_touched": {
      "author": "author-2",
      "date": "2026-10-02",
-     "commit": "e04aba3"
+     "commit": "7bf22db"
     },
     "status_history": [
      {
@@ -630,8 +790,8 @@
    "id": "claude-input-delivery.md#the-marker-is-three-runic-letters-and-the-erase-check-counts-single-characters",
    "uuid": "51db08c5-a7ff-4849-9174-f65811f4301f",
    "file": "claude-input-delivery.md",
-   "line": 144,
-   "end_line": 163,
+   "line": 192,
+   "end_line": 211,
    "title": "The marker is three Runic letters, and the erase check counts single characters",
    "type": [
     "decision"
@@ -653,7 +813,7 @@
     "last_touched": {
      "author": "author-2",
      "date": "2026-10-02",
-     "commit": "e04aba3"
+     "commit": "7bf22db"
     },
     "status_history": [
      {
@@ -670,8 +830,8 @@
    "id": "claude-input-delivery.md#polling-reads-first-and-subtracts-what-the-read-cost",
    "uuid": "ee0449bd-18ae-4258-868c-1164c707078a",
    "file": "claude-input-delivery.md",
-   "line": 164,
-   "end_line": 178,
+   "line": 212,
+   "end_line": 226,
    "title": "Polling reads first and subtracts what the read cost",
    "type": [
     "decision"
@@ -693,7 +853,7 @@
     "last_touched": {
      "author": "author-2",
      "date": "2026-10-02",
-     "commit": "e04aba3"
+     "commit": "7bf22db"
     },
     "status_history": [
      {
@@ -710,8 +870,8 @@
    "id": "claude-input-delivery.md#an-unreadable-stty-used-to-open-gate",
    "uuid": "1bb5a787-a6f9-4b27-8e64-079da9ed79d4",
    "file": "claude-input-delivery.md",
-   "line": 179,
-   "end_line": 192,
+   "line": 227,
+   "end_line": 240,
    "title": "An unreadable `stty` used to open gate ②",
    "type": [
     "decision"
@@ -733,7 +893,7 @@
     "last_touched": {
      "author": "author-2",
      "date": "2026-10-02",
-     "commit": "e04aba3"
+     "commit": "7bf22db"
     },
     "status_history": [
      {
@@ -750,8 +910,8 @@
    "id": "claude-input-delivery.md#gate-stays-closed-when-raw-mode-cannot-be-decided",
    "uuid": "33e7a359-1078-4583-bc2c-45e25eac1146",
    "file": "claude-input-delivery.md",
-   "line": 193,
-   "end_line": 210,
+   "line": 241,
+   "end_line": 258,
    "title": "Gate ② stays closed when raw mode cannot be decided",
    "type": [
     "decision"
@@ -773,7 +933,7 @@
     "last_touched": {
      "author": "author-2",
      "date": "2026-10-02",
-     "commit": "e04aba3"
+     "commit": "7bf22db"
     },
     "status_history": [
      {
@@ -790,8 +950,8 @@
    "id": "claude-input-delivery.md#the-foreground-check-has-three-states-and-unknown-is-not-different",
    "uuid": "754d493b-1b19-47e0-848d-f11694c867ad",
    "file": "claude-input-delivery.md",
-   "line": 211,
-   "end_line": 227,
+   "line": 259,
+   "end_line": 275,
    "title": "The foreground check has three states, and `unknown` is not `different`",
    "type": [
     "decision"
@@ -813,7 +973,7 @@
     "last_touched": {
      "author": "author-2",
      "date": "2026-10-02",
-     "commit": "e04aba3"
+     "commit": "7bf22db"
     },
     "status_history": [
      {
@@ -830,8 +990,8 @@
    "id": "claude-input-delivery.md#non-ascii-text-changes-normalization-when-it-crosses-process-arguments",
    "uuid": "86ac0104-3baa-42d4-be85-f92f19be5ab7",
    "file": "claude-input-delivery.md",
-   "line": 228,
-   "end_line": 249,
+   "line": 276,
+   "end_line": 297,
    "title": "Non-ASCII text changes normalization when it crosses `Process.arguments`",
    "type": [
     "constraint"
@@ -855,7 +1015,7 @@
     "last_touched": {
      "author": "author-2",
      "date": "2026-10-02",
-     "commit": "e04aba3"
+     "commit": "7bf22db"
     },
     "status_history": [
      {
@@ -872,8 +1032,8 @@
    "id": "claude-input-delivery.md#a-click-time-note-is-one-more-claude-input-and-only-plain-text",
    "uuid": "980a96f8-1201-461d-8aaa-59b239ef3749",
    "file": "claude-input-delivery.md",
-   "line": 250,
-   "end_line": 267,
+   "line": 298,
+   "end_line": 315,
    "title": "A click-time note is one more claude input, and only plain text",
    "type": [
     "decision"
@@ -895,7 +1055,7 @@
     "last_touched": {
      "author": "author-2",
      "date": "2026-10-02",
-     "commit": "e04aba3"
+     "commit": "7bf22db"
     },
     "status_history": [
      {
@@ -912,8 +1072,8 @@
    "id": "claude-input-delivery.md#a-click-time-note-has-a-slot-above-the-button-s-stored-inputs",
    "uuid": "c96b9ff2-db7c-43eb-820e-1ca93f6668b0",
    "file": "claude-input-delivery.md",
-   "line": 268,
-   "end_line": 289,
+   "line": 316,
+   "end_line": 337,
    "title": "A click-time note has a slot above the button's stored inputs",
    "type": [
     "decision"
@@ -935,7 +1095,7 @@
     "last_touched": {
      "author": "author-2",
      "date": "2026-10-02",
-     "commit": "e04aba3"
+     "commit": "7bf22db"
     },
     "status_history": [
      {
@@ -952,8 +1112,8 @@
    "id": "claude-input-delivery.md#a-note-carries-no-variables-any-closed-brace-span-is-refused",
    "uuid": "5b303862-71fc-4ab4-97a9-cd8c1ad352b7",
    "file": "claude-input-delivery.md",
-   "line": 290,
-   "end_line": 309,
+   "line": 338,
+   "end_line": 357,
    "title": "A note carries no variables: any closed brace span is refused",
    "type": [
     "decision"
@@ -975,7 +1135,7 @@
     "last_touched": {
      "author": "author-2",
      "date": "2026-10-02",
-     "commit": "e04aba3"
+     "commit": "7bf22db"
     },
     "status_history": [
      {
@@ -992,8 +1152,8 @@
    "id": "claude-input-delivery.md#on-the-page-means-the-terminal-opened-not-that-claude-received-anything",
    "uuid": "0b871300-a750-4e61-97cd-597e7d75b03f",
    "file": "claude-input-delivery.md",
-   "line": 310,
-   "end_line": 323,
+   "line": 358,
+   "end_line": 371,
    "title": "✅ on the page means the terminal opened, not that claude received anything",
    "type": [
     "decision"
@@ -1015,7 +1175,7 @@
     "last_touched": {
      "author": "author-2",
      "date": "2026-10-02",
-     "commit": "e04aba3"
+     "commit": "7bf22db"
     },
     "status_history": [
      {
@@ -1032,8 +1192,8 @@
    "id": "claude-input-delivery.md#whether-a-note-is-typed-or-rides-in-argv-is-the-app-s-decision-and-nothing-promises-it",
    "uuid": "d0f3807e-3fe7-46fb-957c-cceb228b69fd",
    "file": "claude-input-delivery.md",
-   "line": 324,
-   "end_line": 337,
+   "line": 372,
+   "end_line": 385,
    "title": "Whether a note is typed or rides in argv is the app's decision, and nothing promises it",
    "type": [
     "decision"
@@ -1055,7 +1215,7 @@
     "last_touched": {
      "author": "author-2",
      "date": "2026-10-02",
-     "commit": "e04aba3"
+     "commit": "7bf22db"
     },
     "status_history": [
      {
@@ -1072,8 +1232,8 @@
    "id": "claude-input-delivery.md#a-note-goes-to-the-page-its-popover-opened-on-and-a-draft-stays-with-that-page",
    "uuid": "08058a59-9667-4d55-9721-9e84553edc4a",
    "file": "claude-input-delivery.md",
-   "line": 338,
-   "end_line": 351,
+   "line": 386,
+   "end_line": 399,
    "title": "A note goes to the page its popover opened on, and a draft stays with that page",
    "type": [
     "decision"
@@ -1095,7 +1255,7 @@
     "last_touched": {
      "author": "author-2",
      "date": "2026-10-02",
-     "commit": "e04aba3"
+     "commit": "7bf22db"
     },
     "status_history": [
      {
@@ -1112,8 +1272,8 @@
    "id": "claude-input-delivery.md#a-split-button-s-run-is-held-by-page-and-button-never-by-the-node-on-screen",
    "uuid": "92910b32-91a0-4f3f-af42-0256d9aff5c6",
    "file": "claude-input-delivery.md",
-   "line": 352,
-   "end_line": 369,
+   "line": 400,
+   "end_line": 417,
    "title": "A split button's run is held by page and button, never by the node on screen",
    "type": [
     "decision"
@@ -1135,7 +1295,7 @@
     "last_touched": {
      "author": "author-2",
      "date": "2026-10-02",
-     "commit": "e04aba3"
+     "commit": "7bf22db"
     },
     "status_history": [
      {
@@ -1152,8 +1312,8 @@
    "id": "claude-input-delivery.md#the-popover-lists-the-stored-inputs-a-note-follows-from-the-list-that-is-sent",
    "uuid": "d4bff9cb-3d2c-4404-9bf1-97101b58ff1a",
    "file": "claude-input-delivery.md",
-   "line": 370,
-   "end_line": 385,
+   "line": 418,
+   "end_line": 433,
    "title": "The popover lists the stored inputs a note follows from the list that is sent",
    "type": [
     "decision"
@@ -1175,7 +1335,7 @@
     "last_touched": {
      "author": "author-2",
      "date": "2026-10-02",
-     "commit": "e04aba3"
+     "commit": "7bf22db"
     },
     "status_history": [
      {
@@ -1192,8 +1352,8 @@
    "id": "claude-input-delivery.md#residuals-kept-rather-than-closed",
    "uuid": "c656c71f-77a8-40d4-ba71-75d5ce3ab28d",
    "file": "claude-input-delivery.md",
-   "line": 386,
-   "end_line": 396,
+   "line": 434,
+   "end_line": 444,
    "title": "Residuals kept rather than closed",
    "type": [
     "constraint"
@@ -1215,7 +1375,7 @@
     "last_touched": {
      "author": "author-2",
      "date": "2026-10-02",
-     "commit": "e04aba3"
+     "commit": "7bf22db"
     },
     "status_history": [
      {
@@ -1253,9 +1413,9 @@
      "commit": "b929568"
     },
     "last_touched": {
-     "author": "author-2",
-     "date": "2026-10-02",
-     "commit": "e04aba3"
+     "author": "author-1",
+     "date": "2026-10-03",
+     "commit": "b8d8f48"
     },
     "status_history": [
      {
@@ -1295,7 +1455,7 @@
     "last_touched": {
      "author": "author-2",
      "date": "2026-10-02",
-     "commit": "e04aba3"
+     "commit": "7bf22db"
     },
     "status_history": [
      {
@@ -1333,9 +1493,9 @@
      "commit": "0a9e142"
     },
     "last_touched": {
-     "author": "author-2",
-     "date": "2026-10-02",
-     "commit": "e04aba3"
+     "author": "author-1",
+     "date": "2026-10-03",
+     "commit": "b8d8f48"
     },
     "status_history": [
      {
@@ -1375,7 +1535,7 @@
     "last_touched": {
      "author": "author-2",
      "date": "2026-10-02",
-     "commit": "e04aba3"
+     "commit": "7bf22db"
     },
     "status_history": [
      {
@@ -1400,7 +1560,7 @@
    ],
    "status": "active",
    "evidence": "confirmed",
-   "source": "Issue #68 measurement comment and issue #69 driver measurements, 2026-09-01; https://github.com/dazebug/terminal-checkout/issues/68#issuecomment-5487928294",
+   "source": "Issue #68 measurement comment and issue #69 driver measurements, 2026-09-01; https://github.com/dazebug/terminal-checkout/issues/68#issuecomment-5487928294; live 25-item `runCmuxBatch` runs against cmux 0.64.25, 2026-10-02",
    "verification": null,
    "revisit_when": "cmux changes layout execution, split targeting or ordering, `operation_id` validation, or the window scope of an unaddressed `workspace.list`",
    "see": [],
@@ -1413,9 +1573,9 @@
      "commit": "eb70d54"
     },
     "last_touched": {
-     "author": "author-2",
+     "author": "author-1",
      "date": "2026-10-02",
-     "commit": "e04aba3"
+     "commit": "a6fd63b"
     },
     "status_history": [
      {
@@ -1429,11 +1589,51 @@
    "findings": []
   },
   {
+   "id": "cmux-integration.md#a-batch-into-a-found-workspace-leaves-the-surface-that-was-already-there-untouched",
+   "uuid": "ad406a47-a446-4c96-b83f-547a545a7abd",
+   "file": "cmux-integration.md",
+   "line": 118,
+   "end_line": 137,
+   "title": "A batch into a found workspace leaves the surface that was already there untouched",
+   "type": [
+    "decision"
+   ],
+   "status": "active",
+   "evidence": "confirmed",
+   "source": "live `runCmuxBatch` before-and-after runs; `cmuxFoundWorkspacePanePlan` in `app/Sources/Core/CmuxPlacement.swift`; `executeFoundSplit` in `app/Sources/Core/CmuxGroupedExecution.swift`; `cmuxCommandSendGate` in `app/Sources/Core/CmuxControl.swift`; `waitUntilClaudeAcceptsInput` in `app/Sources/Core/ClaudeInjector.swift`; `testFoundPaneExecutionNeverSendsItemsToExistingRoot` in `app/Tests/CoreTests/CmuxGroupedExecutionTests.swift`",
+   "verification": null,
+   "revisit_when": "cmux changes targeted `surface.split` behavior or the app changes found-workspace routing or its Claude-session gate",
+   "see": [],
+   "superseded_by": null,
+   "refs": [],
+   "git": {
+    "created": {
+     "author": "author-1",
+     "date": "2026-10-02",
+     "commit": "a6fd63b"
+    },
+    "last_touched": {
+     "author": "author-1",
+     "date": "2026-10-02",
+     "commit": "a6fd63b"
+    },
+    "status_history": [
+     {
+      "status": "active",
+      "author": "author-1",
+      "date": "2026-10-02",
+      "commit": "a6fd63b"
+     }
+    ]
+   },
+   "findings": []
+  },
+  {
    "id": "cmux-integration.md#a-launch-retry-is-decided-by-the-transport-failure-never-by-matching-a-message",
    "uuid": "eab377e9-e7c7-42b6-a4d2-2dae534210e4",
    "file": "cmux-integration.md",
-   "line": 118,
-   "end_line": 142,
+   "line": 138,
+   "end_line": 162,
    "title": "A launch retry is decided by the transport failure, never by matching a message",
    "type": [
     "decision"
@@ -1453,9 +1653,9 @@
      "commit": "b929568"
     },
     "last_touched": {
-     "author": "author-2",
-     "date": "2026-10-02",
-     "commit": "e04aba3"
+     "author": "author-1",
+     "date": "2026-10-03",
+     "commit": "b8d8f48"
     },
     "status_history": [
      {
@@ -1472,8 +1672,8 @@
    "id": "cmux-integration.md#the-workspace-is-created-focused-and-unaddressed",
    "uuid": "6d8dbc15-63fe-4d83-b70c-818b815e6a95",
    "file": "cmux-integration.md",
-   "line": 143,
-   "end_line": 160,
+   "line": 163,
+   "end_line": 180,
    "title": "The workspace is created focused and unaddressed",
    "type": [
     "decision"
@@ -1495,9 +1695,9 @@
      "commit": "b929568"
     },
     "last_touched": {
-     "author": "author-2",
+     "author": "author-1",
      "date": "2026-10-02",
-     "commit": "e04aba3"
+     "commit": "a6fd63b"
     },
     "status_history": [
      {
@@ -1514,8 +1714,8 @@
    "id": "cmux-integration.md#the-tty-comes-from-debug-terminals-not-from-the-pane",
    "uuid": "c89fcdd5-d141-4617-b942-5007ee4a2277",
    "file": "cmux-integration.md",
-   "line": 161,
-   "end_line": 182,
+   "line": 181,
+   "end_line": 202,
    "title": "The tty comes from `debug.terminals`, not from the pane",
    "type": [
     "decision"
@@ -1537,7 +1737,7 @@
     "last_touched": {
      "author": "author-2",
      "date": "2026-10-02",
-     "commit": "e04aba3"
+     "commit": "7bf22db"
     },
     "status_history": [
      {
@@ -1554,8 +1754,8 @@
    "id": "cmux-integration.md#split-order-halves-the-active-pane-balanced-order-or-layout-preserves-width-and-equalization-normalizes-a-linear-chain",
    "uuid": "d95f34cd-d7e2-4d24-933b-796136f91e49",
    "file": "cmux-integration.md",
-   "line": 183,
-   "end_line": 225,
+   "line": 203,
+   "end_line": 255,
    "title": "Split order halves the active pane; balanced order or layout preserves width, and equalization normalizes a linear chain",
    "type": [
     "decision"
@@ -1575,9 +1775,9 @@
      "commit": "e5b1b9b"
     },
     "last_touched": {
-     "author": "author-2",
+     "author": "author-1",
      "date": "2026-10-02",
-     "commit": "e04aba3"
+     "commit": "a6fd63b"
     },
     "status_history": [
      {
@@ -1591,35 +1791,33 @@
    "findings": []
   },
   {
-   "id": "cmux-integration.md#cmux-needs-no-pane-proof-so-delivery-continues-in-a-background-tab",
+   "id": "cmux-integration.md#cmux-s-marker-experiment-reads-its-addressed-surface-including-in-a-background-tab",
    "uuid": "0af4adab-5942-4019-9a12-3894e0285dd4",
    "file": "cmux-integration.md",
-   "line": 226,
-   "end_line": 243,
-   "title": "cmux needs no pane proof, so delivery continues in a background tab",
+   "line": 256,
+   "end_line": 273,
+   "title": "cmux's marker experiment reads its addressed surface, including in a background tab",
    "type": [
     "decision"
    ],
    "status": "active",
    "evidence": "confirmed",
-   "source": "Issue #68 item 6 and PR #60; contrasted with the Warp path in `claude-input-delivery.md`; https://github.com/dazebug/terminal-checkout/issues/68#issuecomment-5487928294",
+   "source": "`proveOurPaneAndEmptyBox` and `inputBoxAfterSubmit` in `app/Sources/Core/ClaudeInjector.swift`; `surface.read_text` implementation in `app/Sources/Core/CmuxControl.swift`; issue #68 item 6 and PR #60; https://github.com/dazebug/terminal-checkout/issues/68#issuecomment-5487928294",
    "verification": null,
-   "revisit_when": "`surface.read_text` no longer accepts an explicit surface id or no longer accepts `surface_id`",
+   "revisit_when": "`surface.read_text` no longer accepts an explicit surface id, or the marker experiment or `screenNeedsPaneProof` contract changes",
    "see": [],
    "superseded_by": null,
-   "refs": [
-    "claude-input-delivery.md"
-   ],
+   "refs": [],
    "git": {
     "created": {
      "author": "author-1",
-     "date": "2026-08-27",
-     "commit": "b929568"
+     "date": "2026-10-02",
+     "commit": "a6fd63b"
     },
     "last_touched": {
-     "author": "author-2",
+     "author": "author-1",
      "date": "2026-10-02",
-     "commit": "e04aba3"
+     "commit": "a6fd63b"
     },
     "status_history": [
      {
@@ -1636,8 +1834,8 @@
    "id": "cmux-integration.md#placement-contract-matrix-for-cmux-0-64-22-102-ddd4a01bc",
    "uuid": null,
    "file": "cmux-integration.md",
-   "line": 244,
-   "end_line": 264,
+   "line": 274,
+   "end_line": 294,
    "title": "Placement contract matrix for cmux 0.64.22 (102) [ddd4a01bc]",
    "type": [],
    "status": "",
@@ -1656,8 +1854,8 @@
     },
     "last_touched": {
      "author": "author-1",
-     "date": "2026-09-01",
-     "commit": "eb70d54"
+     "date": "2026-10-02",
+     "commit": "a6fd63b"
     },
     "status_history": []
    },
@@ -1665,7 +1863,7 @@
     {
      "severity": "warning",
      "code": "W102",
-     "line": 244,
+     "line": 274,
      "message": "'Placement contract matrix for cmux 0.64.22 (102) [ddd4a01bc]': level-2 heading without any schema fields — fine for a prose section, an error if this was meant to be an entry"
     }
    ]
@@ -1700,7 +1898,7 @@
     "last_touched": {
      "author": "author-2",
      "date": "2026-10-02",
-     "commit": "e04aba3"
+     "commit": "7bf22db"
     },
     "status_history": [
      {
@@ -1741,7 +1939,7 @@
     "last_touched": {
      "author": "author-2",
      "date": "2026-10-02",
-     "commit": "e04aba3"
+     "commit": "7bf22db"
     },
     "status_history": [
      {
@@ -1781,7 +1979,7 @@
     "last_touched": {
      "author": "author-2",
      "date": "2026-10-02",
-     "commit": "e04aba3"
+     "commit": "7bf22db"
     },
     "status_history": [
      {
@@ -1821,7 +2019,7 @@
     "last_touched": {
      "author": "author-2",
      "date": "2026-10-02",
-     "commit": "e04aba3"
+     "commit": "7bf22db"
     },
     "status_history": [
      {
@@ -1861,7 +2059,7 @@
     "last_touched": {
      "author": "author-2",
      "date": "2026-10-02",
-     "commit": "e04aba3"
+     "commit": "7bf22db"
     },
     "status_history": [
      {
@@ -1901,7 +2099,7 @@
     "last_touched": {
      "author": "author-2",
      "date": "2026-10-02",
-     "commit": "e04aba3"
+     "commit": "7bf22db"
     },
     "status_history": [
      {
@@ -1941,7 +2139,7 @@
     "last_touched": {
      "author": "author-2",
      "date": "2026-10-02",
-     "commit": "e04aba3"
+     "commit": "7bf22db"
     },
     "status_history": [
      {
@@ -1981,7 +2179,7 @@
     "last_touched": {
      "author": "author-2",
      "date": "2026-10-02",
-     "commit": "e04aba3"
+     "commit": "7bf22db"
     },
     "status_history": [
      {
@@ -2021,7 +2219,7 @@
     "last_touched": {
      "author": "author-2",
      "date": "2026-10-02",
-     "commit": "e04aba3"
+     "commit": "7bf22db"
     },
     "status_history": [
      {
@@ -2061,7 +2259,7 @@
     "last_touched": {
      "author": "author-2",
      "date": "2026-10-02",
-     "commit": "e04aba3"
+     "commit": "7bf22db"
     },
     "status_history": [
      {
@@ -2111,7 +2309,7 @@
     "last_touched": {
      "author": "author-2",
      "date": "2026-10-02",
-     "commit": "e04aba3"
+     "commit": "7bf22db"
     },
     "status_history": [
      {
@@ -2151,7 +2349,7 @@
     "last_touched": {
      "author": "author-2",
      "date": "2026-10-02",
-     "commit": "e04aba3"
+     "commit": "7bf22db"
     },
     "status_history": [
      {
@@ -2191,7 +2389,7 @@
     "last_touched": {
      "author": "author-2",
      "date": "2026-10-02",
-     "commit": "e04aba3"
+     "commit": "7bf22db"
     },
     "status_history": [
      {
@@ -2231,7 +2429,7 @@
     "last_touched": {
      "author": "author-2",
      "date": "2026-10-02",
-     "commit": "e04aba3"
+     "commit": "7bf22db"
     },
     "status_history": [
      {
@@ -2271,7 +2469,7 @@
     "last_touched": {
      "author": "author-2",
      "date": "2026-10-02",
-     "commit": "e04aba3"
+     "commit": "7bf22db"
     },
     "status_history": [
      {
@@ -2311,7 +2509,7 @@
     "last_touched": {
      "author": "author-2",
      "date": "2026-10-02",
-     "commit": "e04aba3"
+     "commit": "7bf22db"
     },
     "status_history": [
      {
@@ -2351,7 +2549,7 @@
     "last_touched": {
      "author": "author-2",
      "date": "2026-10-02",
-     "commit": "e04aba3"
+     "commit": "7bf22db"
     },
     "status_history": [
      {
@@ -2391,7 +2589,7 @@
     "last_touched": {
      "author": "author-2",
      "date": "2026-10-02",
-     "commit": "e04aba3"
+     "commit": "7bf22db"
     },
     "status_history": [
      {
@@ -2429,9 +2627,9 @@
      "commit": "0112613"
     },
     "last_touched": {
-     "author": "author-2",
-     "date": "2026-10-02",
-     "commit": "e04aba3"
+     "author": "author-1",
+     "date": "2026-10-03",
+     "commit": "b8d8f48"
     },
     "status_history": [
      {
@@ -2458,7 +2656,7 @@
    "evidence": "confirmed",
    "source": "PR #41 (closing change); `LanguageNoteState` and `languageNote` in `app/Sources/App/SetupWindowController.swift`",
    "verification": null,
-   "revisit_when": "the language card gains another mutually exclusive restart outcome",
+   "revisit_when": "the General pane's language row gains another mutually exclusive restart outcome",
    "see": [],
    "superseded_by": null,
    "refs": [],
@@ -2469,9 +2667,9 @@
      "commit": "0112613"
     },
     "last_touched": {
-     "author": "author-2",
-     "date": "2026-10-02",
-     "commit": "e04aba3"
+     "author": "author-1",
+     "date": "2026-10-03",
+     "commit": "b8d8f48"
     },
     "status_history": [
      {
@@ -2511,7 +2709,7 @@
     "last_touched": {
      "author": "author-2",
      "date": "2026-10-02",
-     "commit": "e04aba3"
+     "commit": "7bf22db"
     },
     "status_history": [
      {
@@ -2557,7 +2755,7 @@
     "last_touched": {
      "author": "author-2",
      "date": "2026-10-02",
-     "commit": "e04aba3"
+     "commit": "7bf22db"
     },
     "status_history": [
      {
@@ -2649,6 +2847,366 @@
    ]
   },
   {
+   "id": "options-page-design.md#github-is-the-editing-surface",
+   "uuid": "ba8626d9-ce85-47e7-832e-08a05ea8c652",
+   "file": "options-page-design.md",
+   "line": 3,
+   "end_line": 13,
+   "title": "GitHub is the editing surface",
+   "type": [
+    "decision"
+   ],
+   "status": "active",
+   "evidence": "confirmed",
+   "source": null,
+   "verification": null,
+   "revisit_when": "the user changes the priority between seeing placement in context and editing a compact grouped list",
+   "see": [],
+   "superseded_by": null,
+   "refs": [],
+   "git": {
+    "created": {
+     "author": "author-1",
+     "date": "2026-10-04",
+     "commit": "574177b"
+    },
+    "last_touched": {
+     "author": "author-1",
+     "date": "2026-10-04",
+     "commit": "574177b"
+    },
+    "status_history": [
+     {
+      "status": "active",
+      "author": "author-1",
+      "date": "2026-10-04",
+      "commit": "574177b"
+     }
+    ]
+   },
+   "findings": []
+  },
+  {
+   "id": "options-page-design.md#the-scenery-is-fixed-the-buttons-are-live",
+   "uuid": "1d0e6af7-7d5e-4b26-9115-b54bdfb05d14",
+   "file": "options-page-design.md",
+   "line": 14,
+   "end_line": 24,
+   "title": "The scenery is fixed; the buttons are live",
+   "type": [
+    "decision"
+   ],
+   "status": "active",
+   "evidence": "confirmed",
+   "source": null,
+   "verification": null,
+   "revisit_when": "the replica stops serving as an editing preview or the example is replaced with another explicit preview model",
+   "see": [],
+   "superseded_by": null,
+   "refs": [],
+   "git": {
+    "created": {
+     "author": "author-1",
+     "date": "2026-10-04",
+     "commit": "574177b"
+    },
+    "last_touched": {
+     "author": "author-1",
+     "date": "2026-10-04",
+     "commit": "574177b"
+    },
+    "status_history": [
+     {
+      "status": "active",
+      "author": "author-1",
+      "date": "2026-10-04",
+      "commit": "574177b"
+     }
+    ]
+   },
+   "findings": []
+  },
+  {
+   "id": "options-page-design.md#views-project-engine-state-and-own-confirmation",
+   "uuid": "3284b1f0-ada9-4681-bfab-e55027ed842a",
+   "file": "options-page-design.md",
+   "line": 25,
+   "end_line": 35,
+   "title": "Views project engine state and own confirmation",
+   "type": [
+    "decision"
+   ],
+   "status": "active",
+   "evidence": "confirmed",
+   "source": null,
+   "verification": null,
+   "revisit_when": "the options page no longer uses one engine as the source of edit state or its confirmation surface changes",
+   "see": [],
+   "superseded_by": null,
+   "refs": [],
+   "git": {
+    "created": {
+     "author": "author-1",
+     "date": "2026-10-04",
+     "commit": "574177b"
+    },
+    "last_touched": {
+     "author": "author-1",
+     "date": "2026-10-04",
+     "commit": "574177b"
+    },
+    "status_history": [
+     {
+      "status": "active",
+      "author": "author-1",
+      "date": "2026-10-04",
+      "commit": "574177b"
+     }
+    ]
+   },
+   "findings": []
+  },
+  {
+   "id": "options-page-design.md#a-spot-s-adds-to-that-spot-the-drawer-is-for-browsing",
+   "uuid": "d01f5836-6275-4a1b-a126-61b0ecc43dc8",
+   "file": "options-page-design.md",
+   "line": 36,
+   "end_line": 46,
+   "title": "A spot's + adds to that spot; the drawer is for browsing",
+   "type": [
+    "decision"
+   ],
+   "status": "active",
+   "evidence": "confirmed",
+   "source": null,
+   "verification": null,
+   "revisit_when": "the user asks for + to browse every page kind again, or the drawer stops opening from the edit bar",
+   "see": [],
+   "superseded_by": null,
+   "refs": [],
+   "git": {
+    "created": {
+     "author": "author-1",
+     "date": "2026-10-04",
+     "commit": "05fe82f"
+    },
+    "last_touched": {
+     "author": "author-1",
+     "date": "2026-10-04",
+     "commit": "05fe82f"
+    },
+    "status_history": [
+     {
+      "status": "active",
+      "author": "author-1",
+      "date": "2026-10-04",
+      "commit": "05fe82f"
+     }
+    ]
+   },
+   "findings": []
+  },
+  {
+   "id": "options-page-design.md#hidden-content-stays-hidden-across-modules",
+   "uuid": "23ab0230-c09b-42ac-b8c9-8b4522b0af2b",
+   "file": "options-page-design.md",
+   "line": 47,
+   "end_line": 57,
+   "title": "Hidden content stays hidden across modules",
+   "type": [
+    "incident"
+   ],
+   "status": "active",
+   "evidence": "confirmed",
+   "source": null,
+   "verification": null,
+   "revisit_when": "module visibility no longer uses the HTML `hidden` attribute",
+   "see": [],
+   "superseded_by": null,
+   "refs": [],
+   "git": {
+    "created": {
+     "author": "author-1",
+     "date": "2026-10-04",
+     "commit": "574177b"
+    },
+    "last_touched": {
+     "author": "author-1",
+     "date": "2026-10-04",
+     "commit": "574177b"
+    },
+    "status_history": [
+     {
+      "status": "active",
+      "author": "author-1",
+      "date": "2026-10-04",
+      "commit": "574177b"
+     }
+    ]
+   },
+   "findings": []
+  },
+  {
+   "id": "options-page-design.md#word-boundary-breaking-applies-only-to-korean",
+   "uuid": "bf9dc78d-2810-4937-a567-99139d40942d",
+   "file": "options-page-design.md",
+   "line": 58,
+   "end_line": 68,
+   "title": "Word-boundary breaking applies only to Korean",
+   "type": [
+    "decision"
+   ],
+   "status": "active",
+   "evidence": "confirmed",
+   "source": null,
+   "verification": null,
+   "revisit_when": "another page language needs language-specific word-boundary behavior",
+   "see": [],
+   "superseded_by": null,
+   "refs": [],
+   "git": {
+    "created": {
+     "author": "author-1",
+     "date": "2026-10-04",
+     "commit": "574177b"
+    },
+    "last_touched": {
+     "author": "author-1",
+     "date": "2026-10-04",
+     "commit": "574177b"
+    },
+    "status_history": [
+     {
+      "status": "active",
+      "author": "author-1",
+      "date": "2026-10-04",
+      "commit": "574177b"
+     }
+    ]
+   },
+   "findings": []
+  },
+  {
+   "id": "options-page-design.md#github-copy-and-extension-copy-have-different-owners",
+   "uuid": "20035a4a-da93-46af-9ca0-a0d264c39812",
+   "file": "options-page-design.md",
+   "line": 69,
+   "end_line": 79,
+   "title": "GitHub copy and extension copy have different owners",
+   "type": [
+    "decision"
+   ],
+   "status": "active",
+   "evidence": "inferred",
+   "source": null,
+   "verification": null,
+   "revisit_when": "the replica follows GitHub's localized UI instead of using its fixed English scenery",
+   "see": [],
+   "superseded_by": null,
+   "refs": [],
+   "git": {
+    "created": {
+     "author": "author-1",
+     "date": "2026-10-04",
+     "commit": "574177b"
+    },
+    "last_touched": {
+     "author": "author-1",
+     "date": "2026-10-04",
+     "commit": "574177b"
+    },
+    "status_history": [
+     {
+      "status": "active",
+      "author": "author-1",
+      "date": "2026-10-04",
+      "commit": "574177b"
+     }
+    ]
+   },
+   "findings": []
+  },
+  {
+   "id": "options-page-design.md#github-colors-do-not-mirror-the-app-palette",
+   "uuid": "a050483d-7063-437e-807b-18f7a71b5f54",
+   "file": "options-page-design.md",
+   "line": 80,
+   "end_line": 90,
+   "title": "GitHub colors do not mirror the app palette",
+   "type": [
+    "decision"
+   ],
+   "status": "active",
+   "evidence": "confirmed",
+   "source": null,
+   "verification": null,
+   "revisit_when": "the replica stops imitating GitHub's palette or the app and extension theme ownership changes",
+   "see": [],
+   "superseded_by": null,
+   "refs": [],
+   "git": {
+    "created": {
+     "author": "author-1",
+     "date": "2026-10-04",
+     "commit": "574177b"
+    },
+    "last_touched": {
+     "author": "author-1",
+     "date": "2026-10-04",
+     "commit": "574177b"
+    },
+    "status_history": [
+     {
+      "status": "active",
+      "author": "author-1",
+      "date": "2026-10-04",
+      "commit": "574177b"
+     }
+    ]
+   },
+   "findings": []
+  },
+  {
+   "id": "options-page-design.md#discard-reloads-saved-settings-without-writing",
+   "uuid": "ce1f101a-38d9-4a12-a373-f4ffd3ced0c3",
+   "file": "options-page-design.md",
+   "line": 91,
+   "end_line": 100,
+   "title": "Discard reloads saved settings without writing",
+   "type": [
+    "decision"
+   ],
+   "status": "active",
+   "evidence": "confirmed",
+   "source": null,
+   "verification": null,
+   "revisit_when": "the meaning of discard changes or settings stop being read from the existing load path",
+   "see": [],
+   "superseded_by": null,
+   "refs": [],
+   "git": {
+    "created": {
+     "author": "author-1",
+     "date": "2026-10-04",
+     "commit": "574177b"
+    },
+    "last_touched": {
+     "author": "author-1",
+     "date": "2026-10-04",
+     "commit": "574177b"
+    },
+    "status_history": [
+     {
+      "status": "active",
+      "author": "author-1",
+      "date": "2026-10-04",
+      "commit": "574177b"
+     }
+    ]
+   },
+   "findings": []
+  },
+  {
    "id": "options-page-reordering.md#a-row-drag-stays-in-its-card",
    "uuid": "10864b16-6bd6-4b3e-a4ab-458a89b9cf58",
    "file": "options-page-reordering.md",
@@ -2675,7 +3233,7 @@
     "last_touched": {
      "author": "author-2",
      "date": "2026-10-02",
-     "commit": "e04aba3"
+     "commit": "7bf22db"
     },
     "status_history": [
      {
@@ -2715,7 +3273,7 @@
     "last_touched": {
      "author": "author-2",
      "date": "2026-10-02",
-     "commit": "e04aba3"
+     "commit": "7bf22db"
     },
     "status_history": [
      {
@@ -2755,7 +3313,7 @@
     "last_touched": {
      "author": "author-2",
      "date": "2026-10-02",
-     "commit": "e04aba3"
+     "commit": "7bf22db"
     },
     "status_history": [
      {
@@ -2795,7 +3353,7 @@
     "last_touched": {
      "author": "author-2",
      "date": "2026-10-02",
-     "commit": "e04aba3"
+     "commit": "7bf22db"
     },
     "status_history": [
      {
@@ -2835,7 +3393,7 @@
     "last_touched": {
      "author": "author-2",
      "date": "2026-10-02",
-     "commit": "e04aba3"
+     "commit": "7bf22db"
     },
     "status_history": [
      {
@@ -2849,11 +3407,251 @@
    "findings": []
   },
   {
+   "id": "setup-window-design.md#three-toolbar-panes-with-per-pane-previews",
+   "uuid": "9d1a0602-aa6b-4dbf-9355-8043b1abe92c",
+   "file": "setup-window-design.md",
+   "line": 3,
+   "end_line": 20,
+   "title": "Three toolbar panes with per-pane previews",
+   "type": [
+    "decision"
+   ],
+   "status": "active",
+   "evidence": "confirmed",
+   "source": "user decision (2026-10-03); PR #108; mockups A, B, B2 and C, not kept in the repository; `app/Sources/App/SetupWindowController.swift`, `app/Sources/App/SetupWindowGeneralPane.swift`, `app/Sources/App/SetupWindowGitHubPane.swift`, `app/Sources/App/SetupWindowSlackPane.swift`, and `app/Sources/App/SetupWindowPreviewView.swift`",
+   "verification": null,
+   "revisit_when": "the user chooses a different settings-window structure or preview treatment",
+   "see": [],
+   "superseded_by": null,
+   "refs": [],
+   "git": {
+    "created": {
+     "author": "author-1",
+     "date": "2026-10-03",
+     "commit": "b8d8f48"
+    },
+    "last_touched": {
+     "author": "author-1",
+     "date": "2026-10-03",
+     "commit": "b8d8f48"
+    },
+    "status_history": [
+     {
+      "status": "active",
+      "author": "author-1",
+      "date": "2026-10-03",
+      "commit": "b8d8f48"
+     }
+    ]
+   },
+   "findings": []
+  },
+  {
+   "id": "setup-window-design.md#a-request-record-not-a-pipeline-health-claim",
+   "uuid": "725c242f-0b19-4703-8129-467bd9daa15e",
+   "file": "setup-window-design.md",
+   "line": 21,
+   "end_line": 34,
+   "title": "A request record, not a pipeline health claim",
+   "type": [
+    "decision"
+   ],
+   "status": "active",
+   "evidence": "confirmed",
+   "source": "user decision (2026-10-03); PR #108; `app/Sources/App/SetupWindowPresentation.swift` and `app/Sources/App/SetupWindowGeneralPane.swift`",
+   "verification": null,
+   "revisit_when": "the recorded event changes from request arrival to evidence of command completion",
+   "see": [],
+   "superseded_by": null,
+   "refs": [],
+   "git": {
+    "created": {
+     "author": "author-1",
+     "date": "2026-10-03",
+     "commit": "b8d8f48"
+    },
+    "last_touched": {
+     "author": "author-1",
+     "date": "2026-10-03",
+     "commit": "b8d8f48"
+    },
+    "status_history": [
+     {
+      "status": "active",
+      "author": "author-1",
+      "date": "2026-10-03",
+      "commit": "b8d8f48"
+     }
+    ]
+   },
+   "findings": []
+  },
+  {
+   "id": "setup-window-design.md#problems-appear-first-and-use-a-status-dot",
+   "uuid": "e2ec6698-f449-4732-8a94-2743be9198b8",
+   "file": "setup-window-design.md",
+   "line": 35,
+   "end_line": 48,
+   "title": "Problems appear first and use a status dot",
+   "type": [
+    "decision"
+   ],
+   "status": "active",
+   "evidence": "confirmed",
+   "source": "user decisions (2026-10-03); PR #108; `app/Sources/App/SetupWindowPresentation.swift`, `app/Sources/App/SetupWindowSharedPanel.swift`, and `app/Sources/App/SetupWindowController.swift`",
+   "verification": null,
+   "revisit_when": "problem ordering, opening-reason lifetime, or the shared problem area's placement changes",
+   "see": [],
+   "superseded_by": null,
+   "refs": [],
+   "git": {
+    "created": {
+     "author": "author-1",
+     "date": "2026-10-03",
+     "commit": "b8d8f48"
+    },
+    "last_touched": {
+     "author": "author-1",
+     "date": "2026-10-03",
+     "commit": "b8d8f48"
+    },
+    "status_history": [
+     {
+      "status": "active",
+      "author": "author-1",
+      "date": "2026-10-03",
+      "commit": "b8d8f48"
+     }
+    ]
+   },
+   "findings": []
+  },
+  {
+   "id": "setup-window-design.md#the-repository-base-folder-speaks-only-when-unusable",
+   "uuid": "e17f4c9c-1399-4202-8266-efe7ce7b67a4",
+   "file": "setup-window-design.md",
+   "line": 49,
+   "end_line": 62,
+   "title": "The repository base folder speaks only when unusable",
+   "type": [
+    "decision"
+   ],
+   "status": "active",
+   "evidence": "confirmed",
+   "source": "user decision (2026-10-03); PR #108; `app/Sources/App/SetupWindowPresentation.swift` and `app/Sources/App/SetupWindowGitHubPane.swift`",
+   "verification": null,
+   "revisit_when": "the user asks for repository lookup guidance or the base-folder fallback changes",
+   "see": [],
+   "superseded_by": null,
+   "refs": [],
+   "git": {
+    "created": {
+     "author": "author-1",
+     "date": "2026-10-03",
+     "commit": "b8d8f48"
+    },
+    "last_touched": {
+     "author": "author-1",
+     "date": "2026-10-03",
+     "commit": "b8d8f48"
+    },
+    "status_history": [
+     {
+      "status": "active",
+      "author": "author-1",
+      "date": "2026-10-03",
+      "commit": "b8d8f48"
+     }
+    ]
+   },
+   "findings": []
+  },
+  {
+   "id": "setup-window-design.md#initial-selection-follows-the-opening-cause",
+   "uuid": "d7f85f34-c1df-4d3f-8bc7-bc4a593a7203",
+   "file": "setup-window-design.md",
+   "line": 63,
+   "end_line": 76,
+   "title": "Initial selection follows the opening cause",
+   "type": [
+    "decision"
+   ],
+   "status": "active",
+   "evidence": "confirmed",
+   "source": "user decision (2026-10-03); PR #108; `app/Sources/App/AppDelegate.swift` and `app/Sources/App/SetupWindowController.swift`",
+   "verification": null,
+   "revisit_when": "the opening causes or pane-selection behavior changes",
+   "see": [],
+   "superseded_by": null,
+   "refs": [],
+   "git": {
+    "created": {
+     "author": "author-1",
+     "date": "2026-10-03",
+     "commit": "b8d8f48"
+    },
+    "last_touched": {
+     "author": "author-1",
+     "date": "2026-10-03",
+     "commit": "b8d8f48"
+    },
+    "status_history": [
+     {
+      "status": "active",
+      "author": "author-1",
+      "date": "2026-10-03",
+      "commit": "b8d8f48"
+     }
+    ]
+   },
+   "findings": []
+  },
+  {
+   "id": "setup-window-design.md#app-and-extension-icon-identity",
+   "uuid": "98b1070f-51a6-4826-814d-e623bea584b1",
+   "file": "setup-window-design.md",
+   "line": 77,
+   "end_line": 89,
+   "title": "App and extension icon identity",
+   "type": [
+    "decision"
+   ],
+   "status": "active",
+   "evidence": "confirmed",
+   "source": "user decisions (2026-10-03); PR #108; `app/AppIcon.icns`, `docs/assets/icon.png`, `app/Sources/App/SetupWindowGeneralPane.swift`, `app/Sources/App/SetupWindowPreviewView.swift`, and `extension/manifest.json`",
+   "verification": null,
+   "revisit_when": "the source app icon is replaced or the user changes the icon treatment",
+   "see": [],
+   "superseded_by": null,
+   "refs": [],
+   "git": {
+    "created": {
+     "author": "author-1",
+     "date": "2026-10-03",
+     "commit": "b8d8f48"
+    },
+    "last_touched": {
+     "author": "author-1",
+     "date": "2026-10-03",
+     "commit": "b8d8f48"
+    },
+    "status_history": [
+     {
+      "status": "active",
+      "author": "author-1",
+      "date": "2026-10-03",
+      "commit": "b8d8f48"
+     }
+    ]
+   },
+   "findings": []
+  },
+  {
    "id": "setup-window-placement.md#the-measured-size-is-applied-outside-the-layout-pass-it-was-measured-in",
    "uuid": "3fdaeac2-1787-4d0d-a957-4728f52280ed",
    "file": "setup-window-placement.md",
    "line": 5,
-   "end_line": 25,
+   "end_line": 27,
    "title": "The measured size is applied outside the layout pass it was measured in",
    "type": [
     "decision",
@@ -2874,9 +3672,9 @@
      "commit": "c7c61f4"
     },
     "last_touched": {
-     "author": "author-2",
-     "date": "2026-10-02",
-     "commit": "e04aba3"
+     "author": "author-1",
+     "date": "2026-10-03",
+     "commit": "b8d8f48"
     },
     "status_history": [
      {
@@ -2893,8 +3691,8 @@
    "id": "setup-window-placement.md#one-screen-decision-per-layout-cycle-and-only-the-first-measured-size-is-centred",
    "uuid": "d3930d8d-e7aa-4a62-ac2e-1407674c2244",
    "file": "setup-window-placement.md",
-   "line": 26,
-   "end_line": 47,
+   "line": 28,
+   "end_line": 49,
    "title": "One screen decision per layout cycle, and only the first measured size is centred",
    "type": [
     "decision",
@@ -2917,7 +3715,7 @@
     "last_touched": {
      "author": "author-2",
      "date": "2026-10-02",
-     "commit": "e04aba3"
+     "commit": "7bf22db"
     },
     "status_history": [
      {
@@ -2957,7 +3755,7 @@
     "last_touched": {
      "author": "author-2",
      "date": "2026-10-02",
-     "commit": "e04aba3"
+     "commit": "7bf22db"
     },
     "status_history": [
      {
@@ -2965,6 +3763,218 @@
       "author": "author-1",
       "date": "2026-08-22",
       "commit": "92a2354"
+     }
+    ]
+   },
+   "findings": []
+  },
+  {
+   "id": "slack-thread-shortcut.md#the-trigger-is-copy-link-plus-a-keyboard-shortcut",
+   "uuid": "aebdc42d-59e3-46bd-87cf-cf054b5ff577",
+   "file": "slack-thread-shortcut.md",
+   "line": 5,
+   "end_line": 16,
+   "title": "The trigger is Copy link plus a keyboard shortcut",
+   "type": [
+    "decision"
+   ],
+   "status": "active",
+   "evidence": "confirmed",
+   "source": "User decision and driver measurements, 2026-10-02; [Slack Help — Manage apps in an Enterprise organization](https://slack.com/help/articles/360000281563-Manage-apps-in-an-Enterprise-organization); [Slack docs — Using Socket Mode](https://docs.slack.dev/apis/events-api/using-socket-mode)",
+   "verification": "corroborated by the linked Slack docs for app visibility and Socket Mode routing",
+   "revisit_when": "Slack documents a user-private message shortcut for its desktop app, or Socket Mode gains a per-user routing guarantee",
+   "see": [],
+   "superseded_by": null,
+   "refs": [],
+   "git": {
+    "created": {
+     "author": "author-1",
+     "date": "2026-10-02",
+     "commit": "416ce06"
+    },
+    "last_touched": {
+     "author": "author-1",
+     "date": "2026-10-02",
+     "commit": "416ce06"
+    },
+    "status_history": [
+     {
+      "status": "active",
+      "author": "author-1",
+      "date": "2026-10-02",
+      "commit": "a41b211"
+     }
+    ]
+   },
+   "findings": []
+  },
+  {
+   "id": "slack-thread-shortcut.md#the-app-registers-the-shortcut-itself",
+   "uuid": "b44539a6-52e8-49e7-8ef5-ff168299ec93",
+   "file": "slack-thread-shortcut.md",
+   "line": 17,
+   "end_line": 32,
+   "title": "The app registers the shortcut itself",
+   "type": [
+    "decision"
+   ],
+   "status": "active",
+   "evidence": "confirmed",
+   "source": "User decision and driver measurements, 2026-10-03, Darwin 27.0.0",
+   "verification": "corroborated — measured end to end with the installed app — ⌃⇧⌘C pressed with Slack in front opened one session while the app's Accessibility permission was reset",
+   "revisit_when": "a shortcut assigned in the Shortcuts app fires whichever app is in front, or the app stops staying resident after it launches",
+   "see": [],
+   "superseded_by": null,
+   "refs": [],
+   "git": {
+    "created": {
+     "author": "author-1",
+     "date": "2026-10-02",
+     "commit": "416ce06"
+    },
+    "last_touched": {
+     "author": "author-1",
+     "date": "2026-10-03",
+     "commit": "b8d8f48"
+    },
+    "status_history": [
+     {
+      "status": "active",
+      "author": "author-1",
+      "date": "2026-10-02",
+      "commit": "a41b211"
+     }
+    ]
+   },
+   "findings": []
+  },
+  {
+   "id": "slack-thread-shortcut.md#the-clipboard-can-choose-a-thread-not-a-command",
+   "uuid": "1d588767-204b-4fac-9bb8-de5c540eb826",
+   "file": "slack-thread-shortcut.md",
+   "line": 33,
+   "end_line": 46,
+   "title": "The clipboard can choose a thread, not a command",
+   "type": [
+    "decision"
+   ],
+   "status": "active",
+   "evidence": "confirmed",
+   "source": "User decisions, 2026-10-02 and 2026-10-03; the request contract in `app/Sources/Core/SlackThreadRequest.swift`",
+   "verification": "corroborated by Core parser and request tests",
+   "revisit_when": "the request accepts another caller-controlled value or changes how the initial claude input is delivered",
+   "see": [],
+   "superseded_by": null,
+   "refs": [],
+   "git": {
+    "created": {
+     "author": "author-1",
+     "date": "2026-10-02",
+     "commit": "416ce06"
+    },
+    "last_touched": {
+     "author": "author-1",
+     "date": "2026-10-02",
+     "commit": "416ce06"
+    },
+    "status_history": [
+     {
+      "status": "active",
+      "author": "author-1",
+      "date": "2026-10-02",
+      "commit": "416ce06"
+     }
+    ]
+   },
+   "findings": []
+  },
+  {
+   "id": "slack-thread-shortcut.md#the-shortcuts-workflow-was-signed-and-configured-locally",
+   "uuid": "0ffebfb8-9b0b-400c-bf3b-f001a687718b",
+   "file": "slack-thread-shortcut.md",
+   "line": 47,
+   "end_line": 68,
+   "title": "The Shortcuts workflow was signed and configured locally",
+   "type": [
+    "decision"
+   ],
+   "status": "superseded",
+   "evidence": "confirmed",
+   "source": "User decision; [Apple — Run a shortcut while working on your Mac](https://support.apple.com/en-asia/guide/shortcuts-mac/apd163eb9f95/mac); driver measurements, 2026-10-02",
+   "verification": "corroborated by the removed Shortcuts installer and driver import/run measurements",
+   "revisit_when": "a Shortcuts-based trigger is reconsidered",
+   "see": [],
+   "superseded_by": "b44539a6-52e8-49e7-8ef5-ff168299ec93",
+   "refs": [],
+   "git": {
+    "created": {
+     "author": "author-1",
+     "date": "2026-10-02",
+     "commit": "416ce06"
+    },
+    "last_touched": {
+     "author": "author-1",
+     "date": "2026-10-02",
+     "commit": "416ce06"
+    },
+    "status_history": [
+     {
+      "status": "active",
+      "author": "author-1",
+      "date": "2026-10-02",
+      "commit": "a41b211"
+     },
+     {
+      "status": "superseded",
+      "author": "author-1",
+      "date": "2026-10-02",
+      "commit": "416ce06"
+     }
+    ]
+   },
+   "findings": []
+  },
+  {
+   "id": "slack-thread-shortcut.md#url-launch-ordering-was-measured",
+   "uuid": "694792c4-c761-4f12-8b8b-e758d83f007e",
+   "file": "slack-thread-shortcut.md",
+   "line": 69,
+   "end_line": 82,
+   "title": "URL launch ordering was measured",
+   "type": [
+    "constraint"
+   ],
+   "status": "superseded",
+   "evidence": "confirmed",
+   "source": "Driver AppKit probe, 2026-10-02, Darwin 27.0.0",
+   "verification": "corroborated by the recorded probe results",
+   "revisit_when": "the app registers a URL scheme again",
+   "see": [],
+   "superseded_by": "none — the app no longer registers a URL scheme; the platform behavior is unchanged",
+   "refs": [],
+   "git": {
+    "created": {
+     "author": "author-1",
+     "date": "2026-10-02",
+     "commit": "416ce06"
+    },
+    "last_touched": {
+     "author": "author-1",
+     "date": "2026-10-02",
+     "commit": "416ce06"
+    },
+    "status_history": [
+     {
+      "status": "active",
+      "author": "author-1",
+      "date": "2026-10-02",
+      "commit": "a41b211"
+     },
+     {
+      "status": "superseded",
+      "author": "author-1",
+      "date": "2026-10-02",
+      "commit": "416ce06"
      }
     ]
    },
@@ -2997,7 +4007,7 @@
     "last_touched": {
      "author": "author-2",
      "date": "2026-10-02",
-     "commit": "e04aba3"
+     "commit": "7bf22db"
     },
     "status_history": [
      {
@@ -3037,7 +4047,7 @@
     "last_touched": {
      "author": "author-2",
      "date": "2026-10-02",
-     "commit": "e04aba3"
+     "commit": "7bf22db"
     },
     "status_history": [
      {
@@ -3077,7 +4087,7 @@
     "last_touched": {
      "author": "author-2",
      "date": "2026-10-02",
-     "commit": "e04aba3"
+     "commit": "7bf22db"
     },
     "status_history": [
      {
@@ -3117,7 +4127,7 @@
     "last_touched": {
      "author": "author-2",
      "date": "2026-10-02",
-     "commit": "e04aba3"
+     "commit": "7bf22db"
     },
     "status_history": [
      {
@@ -3157,9 +4167,9 @@
      "commit": "847ecde"
     },
     "last_touched": {
-     "author": "author-2",
-     "date": "2026-10-02",
-     "commit": "e04aba3"
+     "author": "author-1",
+     "date": "2026-10-03",
+     "commit": "b8d8f48"
     },
     "status_history": [
      {
@@ -3199,7 +4209,7 @@
     "last_touched": {
      "author": "author-2",
      "date": "2026-10-02",
-     "commit": "e04aba3"
+     "commit": "7bf22db"
     },
     "status_history": [
      {
@@ -3239,7 +4249,7 @@
     "last_touched": {
      "author": "author-2",
      "date": "2026-10-02",
-     "commit": "e04aba3"
+     "commit": "7bf22db"
     },
     "status_history": [
      {
@@ -3291,7 +4301,7 @@
     "last_touched": {
      "author": "author-2",
      "date": "2026-10-02",
-     "commit": "e04aba3"
+     "commit": "7bf22db"
     },
     "status_history": [
      {
@@ -3370,7 +4380,7 @@
     "last_touched": {
      "author": "author-2",
      "date": "2026-10-02",
-     "commit": "e04aba3"
+     "commit": "7bf22db"
     },
     "status_history": [
      {
@@ -3408,9 +4418,9 @@
      "commit": "c7c61f4"
     },
     "last_touched": {
-     "author": "author-2",
-     "date": "2026-10-02",
-     "commit": "e04aba3"
+     "author": "author-1",
+     "date": "2026-10-03",
+     "commit": "b8d8f48"
     },
     "status_history": [
      {
@@ -3450,7 +4460,7 @@
     "last_touched": {
      "author": "author-2",
      "date": "2026-10-02",
-     "commit": "e04aba3"
+     "commit": "7bf22db"
     },
     "status_history": [
      {
@@ -3491,7 +4501,7 @@
     "last_touched": {
      "author": "author-2",
      "date": "2026-10-02",
-     "commit": "e04aba3"
+     "commit": "7bf22db"
     },
     "status_history": [
      {
@@ -3531,7 +4541,7 @@
     "last_touched": {
      "author": "author-2",
      "date": "2026-10-02",
-     "commit": "e04aba3"
+     "commit": "7bf22db"
     },
     "status_history": [
      {
@@ -3548,21 +4558,22 @@
  "authors": [
   {
    "name": "author-1",
-   "created": 81,
-   "touched": 4,
-   "superseded": 7,
+   "created": 104,
+   "touched": 41,
+   "superseded": 9,
    "first": "2026-08-22",
-   "last": "2026-10-02",
+   "last": "2026-10-04",
    "evidence": {
-    "confirmed": 76,
+    "confirmed": 98,
     "": 4,
-    "unknown": 1
+    "unknown": 1,
+    "inferred": 1
    }
   },
   {
    "name": "author-2",
    "created": 0,
-   "touched": 77,
+   "touched": 63,
    "superseded": 0,
    "first": "2026-10-02",
    "last": "2026-10-02",
@@ -3572,13 +4583,62 @@
  "anonymized": true,
  "findings": {
   "errors": 0,
-  "warnings": 4,
+  "warnings": 11,
   "items": [
+   {
+    "severity": "warning",
+    "code": "W003",
+    "path": ".keep-the-why",
+    "line": 10,
+    "message": "context-schema 0.20.0 is newer than the newest schema this linter knows (0.18.1) — update keep-the-why-lint if the skill's references/migrations.md lists structural changes since; otherwise checks for the newer version simply don't exist yet"
+   },
+   {
+    "severity": "warning",
+    "code": "W301",
+    "path": "docs/context/claude-input-delivery.md",
+    "line": 118,
+    "message": "base64-looking blob (64 chars) — if it needs decoding to be read, it doesn't belong in an entry meant to be read"
+   },
+   {
+    "severity": "warning",
+    "code": "W301",
+    "path": "docs/context/claude-input-delivery.md",
+    "line": 118,
+    "message": "base64-looking blob (61 chars) — if it needs decoding to be read, it doesn't belong in an entry meant to be read"
+   },
+   {
+    "severity": "warning",
+    "code": "W301",
+    "path": "docs/context/claude-input-delivery.md",
+    "line": 136,
+    "message": "base64-looking blob (60 chars) — if it needs decoding to be read, it doesn't belong in an entry meant to be read"
+   },
+   {
+    "severity": "warning",
+    "code": "W301",
+    "path": "docs/context/claude-input-delivery.md",
+    "line": 136,
+    "message": "base64-looking blob (65 chars) — if it needs decoding to be read, it doesn't belong in an entry meant to be read"
+   },
+   {
+    "severity": "warning",
+    "code": "W301",
+    "path": "docs/context/claude-input-delivery.md",
+    "line": 136,
+    "message": "base64-looking blob (60 chars) — if it needs decoding to be read, it doesn't belong in an entry meant to be read"
+   },
+   {
+    "severity": "warning",
+    "code": "W301",
+    "path": "docs/context/claude-input-delivery.md",
+    "line": 159,
+    "message": "base64-looking blob (60 chars) — if it needs decoding to be read, it doesn't belong in an entry meant to be read"
+   },
    {
     "severity": "warning",
     "code": "W102",
     "path": "docs/context/cmux-integration.md",
-    "line": 244,
+    "line": 274,
     "message": "'Placement contract matrix for cmux 0.64.22 (102) [ddd4a01bc]': level-2 heading without any schema fields — fine for a prose section, an error if this was meant to be an entry"
    },
    {
