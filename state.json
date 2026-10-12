@@ -1,19 +1,19 @@
 {
  "state-json": 2,
- "generated": "2026-10-12T12:48:30Z",
+ "generated": "2026-10-12T14:49:00Z",
  "dashboard": "0.11.1",
  "linter": "0.20.2.0",
  "project": {
   "id": "dazebug---terminal-checkout",
   "name": "terminal-checkout",
   "context": "docs/context/",
-  "schema": "0.20.1",
+  "schema": "0.20.2",
   "config": {
    "id": "dazebug---terminal-checkout",
    "canonical": "https://github.com/dazebug/terminal-checkout",
    "context": "`docs/context/`",
    "init": "complete",
-   "context-schema": "0.20.1",
+   "context-schema": "0.20.2",
    "capture-confirmation": "automatic",
    "source-reference": "never"
   },
@@ -26,9 +26,9 @@
   "children": [],
   "git": {
    "available": true,
-   "head": "8219593",
-   "head_full": "8219593157ba624a4de87ab228243614d7d12d57",
-   "branch": "keep-the-why-0.20.1",
+   "head": "cac664e",
+   "head_full": "cac664ee17e5c3b8dff03fc9ac9c89ea462e318e",
+   "branch": "keep-the-why-0.20.2",
    "remote": "github.com/oliver-zehentleitner-aigent/terminal-checkout",
    "upstream": "github.com/dazebug/terminal-checkout",
    "fork": {
